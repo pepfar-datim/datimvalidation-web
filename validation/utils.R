@@ -1,6 +1,6 @@
   require(datimvalidation)
   options(shiny.maxRequestSize=20*1024^2)
-  options("baseurl" = "http://127.0.0.1:8080/")
+  options("baseurl" = "http://www.datim.org/")
   
   DHISLogin<-function(baseurl, username, password) {
     httr::set_config(httr::config(http_version = 0))
