@@ -6,16 +6,13 @@ MAINTAINER Jason P. Pickering "jason@dhis2.org"
 RUN apt-get update && apt-get install -y \
 sudo \
 libcurl4-gnutls-dev \
-libcairo2-dev \
-libxt-dev \
 libssl-dev \
-libssh2-1-dev \
-libssl1.0.0 \
 libxml2-dev
 
-# system library dependency for the euler app
-RUN apt-get update && apt-get install -y \
-libmpfr-dev
+# install shinyProxy
+RUN mkdir -p /opt/shinyproxy/
+RUN wget https://www.shinyproxy.io/downloads/shinyproxy-2.2.1.jar -O /opt/shinyproxy/shinyproxy.jar
+
 
 # basic shiny functionality
 RUN R -e "install.packages(c('shiny','shinyjs','magrittr','openxlsx','devtools','roxygen2','doMC'), repos='https://cloud.r-project.org/')"
