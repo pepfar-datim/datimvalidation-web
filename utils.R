@@ -1,15 +1,10 @@
   require(datimvalidation)
   require(config)
   require(futile.logger)
-
-  
   options(shiny.maxRequestSize=20*1024^2)
   config <- config::get()
   options("baseurl" = config$baseurl)
 
-  
-  config <- config::get()
-  options("baseurl" = config$baseurl)
   
   #Try and create the log directory if it does not exist
   if (!dir.exists(dirname(config$log_path))) {

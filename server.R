@@ -71,7 +71,7 @@ shinyServer(function(input, output, session) {
                           "JSON" = "json",
                           "XML" = "xml"
                         )),
-            selectInput("ou", "Operating Unit", ous),
+            selectInput("ou", "Operating Unit", user_input$user_ous),
             selectInput(
               "de_scheme",
               "Data element ID scheme:",
@@ -136,13 +136,15 @@ shinyServer(function(input, output, session) {
   }
 })
 
-  user_input <- reactiveValues(authenticated = FALSE, status = "")
+  user_input <- reactiveValues(authenticated = FALSE, 
+                               status = "",
+                               user_ous =NA )
   
   observeEvent(input$login_button, {
     is_logged_in<-FALSE
     user_input$authenticated <-DHISLogin(input$server,input$user_name,input$password)
     foo<-getUserOperatingUnits(getOption("organisationUnit"))
-    ous<<-setNames(foo$id,foo$name)
+    user_input$user_ous<-setNames(foo$id,foo$name)
 
   })   
   
