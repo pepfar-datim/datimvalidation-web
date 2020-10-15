@@ -130,7 +130,7 @@ shinyServer(function(input, output, session) {
           mainPanel(tabsetPanel(
             type = "tabs",
             tabPanel("Messages",   tags$ul(uiOutput('messages'))),
-            tabPanel("Validation rules", dataTableOutput("contents"))
+            tabPanel("Validation rules", DT::DTOutput("contents"))
           ))
         ))
   }
@@ -390,14 +390,14 @@ shinyServer(function(input, output, session) {
     }
   )
   
-  output$contents <- DT::renderDataTable({ 
+  output$contents <- DT::renderDT({ 
     
     results<-validation_results() %>% 
       purrr::pluck(., "validation") %>% 
       purrr::pluck(., "validation_rules") 
 
-
     if ( inherits(results, "data.frame") ) { 
+      
       results }
     else { NULL }
   })
