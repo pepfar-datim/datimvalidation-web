@@ -2,6 +2,7 @@ library(shiny)
 library(shinyjs)
 library(openxlsx)
 library(magrittr)
+require(futile.logger)
 
 
 shinyServer(function(input, output, session) {
@@ -142,6 +143,7 @@ shinyServer(function(input, output, session) {
     user_input$authenticated <-DHISLogin(input$server,input$user_name,input$password)
     foo<-getUserOperatingUnits(getOption("organisationUnit"))
     ous<<-setNames(foo$id,foo$name)
+
   })   
   
   # password entry UI componenets:
@@ -386,7 +388,7 @@ shinyServer(function(input, output, session) {
     }
   )
   
-  output$contents <- renderDataTable({ 
+  output$contents <- DT::renderDataTable({ 
     
     results<-validation_results() %>% 
       purrr::pluck(., "validation") %>% 
