@@ -3,7 +3,7 @@
   require(futile.logger)
   options(shiny.maxRequestSize=20*1024^2)
   config <- config::get()
-  options("baseurl" = config$baseurl)
+
 
   
   #Try and create the log directory if it does not exist
@@ -38,31 +38,16 @@
     flog.appender(futile.logger::appender.file(config$log_path))
   }
   
-  DHISLogin<-function(baseurl, username, password) {
-    httr::set_config(httr::config(http_version = 0))
-    url <- URLencode(URL = paste0(getOption("baseurl"), "api/me"))
-    #Logging in here will give us a cookie to reuse
-    r <- httr::GET(url ,
-                   httr::authenticate(username, password),
-                   httr::timeout(60))
-    if(r$status != 200L){
-      return(FALSE)
-    } else {
-      me <- jsonlite::fromJSON(httr::content(r,as = "text"))
-      options("organisationUnit" = me$organisationUnits$id)
-      
-      return(TRUE)
-    }
-  }
-  
-  getUserOperatingUnits<-function(uid) {
+
+  getUserOperatingUnits<-function(uid,d2session = d2_default_session) {
     
     #Global user
     if ( uid == "ybg3MO3hcf4" ) {
-    getValidOperatingUnits()
+      datimvalidation::getValidOperatingUnits(d2session = d2session)
+
     } else {
 
-      getValidOperatingUnits() %>% 
+      getValidOperatingUnits(d2session = d2session) %>% 
         dplyr::filter(id == uid)
     }
   }

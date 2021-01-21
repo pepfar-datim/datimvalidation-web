@@ -3,6 +3,7 @@ library(shinyjs)
 library(openxlsx)
 library(magrittr)
 require(futile.logger)
+require(shinyWidgets)
 
 
 shinyServer(function(input, output, session) {
@@ -138,15 +139,35 @@ shinyServer(function(input, output, session) {
 
   user_input <- reactiveValues(authenticated = FALSE, 
                                status = "",
-                               user_ous =NA )
+                               d2_session = NULL,
+                               user_ous = NA)
   
-  observeEvent(input$login_button, {
-    is_logged_in<-FALSE
-    user_input$authenticated <-DHISLogin(input$server,input$user_name,input$password)
-    foo<-getUserOperatingUnits(getOption("organisationUnit"))
-    user_input$user_ous<-setNames(foo$id,foo$name)
-
-  })   
+  observeEvent(input$login_button, 
+               {
+                 
+                 tryCatch(  {  datimutils::loginToDATIM(base_url = Sys.getenv("BASE_URL"),
+                                                        username = input$user_name,
+                                                        password = input$password) },
+                            #This function throws an error if the login is not successful
+                            error=function(e) {
+                              sendSweetAlert(
+                                session,
+                                title = "Login failed",
+                                text = "Please check your username/password!",
+                                type = "error")
+                              flog.info(paste0("User ", input$user_name, " login failed."), name = "datapack")
+                            } )
+                 
+                 if ( exists("d2_default_session"))  {
+                   
+                   user_input$authenticated<-TRUE
+                   user_input$d2_session<-d2_default_session$clone()
+                   flog.info(paste0("User ", user_input$d2_session$me$userCredentials$username, " logged in."), name = "datapack")
+                   foo<-getUserOperatingUnits(user_input$d2_session$user_orgunit, d2session = user_input$d2_session )
+                   user_input$user_ous<-setNames(foo$id,foo$name)
+                 }
+                 
+               })
   
   # password entry UI componenets:
   #   username and password text fields, login button
@@ -179,7 +200,7 @@ shinyServer(function(input, output, session) {
     withProgress(message = 'Validating file', value = 0,{
       
     incProgress(0.1, detail = ("Loading metadata"))
-    ds<-getCurrentMERDataSets(type = input$ds_type)
+    ds<-getCurrentMERDataSets(type = input$ds_type, d2session = user_input$d2_session)
     incProgress(0.1, detail = ("Parsing data"))
     validation<-list()
 
@@ -198,7 +219,8 @@ shinyServer(function(input, output, session) {
         dataElementIdScheme = input$de_scheme,
         orgUnitIdScheme = input$ou_scheme,
         idScheme = input$id_scheme,
-        csv_header = input$header
+        csv_header = input$header,
+        d2session = user_input$d2_session
       )
     },
     error = function(e) {
@@ -264,7 +286,8 @@ shinyServer(function(input, output, session) {
           data = d,
           datasets = ds,
           organisationUnit = input$ou,
-          return_violations = TRUE
+          return_violations = TRUE,
+          d2session = user_input$d2_session
         ) 
       
       if (inherits(de_ou_check, "data.frame")) {
@@ -284,7 +307,9 @@ shinyServer(function(input, output, session) {
       incProgress(0.1, detail = ("Checking data element/disagg associations"))
       
       ds_disagg_check <-
-        checkDataElementDisaggValidity(d, datasets = ds, return_violations = TRUE)
+        checkDataElementDisaggValidity(d, datasets = ds, 
+                                       return_violations = TRUE,
+                                       d2session = user_input$d2_session)
       
       if (inherits(ds_disagg_check, "data.frame")) {
         
@@ -303,7 +328,7 @@ shinyServer(function(input, output, session) {
       #Value type compliance check
       incProgress(0.1, detail = ("Checking value type compliance."))
       
-      vt_check <- checkValueTypeCompliance(d)
+      vt_check <- checkValueTypeCompliance(d, d2session = user_input$d2_session)
       
       if (inherits(vt_check, "data.frame") & NROW(vt_check) > 0) {
         messages <-  append( paste( "ERROR! :", NROW(vt_check)," invalid values found."), messages)
@@ -316,7 +341,7 @@ shinyServer(function(input, output, session) {
       #Negative value check
       incProgress(0.1, detail = ("Checking negative numbers."))
       
-      neg_check <- checkNegativeValues(d)
+      neg_check <- checkNegativeValues(d, d2session = user_input$d2_session)
       
       if (inherits(neg_check, "data.frame")) {
         messages <- append(paste("ERROR! :", NROW(neg_check), " negatve values found."), messages)
@@ -333,7 +358,8 @@ shinyServer(function(input, output, session) {
         checkMechanismValidity(
           data = d,
           organisationUnit = input$ou,
-          return_violations = TRUE
+          return_violations = TRUE,
+          d2session = user_input$d2_session
         )
       
       if (inherits(mech_check, "data.frame")) {
@@ -360,7 +386,8 @@ shinyServer(function(input, output, session) {
       
       vr_rules<-validateData(d,organisationUnit = input$ou,
                              datasets = ds,
-                             parallel = is_parallel)
+                             parallel = is_parallel,
+                             d2session = user_input$d2_session)
       
       #If there are any validation rule violations, put them in the output
       if  ( NROW(vr_rules) > 0 )  {
