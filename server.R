@@ -22,7 +22,6 @@ shinyServer(function(input, output, session) {
   
   observeEvent(input$reset_input, {
     enableUI()
-    input$file1<-NULL
     ready$ok<-FALSE
     shinyjs::hide("downloadData")
   })
