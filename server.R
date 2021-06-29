@@ -20,6 +20,23 @@ shinyServer(function(input, output, session) {
     ready$ok <- TRUE
   })  
   
+  observeEvent(input$reset_input, {
+    enableUI()
+    input$file1<-NULL
+    ready$ok<-FALSE
+    shinyjs::hide("downloadData")
+  })
+  
+  observeEvent(input$logout,{
+    flog.info(paste0("User ", user_input$d2_session$me$userCredentials$username, " logged out."))
+    ready$ok <- FALSE
+    user_input$authenticated<-FALSE
+    user_input$d2_session<-NULL
+    session$reload()
+    gc()
+    
+  } )
+  
   disableUI<-function(){
     shinyjs::disable("type")
     shinyjs::disable("ou")
@@ -126,7 +143,10 @@ shinyServer(function(input, output, session) {
             ),
             tags$hr(),
             actionButton("validate","Validate"),
-            downloadButton("downloadData", "Download report")
+            downloadButton("downloadData", "Download report"),
+            tags$hr(),
+            div(style = "display: inline-block; vertical-align:top; width: 80 px;", actionButton("reset_input", "Reset inputs")),
+            div(style = "display: inline-block; vertical-align:top; width: 80 px;", actionButton("logout", "Logout"))
           ),
           mainPanel(tabsetPanel(
             type = "tabs",
@@ -184,6 +204,7 @@ shinyServer(function(input, output, session) {
   })
   
   validate<-function() {
+    
     shinyjs::hide("downloadData")
     if (!ready$ok) {return(NULL)}
     
