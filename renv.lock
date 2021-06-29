@@ -486,6 +486,13 @@
       "Repository": "CRAN",
       "Hash": "ee4ed72d7a5047d9e73cf922ad66e9c9"
     },
+    "shinyWidgets": {
+      "Package": "shinyWidgets",
+      "Version": "0.5.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "cfeab56e3bc9d470208c6e645744f532"
+    },
     "shinyjs": {
       "Package": "shinyjs",
       "Version": "2.0.0",
