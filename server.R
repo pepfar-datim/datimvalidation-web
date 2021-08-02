@@ -82,6 +82,21 @@ shinyServer(function(input, output, session) {
         sidebarLayout(
           sidebarPanel(
             shinyjs::useShinyjs(),
+            fileInput(
+              "file1",
+              "Choose data file:",
+              accept = c(
+                "text/csv",
+                "text/comma-separated-values,text/plain",
+                "application/json",
+                "application/xml",
+                "application/zip",
+                ".csv",
+                ".json",
+                ".xml",
+                ".zip"
+              )
+            ),
             selectInput("type", "Type:",
                         c(
                           "CSV" = "csv",
@@ -125,21 +140,6 @@ shinyServer(function(input, output, session) {
               c("Results" = "RESULTS", "Targets" = "TARGETS")
             ),
             checkboxInput("header", "CSV Header", TRUE),
-            fileInput(
-              "file1",
-              "Choose data file:",
-              accept = c(
-                "text/csv",
-                "text/comma-separated-values,text/plain",
-                "application/json",
-                "application/xml",
-                "application/zip",
-                ".csv",
-                ".json",
-                ".xml",
-                ".zip"
-              )
-            ),
             tags$hr(),
             actionButton("validate","Validate"),
             downloadButton("downloadData", "Download report"),
@@ -405,7 +405,6 @@ shinyServer(function(input, output, session) {
       }
       
       vr_rules<-validateData(d,organisationUnit = input$ou,
-                             datasets = ds,
                              parallel = is_parallel,
                              d2session = user_input$d2_session)
       
