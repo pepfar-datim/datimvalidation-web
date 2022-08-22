@@ -157,16 +157,6 @@
       "Hash": "2ba81b120c1655ab696c935ef33ea716",
       "Requirements": []
     },
-    "config": {
-      "Package": "config",
-      "Version": "0.3.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "31d77b09f63550cee9ecb5a08bf76e8f",
-      "Requirements": [
-        "yaml"
-      ]
-    },
     "cpp11": {
       "Package": "cpp11",
       "Version": "0.4.2",
@@ -241,9 +231,9 @@
       "RemoteUsername": "pepfar-datim",
       "RemoteRepo": "datim-validation",
       "RemoteRef": "refactor-de-ou-validations",
-      "RemoteSha": "b5aaa561d158a90289a65fca98ba042e7a3a2109",
+      "RemoteSha": "13218c6f6f8da50984dbaaeb219e77e3e7526214",
       "Remotes": "pepfar-datim/datimutils",
-      "Hash": "78a2c1e99bbf5305235c2108bc5481e3",
+      "Hash": "5e4682ea20e256baf8a34cfeb8dd6634",
       "Requirements": [
         "ISOweek",
         "R6",
