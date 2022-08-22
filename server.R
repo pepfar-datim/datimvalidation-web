@@ -309,7 +309,7 @@ shinyServer(function(input, output, session) {
           d2session = user_input$d2_session
         )
 
-      if (inherits(de_ou_check, "data.frame")) {
+      if (inherits(de_ou_check, "data.frame") && NROW(de_ou_check > 0L)) {
         messages<-append(paste(
           NROW(de_ou_check),
           "invalid data element/orgunit associations found!"
@@ -330,7 +330,7 @@ shinyServer(function(input, output, session) {
                                        return_violations = TRUE,
                                        d2session = user_input$d2_session)
 
-      if (NROW(ds_disagg_check) > 0) {
+      if (inherits(ds_disagg_check, "data.frame")) {
 
         messages <- append(paste(
           NROW(ds_disagg_check),
