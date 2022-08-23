@@ -216,12 +216,12 @@ shinyServer(function(input, output, session) {
     messages<-list()
     vr_results<-list()
     has_error<-FALSE
-
+    step_size <- 1/11
     withProgress(message = 'Validating file', value = 0,{
 
-    incProgress(0.1, detail = ("Loading metadata"))
+    incProgress(step_size, detail = ("Loading metadata"))
     ds<-getCurrentMERDataSets(type = input$ds_type, d2session = user_input$d2_session)
-    incProgress(0.1, detail = ("Parsing data"))
+    incProgress(step_size, detail = ("Parsing data"))
     validation<-list()
 
     if  ( inFile$type == "application/zip" )  {
@@ -265,7 +265,7 @@ shinyServer(function(input, output, session) {
       }
 
       #Period check
-      incProgress(0.1, detail = ("Checking periods."))
+      incProgress(step_size, detail = ("Checking periods."))
 
         messages <-  append(
           paste(
@@ -273,7 +273,7 @@ shinyServer(function(input, output, session) {
           ),messages )
 
         #Record check
-        incProgress(0.1, detail = ("Checking records: "))
+        incProgress(step_size, detail = ("Checking records: "))
 
         zero_check<-sprintf("%1.2f%%",  ( sum(as.character(d$value) == "0") / NROW(d) )  * 100 )
 
@@ -283,7 +283,7 @@ shinyServer(function(input, output, session) {
           ),messages )
 
       #Duplicate check
-      incProgress(0.1, detail = ("Checking for duplicate records."))
+      incProgress(step_size, detail = ("Checking for duplicate records."))
 
       dup_check <- getExactDuplicates(d)
 
@@ -300,7 +300,7 @@ shinyServer(function(input, output, session) {
         messages<-append("No duplicate records detected.",messages)
       }
 
-      incProgress(0.1, detail = ("Checking data element/orgunit associations"))
+      incProgress(step_size, detail = ("Checking data element/orgunit associations"))
       de_ou_check <-
         checkDataElementOrgunitValidity(
           d = d,
@@ -323,7 +323,7 @@ shinyServer(function(input, output, session) {
       }
 
       #Data element orgunit check
-      incProgress(0.1, detail = ("Checking data element/disagg associations"))
+      incProgress(step_size, detail = ("Checking data element/disagg associations"))
 
       ds_disagg_check <-
         checkDataElementDisaggValidity(d, datasets = ds,
@@ -345,7 +345,7 @@ shinyServer(function(input, output, session) {
       }
 
       #Value type compliance check
-      incProgress(0.1, detail = ("Checking value type compliance."))
+      incProgress(step_size, detail = ("Checking value type compliance."))
 
       vt_check <- checkValueTypeCompliance(d, d2session = user_input$d2_session)
 
@@ -358,7 +358,7 @@ shinyServer(function(input, output, session) {
       }
 
       #Negative value check
-      incProgress(0.1, detail = ("Checking negative numbers."))
+      incProgress(step_size, detail = ("Checking negative numbers."))
 
       neg_check <- checkNegativeValues(d, d2session = user_input$d2_session)
 
@@ -371,7 +371,7 @@ shinyServer(function(input, output, session) {
       }
 
       #Mechanism check
-      incProgress(0.1, detail = ("Checking mechanisms."))
+      incProgress(step_size, detail = ("Checking mechanisms."))
 
       mech_check <-
         checkMechanismValidity(
@@ -391,7 +391,7 @@ shinyServer(function(input, output, session) {
         messages <- append("All mechanisms are valid.", messages)
       }
 
-      incProgress(0.1, detail = ("Validating data"))
+      incProgress(step_size, detail = ("Validating data"))
 
       if ( Sys.info()['sysname'] == "Linux") {
 
