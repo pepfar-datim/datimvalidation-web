@@ -648,8 +648,8 @@
       "Repository": null,
       "GithubRepo": "datim-validation",
       "GithubUsername": "pepfar-datim",
-      "GithubRef": "refactor-de-ou-validations",
-      "GithubSha1": "13218c6f6f8da50984dbaaeb219e77e3e7526214",
+      "GithubRef": "httpcache",
+      "GithubSha1": "22be02fae6287fd94d2bcd321487b3c3a44718e2",
       "description": {
         "Package": "datimvalidation",
         "Type": "Package",
@@ -665,22 +665,22 @@
         "BugReports": "https://github.com/jason-p-pickering/datim-validation/issues",
         "Encoding": "UTF-8",
         "Depends": "R (>= 3.6)",
-        "Imports": "assertthat (>= 0.2.0),\ndatimutils (>= 0.1.0),\ndigest (>= 0.6.18),\ndplyr (>= 0.8.3),\ngetPass (>= 0.2-2),\nhttr (>= 1.4.0),\nISOweek (>= 0.6-2),\njsonlite (>= 1.6),\nlubridate (>= 1.7.4),\nplyr (>= 1.8.4),\npurrr (>= 0.3.2),\nR6 (>= 2.4.1),\nreshape2 (>= 1.4.3),\nrlist (>= 0.4.6.1),\nstringr (>= 1.4.0),\nxml2 (>= 1.3.2)",
+        "Imports": "assertthat (>= 0.2.0),\ndatimutils (>= 0.1.0),\ndplyr (>= 0.8.3),\ngetPass (>= 0.2-2),\nhttr (>= 1.4.0),\nISOweek (>= 0.6-2),\njsonlite (>= 1.6),\nlubridate (>= 1.7.4),\nplyr (>= 1.8.4),\npurrr (>= 0.3.2),\nreshape2 (>= 1.4.3),\nrlist (>= 0.4.6.1),\nstringr (>= 1.4.0),\nxml2 (>= 1.3.2),\nhttpcache (>= 1.2.0)",
         "Suggests": "covr (>= 3.2.1),\ndoMC (>= 1.3.5),\nforeach (>= 1.4.4),\nhttptest (>= 3.2.2),\nknitr (>= 1.21),\nmethods,\nrmarkdown (>= 1.11),\nroxygen2 (>= 6.1.1),\ntcltk,\ntestthat (>= 2.0.1),\nstringi (>= 1.3.1),\nrprojroot (>= 1.3-2)",
         "VignetteBuilder": "knitr",
         "RoxygenNote": "7.2.1",
-        "Built": "R 4.2.1; ; 2022-08-22 09:20:11 UTC; unix",
+        "Built": "R 4.2.1; ; 2022-08-23 07:01:20 UTC; unix",
         "RemoteType": "github",
         "RemoteHost": "api.github.com",
         "RemoteUsername": "pepfar-datim",
         "RemoteRepo": "datim-validation",
-        "RemoteRef": "refactor-de-ou-validations",
-        "RemoteSha": "13218c6f6f8da50984dbaaeb219e77e3e7526214",
+        "RemoteRef": "httpcache",
+        "RemoteSha": "22be02fae6287fd94d2bcd321487b3c3a44718e2",
         "GithubHost": "api.github.com",
         "GithubRepo": "datim-validation",
         "GithubUsername": "pepfar-datim",
-        "GithubRef": "refactor-de-ou-validations",
-        "GithubSHA1": "13218c6f6f8da50984dbaaeb219e77e3e7526214",
+        "GithubRef": "httpcache",
+        "GithubSHA1": "22be02fae6287fd94d2bcd321487b3c3a44718e2",
         "Remotes": "pepfar-datim/datimutils"
       }
     },
@@ -1243,6 +1243,39 @@
         "Repository": "CRAN",
         "Date/Publication": "2021-09-08 14:00:02 UTC",
         "Built": "R 4.2.1; ; 2022-08-12 10:38:36 UTC; unix"
+      }
+    },
+    "httpcache": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "httpcache",
+        "Type": "Package",
+        "Title": "Query Cache for HTTP Clients",
+        "Description": "In order to improve performance for HTTP API clients, 'httpcache'\n    provides simple tools for caching and invalidating cache. It includes the\n    HTTP verb functions GET, PUT, PATCH, POST, and DELETE, which are drop-in\n    replacements for those in the 'httr' package. These functions are cache-aware\n    and provide default settings for cache invalidation suitable for RESTful\n    APIs; the package also enables custom cache-management strategies.\n    Finally, 'httpcache' includes a basic logging framework to facilitate the\n    measurement of HTTP request time and cache performance.",
+        "Version": "1.2.0",
+        "Authors@R": "c(person(\"Neal\", \"Richardson\", role = c(\"aut\", \"cre\"),\n    email = \"neal.p.richardson@gmail.com\"))",
+        "URL": "https://enpiar.com/r/httpcache/,\nhttps://github.com/nealrichardson/httpcache/",
+        "BugReports": "https://github.com/nealrichardson/httpcache/issues",
+        "License": "MIT + file LICENSE",
+        "Depends": "R (>= 3.0.0)",
+        "Imports": "digest, httr (>= 1.0.0), utils",
+        "Suggests": "httptest (>= 3.0.0), knitr, rmarkdown, spelling",
+        "RoxygenNote": "7.1.1",
+        "VignetteBuilder": "knitr",
+        "Language": "en-US",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "no",
+        "Packaged": "2021-01-10 21:17:00 UTC; enpiar",
+        "Author": "Neal Richardson [aut, cre]",
+        "Maintainer": "Neal Richardson <neal.p.richardson@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2021-01-10 23:10:02 UTC",
+        "Built": "R 4.2.1; ; 2022-08-22 13:04:00 UTC; unix"
       }
     },
     "httpuv": {
@@ -2675,7 +2708,7 @@
   },
   "files": {
     ".Rprofile": {
-      "checksum": "476dace9d8f6a87100c53068ec1f85c9"
+      "checksum": "3ed38b09d1bf2687f19ed0db0e09f641"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
@@ -2684,7 +2717,7 @@
       "checksum": "9f25abe74a77ac00a2d234cab8021498"
     },
     "server.R": {
-      "checksum": "4b8be3d541a64d057738f7fd1e80d6ba"
+      "checksum": "c5271b63fff4f999faf17e50328611bd"
     },
     "ui.R": {
       "checksum": "10fff370fd41bab3c1d5a247e16071f5"

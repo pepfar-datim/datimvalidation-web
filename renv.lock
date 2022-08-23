@@ -230,18 +230,17 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "pepfar-datim",
       "RemoteRepo": "datim-validation",
-      "RemoteRef": "refactor-de-ou-validations",
-      "RemoteSha": "13218c6f6f8da50984dbaaeb219e77e3e7526214",
+      "RemoteRef": "httpcache",
+      "RemoteSha": "22be02fae6287fd94d2bcd321487b3c3a44718e2",
       "Remotes": "pepfar-datim/datimutils",
-      "Hash": "5e4682ea20e256baf8a34cfeb8dd6634",
+      "Hash": "58acf21af4d1b6aaef2f3cc9e2797c8c",
       "Requirements": [
         "ISOweek",
-        "R6",
         "assertthat",
         "datimutils",
-        "digest",
         "dplyr",
         "getPass",
+        "httpcache",
         "httr",
         "jsonlite",
         "lubridate",
@@ -432,6 +431,17 @@
         "htmltools",
         "jsonlite",
         "yaml"
+      ]
+    },
+    "httpcache": {
+      "Package": "httpcache",
+      "Version": "1.2.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "1199297226d95ef7f4b8283ba1b47c13",
+      "Requirements": [
+        "digest",
+        "httr"
       ]
     },
     "httpuv": {
