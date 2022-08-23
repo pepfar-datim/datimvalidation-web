@@ -216,7 +216,7 @@ shinyServer(function(input, output, session) {
     messages<-list()
     vr_results<-list()
     has_error<-FALSE
-    step_size <- 1/11
+    step_size <- 1/13
     withProgress(message = 'Validating file', value = 0,{
 
     incProgress(step_size, detail = ("Loading metadata"))
@@ -289,7 +289,7 @@ shinyServer(function(input, output, session) {
 
       if (inherits(dup_check, "data.frame") & NROW(dup_check) > 0) {
         messages <-  append(
-          paste(
+          paste("ERROR! ",
             paste( NROW(dup_check)," duplicate values found.")
           ),messages )
 
@@ -299,6 +299,26 @@ shinyServer(function(input, output, session) {
         } else {
         messages<-append("No duplicate records detected.",messages)
       }
+
+      #Check that orgunits are in the provided user hierarchy
+      incProgress(step_size, detail = ("Checking sites are within the operating unit"))
+      ou_hierarchy_check <-  checkOrgunitsInHierarchy(d = d,
+                                                      userOrgUnit = input$ou,
+                                                      d2session = user_input$d2_session)
+
+      if (inherits(ou_hierarchy_check, "list") && length(ou_hierarchy_check > 0L)) {
+        messages<-append(paste("ERROR! ",
+          length(ou_hierarchy_check),
+          "organisation units found which were not in the provided operating unit!"
+        ), messages)
+
+        validation$ou_hierarchy_check<-data.frame(invalid_orgunits = ou_hierarchy_check)
+
+        has_error<-TRUE
+      } else {
+        messages<-append("All organisation units were within the provided operating unit.", messages)
+      }
+
 
       incProgress(step_size, detail = ("Checking data element/orgunit associations"))
       de_ou_check <-
@@ -310,7 +330,7 @@ shinyServer(function(input, output, session) {
         )
 
       if (inherits(de_ou_check, "data.frame") && NROW(de_ou_check > 0L)) {
-        messages<-append(paste(
+        messages<-append(paste("ERROR! ",
           NROW(de_ou_check),
           "invalid data element/orgunit associations found!"
         ), messages)
@@ -320,6 +340,24 @@ shinyServer(function(input, output, session) {
         has_error<-TRUE
       } else {
         messages<-append("Data element/orgunit associations are valid.", messages)
+      }
+
+      #Data element cadence check
+      incProgress(step_size, detail = ("Checking data elemement cadence"))
+      de_cadence_check <- checkDataElementCadence(d, d2session = user_input$d2_session)
+
+      if (inherits(de_cadence_check, "data.frame")) {
+
+        messages <- append(paste("ERROR! ",
+          NROW(de_cadence_check),
+          "data elements were submitted for the incorrect period!"
+        ),
+        messages)
+
+        validation$de_cadence_check<-de_cadence_check
+        has_error<-TRUE
+      } else {
+        messages<-append("Data elements were submittted for the correct period.",messages)
       }
 
       #Data element orgunit check
@@ -332,7 +370,7 @@ shinyServer(function(input, output, session) {
 
       if (inherits(ds_disagg_check, "data.frame")) {
 
-        messages <- append(paste(
+        messages <- append(paste("ERROR! ",
           NROW(ds_disagg_check),
           "invalid data element/disagg associations found!"
         ),
