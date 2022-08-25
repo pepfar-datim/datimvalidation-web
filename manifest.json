@@ -648,15 +648,15 @@
       "Repository": null,
       "GithubRepo": "datim-validation",
       "GithubUsername": "pepfar-datim",
-      "GithubRef": "httpcache",
-      "GithubSha1": "a488d60ed33056e147b6a5145b1903594e7df7b0",
+      "GithubRef": "master",
+      "GithubSha1": "7eddb657c53a92c0316ece0ecdb53dc6c58aa2e8",
       "description": {
         "Package": "datimvalidation",
         "Type": "Package",
         "Title": "External Validation Routines for Data Payloads in DATIM",
         "Version": "1.2.0",
         "Date": "2022-08-23",
-        "Authors@R": "c(\n    person(\"Jason\", \"Pickering\", email = \"jason.p.pickering@gmail.com\",\n        role = c(\"aut\", \"cre\")),\n    person(\"Chris\", \"Nemarich\", email = \"cnemarich@guidehouse.com\",\n        role = c(\"ctb\")),\n    person(\"Vlad\", \"Shioshvili\", email = \"Vladimer.Shioshvili@icf.com\",\n        role = c(\"ctb\")),\n    person(\"Dennis\", \"Banga\", email = \"dennisbanga@gmail.com\",\n        role = c(\"ctb\")),\n    person(\"Hiwot\", \"Chichaybelu\", email = \"Hiwot.Chichaybelu@icf.com\",\n        role = c(\"ctb\"))\n  )",
+        "Authors@R": "c(\n    person(\"Jason\", \"Pickering\", email = \"jason.p.pickering@gmail.com\",\n        role = c(\"aut\", \"cre\")),\n    person(\"Chris\", \"Nemarich\", email = \"cnemarich@guidehouse.com\",\n        role = c(\"ctb\")),\n    person(\"Vlad\", \"Shioshvili\", email = \"Vladimer.Shioshvili@icf.com\",\n        role = c(\"ctb\")),\n    person(\"Dennis\", \"Banga\", email = \"Dennis.Banga@icf.com\",\n        role = c(\"ctb\")),\n    person(\"Hiwot\", \"Chichaybelu\", email = \"Hiwot.Chichaybelu@icf.com\",\n        role = c(\"ctb\"))\n  )",
         "Maintainer": "Jason P. Pickering <jason.p.pickering@gmail.com>",
         "Description": "A comprehensive set of tools to validate data payloads\n        intended for import into 'DATIM' <https://www.datim.org/>.\n        DATIM is the 'PEPFAR' <https://www.state.gov/pepfar/> specific\n        instance of 'DHIS2' <https://www.dhis2.org/>. These scripts are\n        provided for the 'PEPFAR' data exchange community in order to\n        validate their prospective data payloads prior to submission\n        for import.",
         "License": "BSD_3_clause + file LICENSE",
@@ -664,24 +664,24 @@
         "URL": "https://github.com/jason-p-pickering/datim-validation",
         "BugReports": "https://github.com/jason-p-pickering/datim-validation/issues",
         "Encoding": "UTF-8",
-        "Depends": "R (>= 3.6)",
+        "Depends": "R (>= 4.1)",
         "Imports": "assertthat (>= 0.2.0),\ndatimutils (>= 0.1.0),\ndplyr (>= 0.8.3),\ngetPass (>= 0.2-2),\nhttr (>= 1.4.0),\nISOweek (>= 0.6-2),\njsonlite (>= 1.6),\nlubridate (>= 1.7.4),\nplyr (>= 1.8.4),\npurrr (>= 0.3.2),\nreshape2 (>= 1.4.3),\nrlist (>= 0.4.6.1),\nstringr (>= 1.4.0),\nxml2 (>= 1.3.2),\nhttpcache (>= 1.2.0)",
-        "Suggests": "covr (>= 3.2.1),\ndoMC (>= 1.3.5),\nforeach (>= 1.4.4),\nhttptest (>= 3.2.2),\nknitr (>= 1.21),\nmethods,\nrmarkdown (>= 1.11),\nroxygen2 (>= 6.1.1),\ntcltk,\ntestthat (>= 2.0.1),\nstringi (>= 1.3.1),\nrprojroot (>= 1.3-2)",
+        "Suggests": "covr (>= 3.2.1),\ndoMC (>= 1.3.5),\nforeach (>= 1.4.4),\nhttptest (>= 3.2.2),\nknitr (>= 1.21),\nmethods,\nrmarkdown (>= 1.11),\nroxygen2 (>= 6.1.1),\ntcltk,\ntestthat (>= 2.0.1),\nstringi (>= 1.3.1),\nrprojroot (>= 1.3-2),\nlintr (>= 3.0.0),\ntibble (>= 3.1.8)",
         "VignetteBuilder": "knitr",
         "RoxygenNote": "7.2.1",
         "Author": "Jason Pickering [aut, cre],\n  Chris Nemarich [ctb],\n  Vlad Shioshvili [ctb],\n  Dennis Banga [ctb],\n  Hiwot Chichaybelu [ctb]",
-        "Built": "R 4.2.1; ; 2022-08-23 11:13:31 UTC; unix",
+        "Built": "R 4.2.1; ; 2022-08-25 10:26:18 UTC; unix",
         "RemoteType": "github",
         "RemoteHost": "api.github.com",
         "RemoteUsername": "pepfar-datim",
         "RemoteRepo": "datim-validation",
-        "RemoteRef": "httpcache",
-        "RemoteSha": "a488d60ed33056e147b6a5145b1903594e7df7b0",
+        "RemoteRef": "master",
+        "RemoteSha": "7eddb657c53a92c0316ece0ecdb53dc6c58aa2e8",
         "GithubHost": "api.github.com",
         "GithubRepo": "datim-validation",
         "GithubUsername": "pepfar-datim",
-        "GithubRef": "httpcache",
-        "GithubSHA1": "a488d60ed33056e147b6a5145b1903594e7df7b0",
+        "GithubRef": "master",
+        "GithubSHA1": "7eddb657c53a92c0316ece0ecdb53dc6c58aa2e8",
         "Remotes": "pepfar-datim/datimutils"
       }
     },
@@ -2709,10 +2709,13 @@
   },
   "files": {
     ".Rprofile": {
-      "checksum": "39e2e4fce338233cb7ba694eaa4ece01"
+      "checksum": "7d9bbe4d317207c15f6ab602d779ec12"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
+    },
+    "R/oauthLogin.R": {
+      "checksum": "28ccba25ca9248d7f0b61471d6c60cff"
     },
     "README.md": {
       "checksum": "9f25abe74a77ac00a2d234cab8021498"
@@ -2721,7 +2724,7 @@
       "checksum": "c8d5df7314f9a469abed237bc5cef7f4"
     },
     "ui.R": {
-      "checksum": "10fff370fd41bab3c1d5a247e16071f5"
+      "checksum": "5e8533cc5c651b60ac69ebd832e95f68"
     },
     "utils.R": {
       "checksum": "4460bcbab17efd82e6406b57bbb0709d"
