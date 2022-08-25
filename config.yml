@@ -1,3 +1,0 @@
-default:
-  baseurl: "https://www.datim.org/"
-  log_path: "/opt/rstudio-connect/log/datimvalidation/datimvalidation.log"
