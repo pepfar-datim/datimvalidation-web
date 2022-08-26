@@ -648,14 +648,14 @@
       "Repository": null,
       "GithubRepo": "datim-validation",
       "GithubUsername": "pepfar-datim",
-      "GithubRef": "de-acoc-check",
-      "GithubSha1": "1d7fd355b2802c11fb395b7ad1b1e83ea1c82b33",
+      "GithubRef": "mer-narratives",
+      "GithubSha1": "c3f071a79f73757e1444b4a91dfb54f9398e5229",
       "description": {
         "Package": "datimvalidation",
         "Type": "Package",
         "Title": "External Validation Routines for Data Payloads in DATIM",
-        "Version": "1.2.0",
-        "Date": "2022-08-23",
+        "Version": "1.2.1",
+        "Date": "2022-08-26",
         "Authors@R": "c(\n    person(\"Jason\", \"Pickering\", email = \"jason.p.pickering@gmail.com\",\n        role = c(\"aut\", \"cre\")),\n    person(\"Chris\", \"Nemarich\", email = \"cnemarich@guidehouse.com\",\n        role = c(\"ctb\")),\n    person(\"Vlad\", \"Shioshvili\", email = \"Vladimer.Shioshvili@icf.com\",\n        role = c(\"ctb\")),\n    person(\"Dennis\", \"Banga\", email = \"Dennis.Banga@icf.com\",\n        role = c(\"ctb\")),\n    person(\"Hiwot\", \"Chichaybelu\", email = \"Hiwot.Chichaybelu@icf.com\",\n        role = c(\"ctb\"))\n  )",
         "Maintainer": "Jason P. Pickering <jason.p.pickering@gmail.com>",
         "Description": "A comprehensive set of tools to validate data payloads\n        intended for import into 'DATIM' <https://www.datim.org/>.\n        DATIM is the 'PEPFAR' <https://www.state.gov/pepfar/> specific\n        instance of 'DHIS2' <https://www.dhis2.org/>. These scripts are\n        provided for the 'PEPFAR' data exchange community in order to\n        validate their prospective data payloads prior to submission\n        for import.",
@@ -670,18 +670,18 @@
         "VignetteBuilder": "knitr",
         "RoxygenNote": "7.2.1",
         "Author": "Jason Pickering [aut, cre],\n  Chris Nemarich [ctb],\n  Vlad Shioshvili [ctb],\n  Dennis Banga [ctb],\n  Hiwot Chichaybelu [ctb]",
-        "Built": "R 4.2.1; ; 2022-08-26 07:41:18 UTC; unix",
+        "Built": "R 4.2.1; ; 2022-08-26 11:48:25 UTC; unix",
         "RemoteType": "github",
         "RemoteHost": "api.github.com",
         "RemoteUsername": "pepfar-datim",
         "RemoteRepo": "datim-validation",
-        "RemoteRef": "de-acoc-check",
-        "RemoteSha": "1d7fd355b2802c11fb395b7ad1b1e83ea1c82b33",
+        "RemoteRef": "mer-narratives",
+        "RemoteSha": "c3f071a79f73757e1444b4a91dfb54f9398e5229",
         "GithubHost": "api.github.com",
         "GithubRepo": "datim-validation",
         "GithubUsername": "pepfar-datim",
-        "GithubRef": "de-acoc-check",
-        "GithubSHA1": "1d7fd355b2802c11fb395b7ad1b1e83ea1c82b33",
+        "GithubRef": "mer-narratives",
+        "GithubSHA1": "c3f071a79f73757e1444b4a91dfb54f9398e5229",
         "Remotes": "pepfar-datim/datimutils"
       }
     },
@@ -2709,7 +2709,7 @@
   },
   "files": {
     ".Rprofile": {
-      "checksum": "03d2d36445c2dea581f05a551750adbb"
+      "checksum": "14ef639a47b42878aa6b3eec4db5f2e9"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
@@ -2721,7 +2721,7 @@
       "checksum": "9f25abe74a77ac00a2d234cab8021498"
     },
     "server.R": {
-      "checksum": "d44bbb19645a8b88d030800329054ae5"
+      "checksum": "64823bc34a9437e60b47c4ed2436ba7b"
     },
     "ui.R": {
       "checksum": "10fff370fd41bab3c1d5a247e16071f5"
