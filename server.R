@@ -137,7 +137,7 @@ shinyServer(function(input, output, session) {
             selectInput(
               "ds_type",
               "Dataset type:",
-              c("Results" = "RESULTS", "Targets" = "TARGETS")
+              c("Results" = "RESULTS", "Targets" = "TARGETS", "Narratives" = "NARRATIVES_RESULTS")
             ),
             checkboxInput("header", "CSV Header", TRUE),
             tags$hr(),
@@ -264,6 +264,7 @@ shinyServer(function(input, output, session) {
         messages<-append("No problems found during file parsing.",messages)
       }
 
+      #Common checks for all data
       #Period check
       incProgress(step_size, detail = ("Checking periods."))
 
@@ -272,213 +273,242 @@ shinyServer(function(input, output, session) {
             paste( "Periods found: ", paste(unique(d$period),sep="",collapse=","))
           ),messages )
 
-        #Record check
-        incProgress(step_size, detail = ("Checking records: "))
+        #Duplicates check
+        incProgress(step_size, detail = ("Checking for duplicate records."))
 
-        zero_check<-sprintf("%1.2f%%",  ( sum(as.character(d$value) == "0") / NROW(d) )  * 100 )
+        dup_check <- getExactDuplicates(d)
 
-        messages <-  append(
-          paste(
-            paste( "Records found: ", NROW(d), " records found of which ", zero_check, " were zeros.")
-          ),messages )
+        if (inherits(dup_check, "data.frame") & NROW(dup_check) > 0) {
+          messages <-  append(
+            paste("ERROR! ",
+                  paste( NROW(dup_check)," duplicate values found.")
+            ),messages )
 
-      #Duplicate check
-      incProgress(step_size, detail = ("Checking for duplicate records."))
+          validation$duplicates_check<-dup_check
 
-      dup_check <- getExactDuplicates(d)
-
-      if (inherits(dup_check, "data.frame") & NROW(dup_check) > 0) {
-        messages <-  append(
-          paste("ERROR! ",
-            paste( NROW(dup_check)," duplicate values found.")
-          ),messages )
-
-        validation$duplicates_check<-dup_check
-
-        has_error<-TRUE
+          has_error<-TRUE
         } else {
-        messages<-append("No duplicate records detected.",messages)
-      }
+          messages<-append("No duplicate records detected.",messages)
+        }
 
-      #Check that orgunits are in the provided user hierarchy
-      incProgress(step_size, detail = ("Checking sites are within the operating unit"))
-      ou_hierarchy_check <-  checkOrgunitsInHierarchy(d = d,
-                                                      userOrgUnit = input$ou,
-                                                      d2session = user_input$d2_session)
+        #Check that orgunits are in the provided user hierarchy
+        incProgress(step_size, detail = ("Checking sites are within the operating unit"))
+        ou_hierarchy_check <-  checkOrgunitsInHierarchy(d = d,
+                                                        userOrgUnit = input$ou,
+                                                        d2session = user_input$d2_session)
 
-      if (inherits(ou_hierarchy_check, "list") && length(ou_hierarchy_check > 0L)) {
-        messages<-append(paste("ERROR! ",
-          length(ou_hierarchy_check),
-          "organisation units found which were not in the provided operating unit!"
-        ), messages)
+        if (inherits(ou_hierarchy_check, "list") && length(ou_hierarchy_check > 0L)) {
+          messages<-append(paste("ERROR! ",
+                                 length(ou_hierarchy_check),
+                                 "organisation units found which were not in the provided operating unit!"
+          ), messages)
 
-        validation$ou_hierarchy_check<-data.frame(invalid_orgunits = ou_hierarchy_check)
+          validation$ou_hierarchy_check<-data.frame(invalid_orgunits = ou_hierarchy_check)
 
-        has_error<-TRUE
-      } else {
-        messages<-append("All organisation units were within the provided operating unit.", messages)
-      }
+          has_error<-TRUE
+        } else {
+          messages<-append("All organisation units were within the provided operating unit.", messages)
+        }
 
 
-      incProgress(step_size, detail = ("Checking data element/mechanism associations"))
-      de_acoc_check <-
-        checkDataElementMechValidity(
-          d = d,
-          datasets = ds,
-          return_violations = TRUE,
-          d2session = user_input$d2_session
-        )
+        incProgress(step_size, detail = ("Checking data element/mechanism associations"))
+        de_acoc_check <-
+          checkDataElementMechValidity(
+            d = d,
+            datasets = ds,
+            return_violations = TRUE,
+            d2session = user_input$d2_session
+          )
 
-      #Check data elements and mechanism associations
-      if (inherits(de_acoc_check, "data.frame") && NROW(de_acoc_check > 0L)) {
-        messages<-append(paste("ERROR! ",
-          NROW(de_acoc_check),
-          "invalid data element/mechanism associations found!"
-        ), messages)
+        #Check data elements and mechanism associations
+        if (inherits(de_acoc_check, "data.frame") && NROW(de_acoc_check > 0L)) {
+          messages<-append(paste("ERROR! ",
+                                 NROW(de_acoc_check),
+                                 "invalid data element/mechanism associations found!"
+          ), messages)
 
-        validation$dataelement_acoc_check<-de_acoc_check
+          validation$dataelement_acoc_check<-de_acoc_check
 
-        has_error<-TRUE
-      } else {
-        messages<-append("Data element/mechanism associations are valid.", messages)
-      }
+          has_error<-TRUE
+        } else {
+          messages<-append("Data element/mechanism associations are valid.", messages)
+        }
 
-      #Check data element and organisation unit associations
-      incProgress(step_size, detail = ("Checking data element/orgunit associations"))
-      de_ou_check <-
-        checkDataElementOrgunitValidity(
-          d = d,
-          datasets = ds,
-          return_violations = TRUE,
-          d2session = user_input$d2_session
-        )
+        #Check data element and organisation unit associations
+        incProgress(step_size, detail = ("Checking data element/orgunit associations"))
+        de_ou_check <-
+          checkDataElementOrgunitValidity(
+            d = d,
+            datasets = ds,
+            return_violations = TRUE,
+            d2session = user_input$d2_session
+          )
 
-      if (inherits(de_ou_check, "data.frame") && NROW(de_ou_check > 0L)) {
-        messages<-append(paste("ERROR! ",
-                               NROW(de_ou_check),
-                               "invalid data element/orgunit associations found!"
-        ), messages)
+        if (inherits(de_ou_check, "data.frame") && NROW(de_ou_check > 0L)) {
+          messages<-append(paste("ERROR! ",
+                                 NROW(de_ou_check),
+                                 "invalid data element/orgunit associations found!"
+          ), messages)
 
-        validation$dataelement_ou_check<-de_ou_check
+          validation$dataelement_ou_check<-de_ou_check
 
-        has_error<-TRUE
-      } else {
-        messages<-append("Data element/orgunit associations are valid.", messages)
-      }
+          has_error<-TRUE
+        } else {
+          messages<-append("Data element/orgunit associations are valid.", messages)
+        }
 
-      #Data element cadence check
-      incProgress(step_size, detail = ("Checking data elemement cadence"))
-      de_cadence_check <- checkDataElementCadence(d, d2session = user_input$d2_session)
+        #Data element cadence check
+        incProgress(step_size, detail = ("Checking data elemement cadence"))
+        de_cadence_check <- checkDataElementCadence(d, d2session = user_input$d2_session)
 
-      if (inherits(de_cadence_check, "data.frame")) {
+        if (inherits(de_cadence_check, "data.frame")) {
 
-        messages <- append(paste("ERROR! ",
-          NROW(de_cadence_check),
-          "data elements were submitted for the incorrect period!"
-        ),
-        messages)
+          messages <- append(paste("ERROR! ",
+                                   NROW(de_cadence_check),
+                                   "data elements were submitted for the incorrect period!"
+          ),
+          messages)
 
-        validation$de_cadence_check<-de_cadence_check
-        has_error<-TRUE
-      } else {
-        messages<-append("Data elements were submittted for the correct period.",messages)
-      }
+          validation$de_cadence_check<-de_cadence_check
+          has_error<-TRUE
+        } else {
+          messages<-append("Data elements were submittted for the correct period.",messages)
+        }
 
-      #Check data element / category option combinations
-      incProgress(step_size, detail = ("Checking data element/disagg associations"))
+        #Check data element / category option combinations
+        incProgress(step_size, detail = ("Checking data element/disagg associations"))
 
-      ds_disagg_check <-
-        checkDataElementDisaggValidity(d, datasets = ds,
-                                       return_violations = TRUE,
-                                       d2session = user_input$d2_session)
+        ds_disagg_check <-
+          checkDataElementDisaggValidity(d, datasets = ds,
+                                         return_violations = TRUE,
+                                         d2session = user_input$d2_session)
 
-      if (inherits(ds_disagg_check, "data.frame")) {
+        if (inherits(ds_disagg_check, "data.frame")) {
 
-        messages <- append(paste("ERROR! ",
-          NROW(ds_disagg_check),
-          "invalid data element/disagg associations found!"
-        ),
-        messages)
+          messages <- append(paste("ERROR! ",
+                                   NROW(ds_disagg_check),
+                                   "invalid data element/disagg associations found!"
+          ),
+          messages)
 
-        validation$datasets_disagg_check<-ds_disagg_check
-        has_error<-TRUE
-      } else {
-        messages<-append("Data element/disagg associations are valid.",messages)
-      }
+          validation$datasets_disagg_check<-ds_disagg_check
+          has_error<-TRUE
+        } else {
+          messages<-append("Data element/disagg associations are valid.",messages)
+        }
 
-      #Value type compliance check
-      incProgress(step_size, detail = ("Checking value type compliance."))
+        #Mechanism check
+        incProgress(step_size, detail = ("Checking mechanisms."))
 
-      vt_check <- checkValueTypeCompliance(d, d2session = user_input$d2_session)
+        mech_check <-
+          checkMechanismValidity(
+            data = d,
+            organisationUnit = input$ou,
+            return_violations = TRUE,
+            d2session = user_input$d2_session
+          )
 
-      if (inherits(vt_check, "data.frame") & NROW(vt_check) > 0) {
-        messages <-  append( paste( "ERROR! :", NROW(vt_check)," invalid values found."), messages)
-        validation$value_type_compliance<-vt_check
-        has_error<-TRUE
-      } else {
-        messages<-append("Value types are valid.",messages)
-      }
+        if (inherits(mech_check, "data.frame")) {
+          messages <- append(paste( "ERROR! :",
+                                    NROW(mech_check), " invalid mechanisms found."
+          ), messages)
+          validation$mechanism_check <- mech_check
+          has_error<-TRUE
+        } else {
+          messages <- append("All mechanisms are valid.", messages)
+        }
 
-      #Negative value check
-      incProgress(step_size, detail = ("Checking negative numbers."))
+        #Only for narratives
 
-      neg_check <- checkNegativeValues(d, d2session = user_input$d2_session)
+        if (input$ds_type %in% c("NARRATIVES_RESULTS")) {
+          shinyjs::hide("contents")
+          bad_narratives <- checkNarrativeLength(d)
 
-      if (inherits(neg_check, "data.frame")) {
-        messages <- append(paste("ERROR! :", NROW(neg_check), " negatve values found."), messages)
-        validation$negative_values <- neg_check
-        has_error<-TRUE
-      } else {
-        messages<-append("No negative values found.",messages)
-      }
+          if (inherits(bad_narratives, "data.frame") &
+              NROW(bad_narratives) > 0) {
+            messages <-
+              append(
+                paste(
+                  "ERROR! :",
+                  NROW(bad_narratives),
+                  " narratives with more than 50000 characters found."
+                ),
+                messages
+              )
+            validation$bad_narratives <- bad_narratives
+            has_error <- TRUE
+          } else {
+            messages <- append("Narratvies are of an acceptable length.", messages)
+          }
+        }
 
-      #Mechanism check
-      incProgress(step_size, detail = ("Checking mechanisms."))
+        #Only for MER Results and Targets
+        if (input$ds_type %in% c("RESULTS","TARGETS")) {
+          #Zeros
+          incProgress(step_size, detail = ("Checking zeros: "))
 
-      mech_check <-
-        checkMechanismValidity(
-          data = d,
-          organisationUnit = input$ou,
-          return_violations = TRUE,
-          d2session = user_input$d2_session
-        )
+          zero_check<-sprintf("%1.2f%%",  ( sum(as.character(d$value) == "0") / NROW(d) )  * 100 )
 
-      if (inherits(mech_check, "data.frame")) {
-        messages <- append(paste( "ERROR! :",
-          NROW(mech_check), " invalid mechanisms found."
-        ), messages)
-        validation$mechanism_check <- mech_check
-        has_error<-TRUE
-      } else {
-        messages <- append("All mechanisms are valid.", messages)
-      }
+          messages <-  append(
+            paste(
+              paste( "Records found: ", NROW(d), " records found of which ", zero_check, " were zeros.")
+            ),messages )
 
-      incProgress(step_size, detail = ("Checking validation rules..."))
 
-      if ( Sys.info()['sysname'] == "Linux") {
+        #Value type compliance check
+        incProgress(step_size, detail = ("Checking value type compliance."))
 
-       ncores <- parallel::detectCores() - 1
-       doMC::registerDoMC(cores=ncores)
-       is_parallel<-TRUE
+        vt_check <- checkValueTypeCompliance(d, d2session = user_input$d2_session)
 
-      } else {
-        is_parallel<-FALSE
-      }
+        if (inherits(vt_check, "data.frame") & NROW(vt_check) > 0) {
+          messages <-  append( paste( "ERROR! :", NROW(vt_check)," invalid values found."), messages)
+          validation$value_type_compliance<-vt_check
+          has_error<-TRUE
+        } else {
+          messages<-append("Value types are valid.",messages)
+        }
 
-      vr_rules<-validateData(d,organisationUnit = input$ou,
-                             parallel = is_parallel,
-                             d2session = user_input$d2_session)
+        #Negative value check
+        incProgress(step_size, detail = ("Checking negative numbers."))
 
-      #If there are any validation rule violations, put them in the output
-      if  ( NROW(vr_rules) > 0 )  {
-        messages<-append( paste("ERROR! :",  NROW(vr_rules)," validation rule violations found!"),messages)
+        neg_check <- checkNegativeValues(d, d2session = user_input$d2_session)
 
-        validation$validation_rules <- vr_rules[,c("name","ou_name","period","mech_code","formula")]
-        has_error<-TRUE
-      } else {
-        messages<-append( "No validation rule violations found", messages)
+        if (inherits(neg_check, "data.frame")) {
+          messages <- append(paste("ERROR! :", NROW(neg_check), " negatve values found."), messages)
+          validation$negative_values <- neg_check
+          has_error<-TRUE
+        } else {
+          messages<-append("No negative values found.",messages)
+        }
+
+        incProgress(step_size, detail = ("Checking validation rules..."))
+
+        if ( Sys.info()['sysname'] == "Linux") {
+
+          ncores <- parallel::detectCores() - 1
+          doMC::registerDoMC(cores=ncores)
+          is_parallel<-TRUE
+
+        } else {
+          is_parallel<-FALSE
+        }
+
+        vr_rules<-validateData(d,organisationUnit = input$ou,
+                               parallel = is_parallel,
+                               d2session = user_input$d2_session)
+
+        #If there are any validation rule violations, put them in the output
+        if  ( NROW(vr_rules) > 0 )  {
+          messages<-append( paste("ERROR! :",  NROW(vr_rules)," validation rule violations found!"),messages)
+
+          validation$validation_rules <- vr_rules[,c("name","ou_name","period","mech_code","formula")]
+          has_error<-TRUE
+        } else {
+          messages<-append( "No validation rule violations found", messages)
+        }
         }
     })
+
     if (has_error) {
       shinyjs::show("downloadData")
     }
