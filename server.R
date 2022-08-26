@@ -216,7 +216,7 @@ shinyServer(function(input, output, session) {
     messages<-list()
     vr_results<-list()
     has_error<-FALSE
-    step_size <- 1/13
+    step_size <- 1/14
     withProgress(message = 'Validating file', value = 0,{
 
     incProgress(step_size, detail = ("Loading metadata"))
@@ -320,6 +320,30 @@ shinyServer(function(input, output, session) {
       }
 
 
+      incProgress(step_size, detail = ("Checking data element/mechanism associations"))
+      de_acoc_check <-
+        checkDataElementMechValidity(
+          d = d,
+          datasets = ds,
+          return_violations = TRUE,
+          d2session = user_input$d2_session
+        )
+
+      #Check data elements and mechanism associations
+      if (inherits(de_acoc_check, "data.frame") && NROW(de_acoc_check > 0L)) {
+        messages<-append(paste("ERROR! ",
+          NROW(de_acoc_check),
+          "invalid data element/mechanism associations found!"
+        ), messages)
+
+        validation$dataelement_acoc_check<-de_acoc_check
+
+        has_error<-TRUE
+      } else {
+        messages<-append("Data element/mechanism associations are valid.", messages)
+      }
+
+      #Check data element and organisation unit associations
       incProgress(step_size, detail = ("Checking data element/orgunit associations"))
       de_ou_check <-
         checkDataElementOrgunitValidity(
@@ -331,8 +355,8 @@ shinyServer(function(input, output, session) {
 
       if (inherits(de_ou_check, "data.frame") && NROW(de_ou_check > 0L)) {
         messages<-append(paste("ERROR! ",
-          NROW(de_ou_check),
-          "invalid data element/orgunit associations found!"
+                               NROW(de_ou_check),
+                               "invalid data element/orgunit associations found!"
         ), messages)
 
         validation$dataelement_ou_check<-de_ou_check
@@ -360,7 +384,7 @@ shinyServer(function(input, output, session) {
         messages<-append("Data elements were submittted for the correct period.",messages)
       }
 
-      #Data element orgunit check
+      #Check data element / category option combinations
       incProgress(step_size, detail = ("Checking data element/disagg associations"))
 
       ds_disagg_check <-
@@ -429,7 +453,7 @@ shinyServer(function(input, output, session) {
         messages <- append("All mechanisms are valid.", messages)
       }
 
-      incProgress(step_size, detail = ("Validating data"))
+      incProgress(step_size, detail = ("Checking validation rules..."))
 
       if ( Sys.info()['sysname'] == "Linux") {
 

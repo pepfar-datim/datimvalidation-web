@@ -230,10 +230,10 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "pepfar-datim",
       "RemoteRepo": "datim-validation",
-      "RemoteRef": "master",
-      "RemoteSha": "7eddb657c53a92c0316ece0ecdb53dc6c58aa2e8",
+      "RemoteRef": "de-acoc-check",
+      "RemoteSha": "1d7fd355b2802c11fb395b7ad1b1e83ea1c82b33",
       "Remotes": "pepfar-datim/datimutils",
-      "Hash": "6caab538c2679bb05e1268725f68f2c9",
+      "Hash": "eb8b685531a4ddfe1d93e53714ce82fd",
       "Requirements": [
         "ISOweek",
         "assertthat",

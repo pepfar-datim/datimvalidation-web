@@ -648,8 +648,8 @@
       "Repository": null,
       "GithubRepo": "datim-validation",
       "GithubUsername": "pepfar-datim",
-      "GithubRef": "master",
-      "GithubSha1": "7eddb657c53a92c0316ece0ecdb53dc6c58aa2e8",
+      "GithubRef": "de-acoc-check",
+      "GithubSha1": "1d7fd355b2802c11fb395b7ad1b1e83ea1c82b33",
       "description": {
         "Package": "datimvalidation",
         "Type": "Package",
@@ -670,18 +670,18 @@
         "VignetteBuilder": "knitr",
         "RoxygenNote": "7.2.1",
         "Author": "Jason Pickering [aut, cre],\n  Chris Nemarich [ctb],\n  Vlad Shioshvili [ctb],\n  Dennis Banga [ctb],\n  Hiwot Chichaybelu [ctb]",
-        "Built": "R 4.2.1; ; 2022-08-25 10:26:18 UTC; unix",
+        "Built": "R 4.2.1; ; 2022-08-26 07:41:18 UTC; unix",
         "RemoteType": "github",
         "RemoteHost": "api.github.com",
         "RemoteUsername": "pepfar-datim",
         "RemoteRepo": "datim-validation",
-        "RemoteRef": "master",
-        "RemoteSha": "7eddb657c53a92c0316ece0ecdb53dc6c58aa2e8",
+        "RemoteRef": "de-acoc-check",
+        "RemoteSha": "1d7fd355b2802c11fb395b7ad1b1e83ea1c82b33",
         "GithubHost": "api.github.com",
         "GithubRepo": "datim-validation",
         "GithubUsername": "pepfar-datim",
-        "GithubRef": "master",
-        "GithubSHA1": "7eddb657c53a92c0316ece0ecdb53dc6c58aa2e8",
+        "GithubRef": "de-acoc-check",
+        "GithubSHA1": "1d7fd355b2802c11fb395b7ad1b1e83ea1c82b33",
         "Remotes": "pepfar-datim/datimutils"
       }
     },
@@ -2709,7 +2709,7 @@
   },
   "files": {
     ".Rprofile": {
-      "checksum": "7d9bbe4d317207c15f6ab602d779ec12"
+      "checksum": "03d2d36445c2dea581f05a551750adbb"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
@@ -2721,10 +2721,10 @@
       "checksum": "9f25abe74a77ac00a2d234cab8021498"
     },
     "server.R": {
-      "checksum": "c8d5df7314f9a469abed237bc5cef7f4"
+      "checksum": "d44bbb19645a8b88d030800329054ae5"
     },
     "ui.R": {
-      "checksum": "5e8533cc5c651b60ac69ebd832e95f68"
+      "checksum": "10fff370fd41bab3c1d5a247e16071f5"
     },
     "utils.R": {
       "checksum": "4460bcbab17efd82e6406b57bbb0709d"
