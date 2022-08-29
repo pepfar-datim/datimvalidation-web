@@ -5,6 +5,38 @@ library(magrittr)
 require(futile.logger)
 require(shinyWidgets)
 
+######## APP starts
+#TODO: Get rid of this code.
+if (interactive()) {
+  # testing url
+  options(shiny.port = 8100)
+  APP_URL <- "http://127.0.0.1:8100/" # This will be your local host path
+} else {
+  # deployed URL
+  APP_URL <- "https://rstudio-connect.testing.ap.datim.org/validation-dev/" #This will be your shiny server path
+}
+
+
+{
+    app <- httr::oauth_app(Sys.getenv("OAUTH_APPNAME"), # dhis2 = Name
+                         key = Sys.getenv("OAUTH_APPNAME"),         # dhis2 = Client ID
+                         secret = Sys.getenv("OAUTH_SECRET"), #dhis2 = Client Secret
+                         redirect_uri = APP_URL
+  )
+
+  api <- httr::oauth_endpoint(base_url = Sys.getenv("OAUTH_ENDPOINT"),
+                              request=NULL,# Documentation says to leave this NULL for OAuth2
+                              authorize = "authorize",
+                              access="token"
+  )
+
+  scope <- "ALL"
+}
+
+has_auth_code <- function(params) {
+
+  return(!is.null(params$code))
+}
 
 shinyServer(function(input, output, session) {
 
@@ -27,12 +59,17 @@ shinyServer(function(input, output, session) {
   })
 
   observeEvent(input$logout,{
+    req(input$logout)
+    # Gets you back to the login without the authorization code at top
+    updateQueryString("?",mode="replace",session=session)
     flog.info(paste0("User ", user_input$d2_session$me$userCredentials$username, " logged out."))
-    ready$ok <- FALSE
-    user_input$authenticated<-FALSE
-    user_input$d2_session<-NULL
-    session$reload()
+    user_input$authenticated  <-  FALSE
+    user_input$user_name <- ""
+    user_input$authorized  <-  FALSE
+    user_input$d2_session  <-  NULL
+    d2_default_session <- NULL
     gc()
+    session$reload()
 
   } )
 
@@ -161,45 +198,88 @@ shinyServer(function(input, output, session) {
                                d2_session = NULL,
                                user_ous = NA)
 
-  observeEvent(input$login_button,
-               {
-
-                 tryCatch(  {  datimutils::loginToDATIM(base_url = Sys.getenv("BASE_URL"),
-                                                        username = input$user_name,
-                                                        password = input$password) },
-                            #This function throws an error if the login is not successful
-                            error=function(e) {
-                              sendSweetAlert(
-                                session,
-                                title = "Login failed",
-                                text = "Please check your username/password!",
-                                type = "error")
-                              flog.info(paste0("User ", input$user_name, " login failed."), name = "datapack")
-                            } )
-
-                 if ( exists("d2_default_session"))  {
-
-                   user_input$authenticated<-TRUE
-                   user_input$d2_session<-d2_default_session$clone()
-                   flog.info(paste0("User ", user_input$d2_session$me$userCredentials$username, " logged in."), name = "datapack")
-                   foo<-getUserOperatingUnits(user_input$d2_session$user_orgunit, d2session = user_input$d2_session )
-                   user_input$user_ous<-setNames(foo$id,foo$name)
-                 }
-
-               })
 
   # password entry UI componenets:
   #   username and password text fields, login button
   output$uiLogin <- renderUI({
     wellPanel(
       fluidRow(img(src='pepfar.png', align = "center")),
-        fluidRow(h4("Welcome to the DATIM Validation tool. Please login with your DATIM credentials:")
+        fluidRow(width = 7, h4("Welcome to the DATIM Validation tool. You will be redirected to DATIM to login.")
       ),
       fluidRow(
-      textInput("user_name", "User Name:",width = "600px"),
-      passwordInput("password", "Password:",width = "600px"),
-      actionButton("login_button", "Log in")
+      actionButton("login_button_oauth","Continute with DATIM"),
+      uiOutput("ui_hasauth"),
+      uiOutput("ui_redirect")
     ))
+  })
+
+  output$ui_redirect = renderUI({
+    #print(input$login_button_oauth) #useful for debugging
+    if(!is.null(input$login_button_oauth)){
+      if(input$login_button_oauth>0){
+        url <- httr::oauth2.0_authorize_url(api, app, scope = scope)
+        redirect <- sprintf("location.replace(\"%s\");", url)
+        tags$script(HTML(redirect))
+      } else NULL
+    } else NULL
+  })
+
+  ### Login Button oauth Checks
+  observeEvent(input$login_button_oauth > 0,{
+
+    #Grabs the code from the url
+    params <- parseQueryString(session$clientData$url_search)
+    req(has_auth_code(params))
+    print(has_auth_code(params))
+
+    tryCatch({
+      print("starting authentication")
+      #Manually create a token
+      token <- httr::oauth2.0_token(
+        app = app,
+        endpoint =api,
+        scope = scope,
+        use_basic_auth = TRUE,
+        oob_value=APP_URL,
+        cache = FALSE,
+        credentials = httr::oauth2.0_access_token(endpoint = api,
+                                            app = app,
+                                            code = params$code,
+                                            use_basic_auth = TRUE)
+      )
+
+      loginToDATIMOAuth(base_url = Sys.getenv("BASE_URL"),
+                        token = token,
+                        app=app,
+                        api = api,
+                        redirect_uri= APP_URL,
+                        scope = scope,
+                        d2_session_envir = parent.env(environment()))
+      user_input$authenticated  <-  TRUE
+      user_input$d2_session  <-  d2_default_session$clone()
+
+    },
+    error = function(e) { # Not needed for oauth
+      flog.info(paste0("User  login failed."),
+      name = "datapack")
+    }
+    )
+    print("Does the session object exist?")
+    print(exists("d2_default_session"))
+    if (exists("d2_default_session")) {
+      if (any(class(d2_default_session) == "d2Session")) {
+        user_input$authenticated  <-  TRUE
+        user_input$d2_session  <-  d2_default_session$clone()
+        d2_default_session <- NULL
+        flog.info(paste0("User ", user_input$d2_session$me$userCredentials$username, " logged in."), name = "datapack")
+        foo<-getUserOperatingUnits(user_input$d2_session$user_orgunit, d2session = user_input$d2_session )
+        user_input$user_ous<-setNames(foo$id,foo$name)
+        print(user_input$user_ous)
+      }
+    } else {
+
+    }
+
   })
 
   validate<-function() {
