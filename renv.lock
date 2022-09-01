@@ -5,6 +5,10 @@
       {
         "Name": "CRAN",
         "URL": "https://cran.rstudio.com"
+      },
+      {
+        "Name": "pepfar",
+        "URL": "https://rstudio-package.ap.datim.org/prod/latest"
       }
     ]
   },
@@ -204,16 +208,17 @@
     },
     "datimutils": {
       "Package": "datimutils",
-      "Version": "0.5.2",
+      "Version": "0.5.3",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "pepfar-datim",
       "RemoteRepo": "datimutils",
-      "RemoteRef": "master",
-      "RemoteSha": "1f81eb3dd872154abdf5d77540e3494bd8468dd8",
-      "Hash": "11361204052bb668789e935b39644f8e",
+      "RemoteRef": "oauth-redux",
+      "RemoteSha": "60987e94d93c4a196a1d5a5a31a3fba7229d1a63",
+      "Hash": "80451b5eeaa3c8d2207d39c11ea04553",
       "Requirements": [
+        "R6",
         "httr",
         "jsonlite",
         "keyring",
