@@ -63,14 +63,6 @@
       "Hash": "e9c08b94391e9f3f97355841229124f2",
       "Requirements": []
     },
-    "XML": {
-      "Package": "XML",
-      "Version": "3.99-0.10",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "f140675d766cf765bf06a5f14afb149d",
-      "Requirements": []
-    },
     "anytime": {
       "Package": "anytime",
       "Version": "0.3.9",
@@ -198,14 +190,6 @@
       "Hash": "022c42d49c28e95d69ca60446dbabf88",
       "Requirements": []
     },
-    "data.table": {
-      "Package": "data.table",
-      "Version": "1.14.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "36b67b5adf57b292923f5659f5f0c853",
-      "Requirements": []
-    },
     "datimutils": {
       "Package": "datimutils",
       "Version": "0.6.0",
@@ -235,13 +219,14 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "pepfar-datim",
       "RemoteRepo": "datim-validation",
-      "RemoteRef": "sims",
-      "RemoteSha": "f988e0f28422e3c0e21f4d8390b0a5b7408c8f07",
+      "RemoteRef": "master",
+      "RemoteSha": "c66c4f1722bf401738e5d4104cae77143cf86803",
       "Remotes": "pepfar-datim/datimutils",
-      "Hash": "203d9a86682d4f861973e7610d27331c",
+      "Hash": "936035feee318974d76c093eecb2e317",
       "Requirements": [
         "ISOweek",
         "assertthat",
+        "crayon",
         "datimutils",
         "dplyr",
         "getPass",
@@ -252,7 +237,6 @@
         "plyr",
         "purrr",
         "reshape2",
-        "rlist",
         "stringr",
         "xml2"
       ]
@@ -713,19 +697,6 @@
       "Repository": "CRAN",
       "Hash": "6539dd8c651e67e3b55b5ffea106362b",
       "Requirements": []
-    },
-    "rlist": {
-      "Package": "rlist",
-      "Version": "0.4.6.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "290c8ea0700d2e7258082d0025386e68",
-      "Requirements": [
-        "XML",
-        "data.table",
-        "jsonlite",
-        "yaml"
-      ]
     },
     "rstudioapi": {
       "Package": "rstudioapi",

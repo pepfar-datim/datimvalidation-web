@@ -402,7 +402,6 @@ observeEvent(input$datastream,{
           checkDataElementOrgunitValidity(
             d = d,
             datasets = ds,
-            return_violations = TRUE,
             d2session = user_input$d2_session
           )
 
