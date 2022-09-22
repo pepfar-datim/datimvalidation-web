@@ -119,7 +119,7 @@
         "Maintainer": "Winston Chang <winston@stdout.org>",
         "Repository": "CRAN",
         "Date/Publication": "2021-08-19 14:00:05 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:34:37 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 12:58:48 UTC; unix"
       }
     },
     "Rcpp": {
@@ -149,34 +149,6 @@
         "Repository": "CRAN",
         "Date/Publication": "2022-07-08 23:10:06 UTC",
         "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-15 14:08:32 UTC; unix"
-      }
-    },
-    "XML": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
-      "description": {
-        "Package": "XML",
-        "Version": "3.99-0.10",
-        "Authors@R": "c(person(\"CRAN Team\", role = c('ctb', 'cre'),\n                    email = \"CRAN@r-project.org\",\n                    comment = \"de facto maintainer since 2013\"),\n             person(\"Duncan\", \"Temple Lang\", role = c(\"aut\"),\n                    email = \"duncan@r-project.org\",\n                    comment = c(ORCID = \"0000-0003-0159-1546\")),\n\t    person(\"Tomas\", \"Kalibera\", role = \"ctb\"))",
-        "Title": "Tools for Parsing and Generating XML Within R and S-Plus",
-        "Depends": "R (>= 4.0.0), methods, utils",
-        "Suggests": "bitops, RCurl",
-        "SystemRequirements": "libxml2 (>= 2.6.3)",
-        "Description": "Many approaches for both reading and\n        creating XML (and HTML) documents (including DTDs), both local\n        and accessible via HTTP or FTP.  Also offers access to an\n        'XPath' \"interpreter\".",
-        "URL": "http://www.omegahat.net/RSXML/",
-        "License": "BSD_3_clause + file LICENSE",
-        "Collate": "AAA.R DTD.R DTDClasses.R DTDRef.R SAXMethods.R XMLClasses.R\napplyDOM.R assignChild.R catalog.R createNode.R dynSupports.R\nerror.R flatTree.R nodeAccessors.R parseDTD.R schema.R\nsummary.R tangle.R toString.R tree.R version.R xmlErrorEnums.R\nxmlEventHandler.R xmlEventParse.R xmlHandler.R\nxmlInternalSource.R xmlOutputDOM.R xmlNodes.R xmlOutputBuffer.R\nxmlTree.R xmlTreeParse.R htmlParse.R hashTree.R zzz.R\nsupports.R parser.R libxmlFeatures.R xmlString.R saveXML.R\nnamespaces.R readHTMLTable.R reflection.R xmlToDataFrame.R\nbitList.R compare.R encoding.R fixNS.R xmlRoot.R serialize.R\nxmlMemoryMgmt.R keyValueDB.R solrDocs.R XMLRErrorInfo.R\nxincludes.R namespaceHandlers.R tangle1.R htmlLinks.R\nhtmlLists.R getDependencies.R getRelativeURL.R xmlIncludes.R\nsimplifyPath.R",
-        "NeedsCompilation": "yes",
-        "Packaged": "2022-06-09 10:06:34 UTC; ligges",
-        "Author": "CRAN Team [ctb, cre] (de facto maintainer since 2013),\n  Duncan Temple Lang [aut] (<https://orcid.org/0000-0003-0159-1546>),\n  Tomas Kalibera [ctb]",
-        "Maintainer": "CRAN Team <CRAN@r-project.org>",
-        "Repository": "CRAN",
-        "Date/Publication": "2022-06-09 22:40:12 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-16 09:02:21 UTC; unix"
       }
     },
     "anytime": {
@@ -240,7 +212,7 @@
         "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
         "Repository": "CRAN",
         "Date/Publication": "2019-01-13 12:50:03 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:35:06 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 12:57:55 UTC; unix"
       }
     },
     "assertthat": {
@@ -267,7 +239,7 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2019-03-21 14:53:46 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:35:07 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 12:57:55 UTC; unix"
       }
     },
     "base64enc": {
@@ -292,7 +264,7 @@
         "Packaged": "2015-02-04 20:31:00 UTC; svnuser",
         "Repository": "CRAN",
         "Date/Publication": "2015-07-28 08:03:37",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:35:09 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 12:57:56 UTC; unix"
       }
     },
     "bslib": {
@@ -356,7 +328,7 @@
         "Maintainer": "Winston Chang <winston@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-08-19 21:30:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:38:44 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 12:59:58 UTC; unix"
       }
     },
     "cli": {
@@ -388,7 +360,7 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-04-25 10:00:06 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:35:27 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:00:10 UTC; unix"
       }
     },
     "codetools": {
@@ -443,7 +415,7 @@
         "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
         "Repository": "CRAN",
         "Date/Publication": "2022-03-09 15:40:07 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:38:56 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:00:16 UTC; unix"
       }
     },
     "cpp11": {
@@ -475,7 +447,7 @@
         "Maintainer": "Romain François <romain@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-11-30 09:10:04 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:36:11 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 13:00:23 UTC; unix"
       }
     },
     "crayon": {
@@ -505,7 +477,7 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-03-26 17:30:05 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:35:53 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 13:00:24 UTC; unix"
       }
     },
     "crosstalk": {
@@ -568,38 +540,7 @@
         "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
         "Repository": "CRAN",
         "Date/Publication": "2021-06-23 07:00:06 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:39:06 UTC; unix"
-      }
-    },
-    "data.table": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
-      "description": {
-        "Package": "data.table",
-        "Version": "1.14.2",
-        "Title": "Extension of `data.frame`",
-        "Authors@R": "c(\n  person(\"Matt\",\"Dowle\",           role=c(\"aut\",\"cre\"), email=\"mattjdowle@gmail.com\"),\n  person(\"Arun\",\"Srinivasan\",      role=\"aut\",          email=\"asrini@pm.me\"),\n  person(\"Jan\",\"Gorecki\",          role=\"ctb\"),\n  person(\"Michael\",\"Chirico\",      role=\"ctb\"),\n  person(\"Pasha\",\"Stetsenko\",      role=\"ctb\"),\n  person(\"Tom\",\"Short\",            role=\"ctb\"),\n  person(\"Steve\",\"Lianoglou\",      role=\"ctb\"),\n  person(\"Eduard\",\"Antonyan\",      role=\"ctb\"),\n  person(\"Markus\",\"Bonsch\",        role=\"ctb\"),\n  person(\"Hugh\",\"Parsonage\",       role=\"ctb\"),\n  person(\"Scott\",\"Ritchie\",        role=\"ctb\"),\n  person(\"Kun\",\"Ren\",              role=\"ctb\"),\n  person(\"Xianying\",\"Tan\",         role=\"ctb\"),\n  person(\"Rick\",\"Saporta\",         role=\"ctb\"),\n  person(\"Otto\",\"Seiskari\",        role=\"ctb\"),\n  person(\"Xianghui\",\"Dong\",        role=\"ctb\"),\n  person(\"Michel\",\"Lang\",          role=\"ctb\"),\n  person(\"Watal\",\"Iwasaki\",        role=\"ctb\"),\n  person(\"Seth\",\"Wenchel\",         role=\"ctb\"),\n  person(\"Karl\",\"Broman\",          role=\"ctb\"),\n  person(\"Tobias\",\"Schmidt\",       role=\"ctb\"),\n  person(\"David\",\"Arenburg\",       role=\"ctb\"),\n  person(\"Ethan\",\"Smith\",          role=\"ctb\"),\n  person(\"Francois\",\"Cocquemas\",   role=\"ctb\"),\n  person(\"Matthieu\",\"Gomez\",       role=\"ctb\"),\n  person(\"Philippe\",\"Chataignon\",  role=\"ctb\"),\n  person(\"Nello\",\"Blaser\",         role=\"ctb\"),\n  person(\"Dmitry\",\"Selivanov\",     role=\"ctb\"),\n  person(\"Andrey\",\"Riabushenko\",   role=\"ctb\"),\n  person(\"Cheng\",\"Lee\",            role=\"ctb\"),\n  person(\"Declan\",\"Groves\",        role=\"ctb\"),\n  person(\"Daniel\",\"Possenriede\",   role=\"ctb\"),\n  person(\"Felipe\",\"Parages\",       role=\"ctb\"),\n  person(\"Denes\",\"Toth\",           role=\"ctb\"),\n  person(\"Mus\",\"Yaramaz-David\",    role=\"ctb\"),\n  person(\"Ayappan\",\"Perumal\",      role=\"ctb\"),\n  person(\"James\",\"Sams\",           role=\"ctb\"),\n  person(\"Martin\",\"Morgan\",        role=\"ctb\"),\n  person(\"Michael\",\"Quinn\",        role=\"ctb\"),\n  person(\"@javrucebo\",\"\",          role=\"ctb\"),\n  person(\"@marc-outins\",\"\",        role=\"ctb\"),\n  person(\"Roy\",\"Storey\",           role=\"ctb\"),\n  person(\"Manish\",\"Saraswat\",      role=\"ctb\"),\n  person(\"Morgan\",\"Jacob\",         role=\"ctb\"),\n  person(\"Michael\",\"Schubmehl\",    role=\"ctb\"),\n  person(\"Davis\",\"Vaughan\",        role=\"ctb\"),\n  person(\"Toby\",\"Hocking\",         role=\"ctb\"),\n  person(\"Leonardo\",\"Silvestri\",   role=\"ctb\"),\n  person(\"Tyson\",\"Barrett\",        role=\"ctb\"),\n  person(\"Jim\",\"Hester\",           role=\"ctb\"),\n  person(\"Anthony\",\"Damico\",       role=\"ctb\"),\n  person(\"Sebastian\",\"Freundt\",    role=\"ctb\"),\n  person(\"David\",\"Simons\",         role=\"ctb\"),\n  person(\"Elliott\",\"Sales de Andrade\", role=\"ctb\"),\n  person(\"Cole\",\"Miller\",          role=\"ctb\"),\n  person(\"Jens Peder\",\"Meldgaard\", role=\"ctb\"),\n  person(\"Vaclav\",\"Tlapak\",        role=\"ctb\"),\n  person(\"Kevin\",\"Ushey\",          role=\"ctb\"),\n  person(\"Dirk\",\"Eddelbuettel\",    role=\"ctb\"),\n  person(\"Ben\",\"Schwen\",           role=\"ctb\"))",
-        "Depends": "R (>= 3.1.0)",
-        "Imports": "methods",
-        "Suggests": "bit64 (>= 4.0.0), bit (>= 4.0.4), curl, R.utils, xts,\nnanotime, zoo (>= 1.8-1), yaml, knitr, rmarkdown",
-        "SystemRequirements": "zlib",
-        "Description": "Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns, friendly and fast character-separated-value read/write. Offers a natural and flexible syntax, for faster development.",
-        "License": "MPL-2.0 | file LICENSE",
-        "URL": "https://r-datatable.com, https://Rdatatable.gitlab.io/data.table,\nhttps://github.com/Rdatatable/data.table",
-        "BugReports": "https://github.com/Rdatatable/data.table/issues",
-        "VignetteBuilder": "knitr",
-        "ByteCompile": "TRUE",
-        "NeedsCompilation": "yes",
-        "Packaged": "2021-09-23 03:10:37 UTC; mdowle",
-        "Author": "Matt Dowle [aut, cre],\n  Arun Srinivasan [aut],\n  Jan Gorecki [ctb],\n  Michael Chirico [ctb],\n  Pasha Stetsenko [ctb],\n  Tom Short [ctb],\n  Steve Lianoglou [ctb],\n  Eduard Antonyan [ctb],\n  Markus Bonsch [ctb],\n  Hugh Parsonage [ctb],\n  Scott Ritchie [ctb],\n  Kun Ren [ctb],\n  Xianying Tan [ctb],\n  Rick Saporta [ctb],\n  Otto Seiskari [ctb],\n  Xianghui Dong [ctb],\n  Michel Lang [ctb],\n  Watal Iwasaki [ctb],\n  Seth Wenchel [ctb],\n  Karl Broman [ctb],\n  Tobias Schmidt [ctb],\n  David Arenburg [ctb],\n  Ethan Smith [ctb],\n  Francois Cocquemas [ctb],\n  Matthieu Gomez [ctb],\n  Philippe Chataignon [ctb],\n  Nello Blaser [ctb],\n  Dmitry Selivanov [ctb],\n  Andrey Riabushenko [ctb],\n  Cheng Lee [ctb],\n  Declan Groves [ctb],\n  Daniel Possenriede [ctb],\n  Felipe Parages [ctb],\n  Denes Toth [ctb],\n  Mus Yaramaz-David [ctb],\n  Ayappan Perumal [ctb],\n  James Sams [ctb],\n  Martin Morgan [ctb],\n  Michael Quinn [ctb],\n  @javrucebo [ctb],\n  @marc-outins [ctb],\n  Roy Storey [ctb],\n  Manish Saraswat [ctb],\n  Morgan Jacob [ctb],\n  Michael Schubmehl [ctb],\n  Davis Vaughan [ctb],\n  Toby Hocking [ctb],\n  Leonardo Silvestri [ctb],\n  Tyson Barrett [ctb],\n  Jim Hester [ctb],\n  Anthony Damico [ctb],\n  Sebastian Freundt [ctb],\n  David Simons [ctb],\n  Elliott Sales de Andrade [ctb],\n  Cole Miller [ctb],\n  Jens Peder Meldgaard [ctb],\n  Vaclav Tlapak [ctb],\n  Kevin Ushey [ctb],\n  Dirk Eddelbuettel [ctb],\n  Ben Schwen [ctb]",
-        "Maintainer": "Matt Dowle <mattjdowle@gmail.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2021-09-27 16:30:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:39:09 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:00:29 UTC; unix"
       }
     },
     "datimutils": {
@@ -608,39 +549,39 @@
       "GithubRepo": "datimutils",
       "GithubUsername": "pepfar-datim",
       "GithubRef": "master",
-      "GithubSha1": "1f81eb3dd872154abdf5d77540e3494bd8468dd8",
+      "GithubSha1": "3346faec3d1c0a6d180a1b60cab4176c2b27fa95",
       "description": {
         "Package": "datimutils",
         "Type": "Package",
         "Title": "Utilities for interacting with the DATIM api from R",
-        "Version": "0.5.2",
-        "Date": "2022-08-18",
+        "Version": "0.6.0",
+        "Date": "2022-09-19",
         "Authors@R": "\n    c(\n    person(\"Scott\", \"Jackson\", email = \"sjackson@baosystems.com\",\n        role = c(\"aut\", \"cre\")),\n    person(\"Jason\", \"Pickering\", email = \"jason.p.pickering@gmail.com\",\n        role = c(\"aut\")),\n    person(\"Sam\", \"Garman\", email = \"sgarman@baosystems.com\",\n        role = c(\"aut\")),\n    person(\"Jordan\", \"Bales\", email = \"jbales@baosystems.com\",\n        role = c(\"aut\")),\n    person(\"Fausto\", \"Lopez\", email = \"flopez@baosystems.com\",\n        role = c(\"aut\")),\n    person(\"Chris\", \"Nemarich\", email = \"cnemarich@guidehouse.com\",\n        role = c(\"ctb\"))\n  )",
         "Description": "General utilities for interacting with the DATIM api from R.",
         "URL": "https://github.com/pepfar-datim/datimutils",
         "BugReports": "https://github.com/pepfar-datim/datimutils",
-        "Depends": "R (>= 3.6.0)",
-        "Imports": "tidyr (>= 0.8.3),\njsonlite (>= 1.6),\nstringi (>= 1.7.6),\nhttr (>= 1.4.0),\nkeyring,\nrlang",
-        "Suggests": "devtools (>= 2.0.1),\ndplyr (>= 0.8.3),\ntibble (>= 2.1.1),\nreadr (>= 1.3.1),\nhttptest,\nknitr,\nrmarkdown,\nassertthat,\ntestthat (>= 2.1.0)",
+        "Depends": "R (>= 4.1.1)",
+        "Imports": "tidyr (>= 0.8.3),\njsonlite (>= 1.6),\nstringi (>= 1.7.6),\nhttr (>= 1.4.0),\nkeyring,\nrlang,\nR6 (>= 2.5.1)",
+        "Suggests": "devtools (>= 2.0.1),\ndplyr (>= 0.8.3),\ntibble (>= 2.1.1),\nreadr (>= 1.3.1),\nhttptest,\nknitr,\nrmarkdown,\nassertthat,\ntestthat (>= 2.1.0),\nlintr(>= 3.0.0)",
         "License": "GPL-3 + file LICENSE",
         "Encoding": "UTF-8",
         "LazyData": "true",
-        "RoxygenNote": "7.2.0",
+        "RoxygenNote": "7.2.1",
         "VignetteBuilder": "knitr",
         "Author": "Scott Jackson [aut, cre],\n  Jason Pickering [aut],\n  Sam Garman [aut],\n  Jordan Bales [aut],\n  Fausto Lopez [aut],\n  Chris Nemarich [ctb]",
         "Maintainer": "Scott Jackson <sjackson@baosystems.com>",
-        "Built": "R 4.2.1; ; 2022-08-22 08:37:23 UTC; unix",
+        "Built": "R 4.2.1; ; 2022-09-19 14:50:21 UTC; unix",
         "RemoteType": "github",
         "RemoteHost": "api.github.com",
         "RemoteUsername": "pepfar-datim",
         "RemoteRepo": "datimutils",
         "RemoteRef": "master",
-        "RemoteSha": "1f81eb3dd872154abdf5d77540e3494bd8468dd8",
+        "RemoteSha": "3346faec3d1c0a6d180a1b60cab4176c2b27fa95",
         "GithubHost": "api.github.com",
         "GithubRepo": "datimutils",
         "GithubUsername": "pepfar-datim",
         "GithubRef": "master",
-        "GithubSHA1": "1f81eb3dd872154abdf5d77540e3494bd8468dd8"
+        "GithubSHA1": "3346faec3d1c0a6d180a1b60cab4176c2b27fa95"
       }
     },
     "datimvalidation": {
@@ -648,40 +589,40 @@
       "Repository": null,
       "GithubRepo": "datim-validation",
       "GithubUsername": "pepfar-datim",
-      "GithubRef": "master",
-      "GithubSha1": "7eddb657c53a92c0316ece0ecdb53dc6c58aa2e8",
+      "GithubRef": "dev",
+      "GithubSha1": "178c4ff7395e1c5ecdd296dc5557fbcafdba4ece",
       "description": {
         "Package": "datimvalidation",
         "Type": "Package",
         "Title": "External Validation Routines for Data Payloads in DATIM",
-        "Version": "1.2.0",
-        "Date": "2022-08-23",
+        "Version": "1.3.0",
+        "Date": "2022-09-19",
         "Authors@R": "c(\n    person(\"Jason\", \"Pickering\", email = \"jason.p.pickering@gmail.com\",\n        role = c(\"aut\", \"cre\")),\n    person(\"Chris\", \"Nemarich\", email = \"cnemarich@guidehouse.com\",\n        role = c(\"ctb\")),\n    person(\"Vlad\", \"Shioshvili\", email = \"Vladimer.Shioshvili@icf.com\",\n        role = c(\"ctb\")),\n    person(\"Dennis\", \"Banga\", email = \"Dennis.Banga@icf.com\",\n        role = c(\"ctb\")),\n    person(\"Hiwot\", \"Chichaybelu\", email = \"Hiwot.Chichaybelu@icf.com\",\n        role = c(\"ctb\"))\n  )",
         "Maintainer": "Jason P. Pickering <jason.p.pickering@gmail.com>",
         "Description": "A comprehensive set of tools to validate data payloads\n        intended for import into 'DATIM' <https://www.datim.org/>.\n        DATIM is the 'PEPFAR' <https://www.state.gov/pepfar/> specific\n        instance of 'DHIS2' <https://www.dhis2.org/>. These scripts are\n        provided for the 'PEPFAR' data exchange community in order to\n        validate their prospective data payloads prior to submission\n        for import.",
         "License": "BSD_3_clause + file LICENSE",
         "SystemRequirements": "Active user account on 'DATIM'\n<https://www.datim.org/>",
-        "URL": "https://github.com/jason-p-pickering/datim-validation",
-        "BugReports": "https://github.com/jason-p-pickering/datim-validation/issues",
+        "URL": "https://github.com/pepfar-datim/datim-validation",
+        "BugReports": "https://github.com/pepfar-datim/datim-validation/issues",
         "Encoding": "UTF-8",
         "Depends": "R (>= 4.1)",
-        "Imports": "assertthat (>= 0.2.0),\ndatimutils (>= 0.1.0),\ndplyr (>= 0.8.3),\ngetPass (>= 0.2-2),\nhttr (>= 1.4.0),\nISOweek (>= 0.6-2),\njsonlite (>= 1.6),\nlubridate (>= 1.7.4),\nplyr (>= 1.8.4),\npurrr (>= 0.3.2),\nreshape2 (>= 1.4.3),\nrlist (>= 0.4.6.1),\nstringr (>= 1.4.0),\nxml2 (>= 1.3.2),\nhttpcache (>= 1.2.0)",
+        "Imports": "assertthat (>= 0.2.0),\ndatimutils (>= 0.6.0),\ndplyr (>= 0.8.3),\ngetPass (>= 0.2-2),\nhttr (>= 1.4.0),\nISOweek (>= 0.6-2),\njsonlite (>= 1.6),\nlubridate (>= 1.7.4),\nplyr (>= 1.8.4),\npurrr (>= 0.3.2),\nreshape2 (>= 1.4.3),\nstringr (>= 1.4.0),\nxml2 (>= 1.3.2),\nhttpcache (>= 1.2.0),\ncrayon (>= 1.5.1)",
         "Suggests": "covr (>= 3.2.1),\ndoMC (>= 1.3.5),\nforeach (>= 1.4.4),\nhttptest (>= 3.2.2),\nknitr (>= 1.21),\nmethods,\nrmarkdown (>= 1.11),\nroxygen2 (>= 6.1.1),\ntcltk,\ntestthat (>= 2.0.1),\nstringi (>= 1.3.1),\nrprojroot (>= 1.3-2),\nlintr (>= 3.0.0),\ntibble (>= 3.1.8)",
         "VignetteBuilder": "knitr",
         "RoxygenNote": "7.2.1",
         "Author": "Jason Pickering [aut, cre],\n  Chris Nemarich [ctb],\n  Vlad Shioshvili [ctb],\n  Dennis Banga [ctb],\n  Hiwot Chichaybelu [ctb]",
-        "Built": "R 4.2.1; ; 2022-08-25 10:26:18 UTC; unix",
+        "Built": "R 4.2.1; ; 2022-09-22 14:01:25 UTC; unix",
         "RemoteType": "github",
         "RemoteHost": "api.github.com",
         "RemoteUsername": "pepfar-datim",
         "RemoteRepo": "datim-validation",
-        "RemoteRef": "master",
-        "RemoteSha": "7eddb657c53a92c0316ece0ecdb53dc6c58aa2e8",
+        "RemoteRef": "dev",
+        "RemoteSha": "178c4ff7395e1c5ecdd296dc5557fbcafdba4ece",
         "GithubHost": "api.github.com",
         "GithubRepo": "datim-validation",
         "GithubUsername": "pepfar-datim",
-        "GithubRef": "master",
-        "GithubSHA1": "7eddb657c53a92c0316ece0ecdb53dc6c58aa2e8",
+        "GithubRef": "dev",
+        "GithubSHA1": "178c4ff7395e1c5ecdd296dc5557fbcafdba4ece",
         "Remotes": "pepfar-datim/datimutils"
       }
     },
@@ -711,7 +652,7 @@
         "Packaged": "2021-11-30 23:41:39 UTC; edd",
         "Repository": "CRAN",
         "Date/Publication": "2021-12-01 07:40:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:36:18 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 12:58:08 UTC; unix"
       }
     },
     "doMC": {
@@ -774,7 +715,7 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-04-28 13:30:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-15 14:15:37 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:03:26 UTC; unix"
       }
     },
     "ellipsis": {
@@ -804,7 +745,7 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-04-29 12:40:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:35:49 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:00:36 UTC; unix"
       }
     },
     "fansi": {
@@ -836,7 +777,7 @@
         "Maintainer": "Brodie Gaslam <brodie.gaslam@yahoo.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-03-24 07:50:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:35:50 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:02:12 UTC; unix"
       }
     },
     "fastmap": {
@@ -865,7 +806,7 @@
         "Maintainer": "Winston Chang <winston@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-01-25 21:00:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:37:15 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 12:58:21 UTC; unix"
       }
     },
     "filelock": {
@@ -893,7 +834,7 @@
         "Packaged": "2018-10-05 10:03:40 UTC; gaborcsardi",
         "Repository": "CRAN",
         "Date/Publication": "2018-10-05 10:30:12 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:39:29 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:03:32 UTC; unix"
       }
     },
     "fontawesome": {
@@ -1024,7 +965,7 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-12-08 23:00:08 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:37:22 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 12:58:29 UTC; unix"
       }
     },
     "futile.logger": {
@@ -1113,7 +1054,7 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-07-05 19:40:02 UTC",
-        "Built": "R 4.2.1; ; 2022-08-15 14:15:36 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 13:03:23 UTC; unix"
       }
     },
     "getPass": {
@@ -1178,7 +1119,7 @@
         "Maintainer": "Jennifer Bryan <jenny@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-02-24 07:50:20 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:33:51 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:00:09 UTC; unix"
       }
     },
     "htmltools": {
@@ -1397,7 +1338,7 @@
         "Maintainer": "Carson Sievert <carson@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-04-26 17:10:02 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:38:41 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 12:59:55 UTC; unix"
       }
     },
     "jsonlite": {
@@ -1427,7 +1368,7 @@
         "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\n  Duncan Temple Lang [ctb],\n  Lloyd Hilaiel [cph] (author of bundled libyajl)",
         "Repository": "CRAN",
         "Date/Publication": "2022-02-22 11:20:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:37:19 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 12:58:26 UTC; unix"
       }
     },
     "keyring": {
@@ -1458,7 +1399,7 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-11-29 09:00:13 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:39:30 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:03:36 UTC; unix"
       }
     },
     "lambda.r": {
@@ -1579,7 +1520,7 @@
         "Maintainer": "Lionel Henry <lionel@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-09-24 15:30:02 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:35:48 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 13:00:40 UTC; unix"
       }
     },
     "lubridate": {
@@ -1649,7 +1590,7 @@
         "Maintainer": "Lionel Henry <lionel@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-03-30 07:30:09 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:33:52 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:00:56 UTC; unix"
       }
     },
     "memoise": {
@@ -1678,7 +1619,7 @@
         "Maintainer": "Winston Chang <winston@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-11-26 16:11:10 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:40:13 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 13:00:41 UTC; unix"
       }
     },
     "mime": {
@@ -1707,7 +1648,7 @@
         "Maintainer": "Yihui Xie <xie@yihui.name>",
         "Repository": "CRAN",
         "Date/Publication": "2021-09-28 05:00:05 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:39:21 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:00:37 UTC; unix"
       }
     },
     "openssl": {
@@ -1739,7 +1680,7 @@
         "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
         "Repository": "CRAN",
         "Date/Publication": "2022-05-24 19:10:12 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-15 14:11:27 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:00:26 UTC; unix"
       }
     },
     "openxlsx": {
@@ -1839,7 +1780,7 @@
         "Packaged": "2019-09-22 08:42:40 UTC; gaborcsardi",
         "Repository": "CRAN",
         "Date/Publication": "2019-09-22 09:20:02 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:35:59 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 13:02:37 UTC; unix"
       }
     },
     "plyr": {
@@ -1937,7 +1878,7 @@
         "Maintainer": "Lionel Henry <lionel@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2020-04-17 12:10:07 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:36:02 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:01:49 UTC; unix"
       }
     },
     "rappdirs": {
@@ -1969,7 +1910,7 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-01-31 05:40:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:37:41 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 12:58:49 UTC; unix"
       }
     },
     "reshape2": {
@@ -2039,39 +1980,6 @@
         "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-15 14:08:15 UTC; unix"
       }
     },
-    "rlist": {
-      "Source": "CRAN",
-      "Repository": "https://cran.rstudio.com",
-      "GithubRepo": null,
-      "GithubUsername": null,
-      "GithubRef": null,
-      "GithubSha1": null,
-      "description": {
-        "Package": "rlist",
-        "Type": "Package",
-        "Title": "A Toolbox for Non-Tabular Data Manipulation",
-        "Version": "0.4.6.2",
-        "Author": "Kun Ren <ken@renkun.me>",
-        "Maintainer": "Kun Ren <ken@renkun.me>",
-        "Description": "Provides a set of functions for data manipulation with\n    list objects, including mapping, filtering, grouping, sorting,\n    updating, searching, and other useful functions. Most functions\n    are designed to be pipeline friendly so that data processing with\n    lists can be chained.",
-        "Depends": "R (>= 2.15)",
-        "Date": "2021-09-02",
-        "Suggests": "testthat, stringdist",
-        "Imports": "yaml, jsonlite, XML, data.table",
-        "License": "MIT + file LICENSE",
-        "URL": "https://renkun-ken.github.io/rlist/,\nhttps://github.com/renkun-ken/rlist,\nhttps://renkun-ken.github.io/rlist-tutorial/",
-        "BugReports": "https://github.com/renkun-ken/rlist/issues",
-        "ByteCompile": "TRUE",
-        "LazyData": "true",
-        "RoxygenNote": "7.1.1",
-        "Encoding": "UTF-8",
-        "NeedsCompilation": "no",
-        "Packaged": "2021-09-02 23:36:14 UTC; ken",
-        "Repository": "CRAN",
-        "Date/Publication": "2021-09-03 12:20:02 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:39:51 UTC; unix"
-      }
-    },
     "rstudioapi": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -2098,7 +2006,7 @@
         "Author": "Kevin Ushey [aut, cre],\n  JJ Allaire [aut],\n  Hadley Wickham [aut],\n  Gary Ritchie [aut],\n  RStudio [cph]",
         "Repository": "CRAN",
         "Date/Publication": "2020-11-12 21:50:02 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:40:02 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 13:02:05 UTC; unix"
       }
     },
     "sass": {
@@ -2257,7 +2165,7 @@
         "Packaged": "2022-06-11 08:16:07 UTC; jeroen",
         "Repository": "CRAN",
         "Date/Publication": "2022-06-11 21:40:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-15 14:15:43 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:03:35 UTC; unix"
       }
     },
     "sourcetools": {
@@ -2350,7 +2258,7 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2019-02-10 03:40:03 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:34:35 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 13:01:41 UTC; unix"
       }
     },
     "sys": {
@@ -2381,7 +2289,7 @@
         "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
         "Repository": "CRAN",
         "Date/Publication": "2020-07-23 04:30:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:35:06 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 12:57:54 UTC; unix"
       }
     },
     "tibble": {
@@ -2454,7 +2362,7 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-02-01 08:40:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:36:12 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:05:07 UTC; unix"
       }
     },
     "tidyselect": {
@@ -2487,7 +2395,7 @@
         "Maintainer": "Lionel Henry <lionel@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-02-21 16:00:02 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:36:04 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 13:03:24 UTC; unix"
       }
     },
     "utf8": {
@@ -2517,7 +2425,7 @@
         "Maintainer": "Kirill Müller <krlmlr+r@mailbox.org>",
         "Repository": "CRAN",
         "Date/Publication": "2021-07-24 15:00:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:35:54 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:02:16 UTC; unix"
       }
     },
     "vctrs": {
@@ -2552,7 +2460,7 @@
         "Maintainer": "Lionel Henry <lionel@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-04-13 10:30:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:35:33 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:02:20 UTC; unix"
       }
     },
     "withr": {
@@ -2586,7 +2494,7 @@
         "Maintainer": "Lionel Henry <lionel@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-03-03 21:50:02 UTC",
-        "Built": "R 4.2.1; ; 2022-08-12 06:37:01 UTC; unix"
+        "Built": "R 4.2.1; ; 2022-08-31 13:00:42 UTC; unix"
       }
     },
     "xml2": {
@@ -2619,7 +2527,7 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-11-30 14:40:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:39:34 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:01:52 UTC; unix"
       }
     },
     "xtable": {
@@ -2675,7 +2583,7 @@
         "Packaged": "2022-02-19 02:41:00 UTC; garbetsp",
         "Repository": "CRAN",
         "Date/Publication": "2022-02-21 09:20:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:39:26 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:01:42 UTC; unix"
       }
     },
     "zip": {
@@ -2703,31 +2611,40 @@
         "Packaged": "2021-05-30 21:43:42 UTC; gaborcsardi",
         "Repository": "CRAN",
         "Date/Publication": "2021-05-31 04:30:02 UTC",
-        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:40:59 UTC; unix"
+        "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:03:02 UTC; unix"
       }
     }
   },
   "files": {
+    ".RData": {
+      "checksum": "c8f242fe9249fe4440183f59976d05bf"
+    },
     ".Rprofile": {
-      "checksum": "7d9bbe4d317207c15f6ab602d779ec12"
+      "checksum": "fe49f35b7522505908710d0162bdd6ff"
+    },
+    "DESCRIPTION": {
+      "checksum": "86416613d872a725e7d3273801b6a638"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
     },
-    "R/oauthLogin.R": {
-      "checksum": "28ccba25ca9248d7f0b61471d6c60cff"
+    "R/downloadTypes.R": {
+      "checksum": "4c6b5f75e0d8d36dbc229a00d258ebd0"
+    },
+    "R/utils.R": {
+      "checksum": "f0f67eea3768d1b73664c295bd1ce307"
     },
     "README.md": {
       "checksum": "9f25abe74a77ac00a2d234cab8021498"
     },
     "server.R": {
-      "checksum": "c8d5df7314f9a469abed237bc5cef7f4"
+      "checksum": "6479e2df7fe973682eef447942152dc5"
     },
     "ui.R": {
-      "checksum": "5e8533cc5c651b60ac69ebd832e95f68"
+      "checksum": "10fff370fd41bab3c1d5a247e16071f5"
     },
     "utils.R": {
-      "checksum": "4460bcbab17efd82e6406b57bbb0709d"
+      "checksum": "3715db0d86cbde1afe4273da3a7c0566"
     },
     "www/pepfar.png": {
       "checksum": "cd04d9e778b00519de3e0e2afc97eb28"

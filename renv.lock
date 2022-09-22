@@ -5,6 +5,10 @@
       {
         "Name": "CRAN",
         "URL": "https://cran.rstudio.com"
+      },
+      {
+        "Name": "pepfar",
+        "URL": "https://rstudio-package.ap.datim.org/prod/latest"
       }
     ]
   },
@@ -57,14 +61,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "e9c08b94391e9f3f97355841229124f2",
-      "Requirements": []
-    },
-    "XML": {
-      "Package": "XML",
-      "Version": "3.99-0.10",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "f140675d766cf765bf06a5f14afb149d",
       "Requirements": []
     },
     "anytime": {
@@ -194,26 +190,19 @@
       "Hash": "022c42d49c28e95d69ca60446dbabf88",
       "Requirements": []
     },
-    "data.table": {
-      "Package": "data.table",
-      "Version": "1.14.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "36b67b5adf57b292923f5659f5f0c853",
-      "Requirements": []
-    },
     "datimutils": {
       "Package": "datimutils",
-      "Version": "0.5.2",
+      "Version": "0.6.0",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "pepfar-datim",
       "RemoteRepo": "datimutils",
       "RemoteRef": "master",
-      "RemoteSha": "1f81eb3dd872154abdf5d77540e3494bd8468dd8",
-      "Hash": "11361204052bb668789e935b39644f8e",
+      "RemoteSha": "3346faec3d1c0a6d180a1b60cab4176c2b27fa95",
+      "Hash": "b38f9407699a3f75b74a0b3349d8684a",
       "Requirements": [
+        "R6",
         "httr",
         "jsonlite",
         "keyring",
@@ -224,19 +213,20 @@
     },
     "datimvalidation": {
       "Package": "datimvalidation",
-      "Version": "1.2.0",
+      "Version": "1.3.0",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "pepfar-datim",
       "RemoteRepo": "datim-validation",
       "RemoteRef": "master",
-      "RemoteSha": "7eddb657c53a92c0316ece0ecdb53dc6c58aa2e8",
+      "RemoteSha": "c66c4f1722bf401738e5d4104cae77143cf86803",
       "Remotes": "pepfar-datim/datimutils",
-      "Hash": "6caab538c2679bb05e1268725f68f2c9",
+      "Hash": "936035feee318974d76c093eecb2e317",
       "Requirements": [
         "ISOweek",
         "assertthat",
+        "crayon",
         "datimutils",
         "dplyr",
         "getPass",
@@ -247,7 +237,6 @@
         "plyr",
         "purrr",
         "reshape2",
-        "rlist",
         "stringr",
         "xml2"
       ]
@@ -708,19 +697,6 @@
       "Repository": "CRAN",
       "Hash": "6539dd8c651e67e3b55b5ffea106362b",
       "Requirements": []
-    },
-    "rlist": {
-      "Package": "rlist",
-      "Version": "0.4.6.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "290c8ea0700d2e7258082d0025386e68",
-      "Requirements": [
-        "XML",
-        "data.table",
-        "jsonlite",
-        "yaml"
-      ]
     },
     "rstudioapi": {
       "Package": "rstudioapi",

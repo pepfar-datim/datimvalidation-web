@@ -6,6 +6,40 @@ require(futile.logger)
 require(shinyWidgets)
 
 
+################ OAuth Client information #####################################
+if (interactive()) {
+  # testing url
+  options(shiny.port = 3123)
+  APP_URL <- "http://127.0.0.1:3123/"# This will be your local host path
+} else {
+  # deployed URL
+  APP_URL <- Sys.getenv("APP_URL") #This will be your shiny server path
+}
+
+{
+
+  oauth_app <- httr::oauth_app(Sys.getenv("OAUTH_APPNAME"),
+                               key = Sys.getenv("OAUTH_KEYNAME"),        # dhis2 = Client ID
+                               secret = Sys.getenv("OAUTH_SECRET"), #dhis2 = Client Secret
+                               redirect_uri = APP_URL
+  )
+
+  oauth_api <- httr::oauth_endpoint(base_url = paste0(Sys.getenv("BASE_URL"),"uaa/oauth"),
+                                    request=NULL,# Documentation says to leave this NULL for OAuth2
+                                    authorize = "authorize",
+                                    access="token"
+  )
+
+  oauth_scope <- "ALL"
+}
+
+has_auth_code <- function(params) {
+
+  return(!is.null(params$code))
+}
+
+
+
 shinyServer(function(input, output, session) {
 
   ready <- reactiveValues(ok = FALSE)
@@ -20,6 +54,17 @@ shinyServer(function(input, output, session) {
     ready$ok <- TRUE
   })
 
+observeEvent(input$datastream,{
+  if(input$datastream == "SIMS") {
+    updateSelectInput(session = session, inputId = "ou",
+                      choices = (c("Global" = "ybg3MO3hcf4")))
+  } else {
+    foo <- getUserOperatingUnits(user_input$d2_session$user_orgunit,user_input$d2_session)
+    setNames(foo$id,foo$name)
+    updateSelectInput(session = session, inputId = "ou",choices = setNames(foo$id,foo$name))
+  }
+
+})
   observeEvent(input$reset_input, {
     enableUI()
     ready$ok<-FALSE
@@ -27,16 +72,23 @@ shinyServer(function(input, output, session) {
   })
 
   observeEvent(input$logout,{
+    req(input$logout)
+    # Gets you back to the login without the authorization code at top
+    updateQueryString("?",mode="replace",session=session)
     flog.info(paste0("User ", user_input$d2_session$me$userCredentials$username, " logged out."))
     ready$ok <- FALSE
-    user_input$authenticated<-FALSE
-    user_input$d2_session<-NULL
-    session$reload()
+    user_input$authenticated <- FALSE
+    user_input$user_name <- ""
+    user_input$authorized <- FALSE
+    user_input$d2_session <- NULL
+    d2_default_session <- NULL
     gc()
+    session$reload()
 
   } )
 
   disableUI<-function(){
+    shinyjs::disable("datastream")
     shinyjs::disable("type")
     shinyjs::disable("ou")
     shinyjs::disable("ou_scheme")
@@ -48,6 +100,7 @@ shinyServer(function(input, output, session) {
   }
 
   enableUI<-function(){
+    shinyjs::enable("datastream")
     shinyjs::enable("type")
     shinyjs::enable("ou")
     shinyjs::enable("ou_scheme")
@@ -97,6 +150,11 @@ shinyServer(function(input, output, session) {
                 ".zip"
               )
             ),
+            selectInput(
+              "datastream",
+              "Dataset type:",
+              getDataStreamsInput(user_input$d2_session)
+            ),
             selectInput("type", "Type:",
                         c(
                           "CSV" = "csv",
@@ -134,15 +192,12 @@ shinyServer(function(input, output, session) {
               ),
               selected = "id"
             ),
-            selectInput(
-              "ds_type",
-              "Dataset type:",
-              c("Results" = "RESULTS", "Targets" = "TARGETS")
-            ),
             checkboxInput("header", "CSV Header", TRUE),
             tags$hr(),
             actionButton("validate","Validate"),
-            downloadButton("downloadData", "Download report"),
+            tags$hr(),
+            selectInput("downloadType", "Download type", downloadTypes()),
+            downloadButton("downloadOutputs", "Download"),
             tags$hr(),
             div(style = "display: inline-block; vertical-align:top; width: 80 px;", actionButton("reset_input", "Reset inputs")),
             div(style = "display: inline-block; vertical-align:top; width: 80 px;", actionButton("logout", "Logout"))
@@ -161,50 +216,97 @@ shinyServer(function(input, output, session) {
                                d2_session = NULL,
                                user_ous = NA)
 
-  observeEvent(input$login_button,
-               {
-
-                 tryCatch(  {  datimutils::loginToDATIM(base_url = Sys.getenv("BASE_URL"),
-                                                        username = input$user_name,
-                                                        password = input$password) },
-                            #This function throws an error if the login is not successful
-                            error=function(e) {
-                              sendSweetAlert(
-                                session,
-                                title = "Login failed",
-                                text = "Please check your username/password!",
-                                type = "error")
-                              flog.info(paste0("User ", input$user_name, " login failed."), name = "datapack")
-                            } )
-
-                 if ( exists("d2_default_session"))  {
-
-                   user_input$authenticated<-TRUE
-                   user_input$d2_session<-d2_default_session$clone()
-                   flog.info(paste0("User ", user_input$d2_session$me$userCredentials$username, " logged in."), name = "datapack")
-                   foo<-getUserOperatingUnits(user_input$d2_session$user_orgunit, d2session = user_input$d2_session )
-                   user_input$user_ous<-setNames(foo$id,foo$name)
-                 }
-
-               })
-
-  # password entry UI componenets:
-  #   username and password text fields, login button
+  # password entry UI components:
+  # Login components
   output$uiLogin <- renderUI({
     wellPanel(
       fluidRow(img(src='pepfar.png', align = "center")),
         fluidRow(h4("Welcome to the DATIM Validation tool. Please login with your DATIM credentials:")
       ),
       fluidRow(
-      textInput("user_name", "User Name:",width = "600px"),
-      passwordInput("password", "Password:",width = "600px"),
-      actionButton("login_button", "Log in")
-    ))
+        actionButton("login_button_oauth","Log in with DATIM"),
+        uiOutput("ui_hasauth"),
+        uiOutput("ui_redirect")
+    ),
+    tags$hr(),
+    fluidRow(HTML(getVersionInfo()))
+    )
+  })
+
+  output$ui_redirect = renderUI({
+    #print(input$login_button_oauth) useful for debugging
+    if(!is.null(input$login_button_oauth)){
+      if(input$login_button_oauth>0){
+        url <- httr::oauth2.0_authorize_url(oauth_api, oauth_app, scope = oauth_scope)
+        redirect <- sprintf("location.replace(\"%s\");", url)
+        tags$script(HTML(redirect))
+      } else NULL
+    } else NULL
+  })
+
+  ### Login Button oauth Checks
+  observeEvent(input$login_button_oauth > 0,{
+
+    #Grabs the code from the url
+    params <- parseQueryString(session$clientData$url_search)
+    #Wait until the auth code actually exists
+    req(has_auth_code(params))
+
+    #Manually create a token
+    token <- httr::oauth2.0_token(
+      app = oauth_app,
+      endpoint = oauth_api,
+      scope = oauth_scope,
+      use_basic_auth = TRUE,
+      oob_value = APP_URL,
+      cache = FALSE,
+      credentials = httr::oauth2.0_access_token(endpoint = oauth_api,
+                                                app = oauth_app,
+                                                code = params$code,
+                                                use_basic_auth = TRUE)
+    )
+
+    loginAttempt <- tryCatch({
+
+      datimutils::loginToDATIMOAuth(base_url =  Sys.getenv("BASE_URL"),
+                                    token = token,
+                                    app = oauth_app,
+                                    api = oauth_api,
+                                    redirect_uri= APP_URL,
+                                    scope = oauth_scope,
+                                    d2_session_envir = parent.env(environment())
+      ) },
+      # This function throws an error if the login is not successful
+      error = function(e) {
+        flog.info(paste0("User ", input$user_name, " login failed. ", e$message), name = "datapack")
+      }
+    )
+
+    if (exists("d2_default_session")) {
+
+      user_input$authenticated  <-  TRUE
+      user_input$d2_session  <-  d2_default_session$clone()
+      d2_default_session <- NULL
+
+      foo<-getUserOperatingUnits(user_input$d2_session$user_orgunit, d2session = user_input$d2_session )
+      user_input$user_ous<-setNames(foo$id,foo$name)
+
+      flog.info(
+        paste0(
+          "User ",
+          user_input$d2_session$me$userCredentials$username,
+          " logged in."
+        ),
+        name = "datapack"
+      )
+    }
+
   })
 
   validate<-function() {
 
-    shinyjs::hide("downloadData")
+    shinyjs::disable("downloadType")
+    shinyjs::disable("downloadOutputs")
     if (!ready$ok) {return(NULL)}
 
     #Lock the UI and hide download button
@@ -216,11 +318,12 @@ shinyServer(function(input, output, session) {
     messages<-list()
     vr_results<-list()
     has_error<-FALSE
-    step_size <- 1/13
+    step_size <- 1/14
+
     withProgress(message = 'Validating file', value = 0,{
 
     incProgress(step_size, detail = ("Loading metadata"))
-    ds<-getCurrentMERDataSets(type = input$ds_type, d2session = user_input$d2_session)
+    ds <- getCurrentDataSets(datastream = input$datastream, d2session = user_input$d2_session)
     incProgress(step_size, detail = ("Parsing data"))
     validation<-list()
 
@@ -231,257 +334,238 @@ shinyServer(function(input, output, session) {
       input_file<-inFile$datapath
     }
 
-    d <-  tryCatch({
-      datimvalidation::d2Parser(
+    # d <-  tryCatch({
+      d <- datimvalidation::d2Parser(
         filename = input_file,
-        organisationUnit = input$ou,
         type = input$type,
+        datastream = input$datastream,
+        organisationUnit = input$ou,
         dataElementIdScheme = input$de_scheme,
         orgUnitIdScheme = input$ou_scheme,
         idScheme = input$id_scheme,
-        csv_header = input$header,
+        hasHeader = input$header,
         d2session = user_input$d2_session
       )
-    },
-    error = function(e) {
-      return(e)
-    },
-    warning = function(w) {
-      list(paste("Escalated warning to error: ", conditionMessage(w)))
-    })
+    # },
+    # error = function(e) {
+    #   return(e)
+    # },
+    # warning = function(w) {
+    #   list(paste("Escalated warning to error: ", conditionMessage(w)))
+    # })
 
       #Reset the button to force upload again
       shinyjs::reset("file1")
       disableUI()
 
-      if (inherits(d, "list")) {
-        messages <- append( "ERROR! : There were errors while parsing the file. Please check that you have provided the correct paramaters!", messages)
-        messages <- append( d, messages)
-        return(NULL)
+      # if (inherits(d, "list")) {
+      #   messages <- append( "ERROR! : There were errors while parsing the file. Please check that you have provided the correct paramaters!", messages)
+      #   messages <- append( d, messages)
+      #   return(NULL)
+      #
+      # } else {
+      #
+      #   messages<-append("No problems found during file parsing.",messages)
+      # }
 
-      } else {
-
-        messages<-append("No problems found during file parsing.",messages)
-      }
-
+      #Common checks for all data
       #Period check
       incProgress(step_size, detail = ("Checking periods."))
 
-        messages <-  append(
-          paste(
-            paste( "Periods found: ", paste(unique(d$period),sep="",collapse=","))
-          ),messages )
+      periods <- unique(d$data$import$period)
+      msg <- paste(paste( "Periods found: ", periods,sep="",collapse=","))
 
-        #Record check
-        incProgress(step_size, detail = ("Checking records: "))
+        d$info$messages <-  datimvalidation::appendMessage( d$info$messages, msg, "INFO")
 
-        zero_check<-sprintf("%1.2f%%",  ( sum(as.character(d$value) == "0") / NROW(d) )  * 100 )
+        #Duplicates check
+        incProgress(step_size, detail = ("Checking for duplicate records."))
 
-        messages <-  append(
-          paste(
-            paste( "Records found: ", NROW(d), " records found of which ", zero_check, " were zeros.")
-          ),messages )
+        d <- getExactDuplicates(d)
 
-      #Duplicate check
-      incProgress(step_size, detail = ("Checking for duplicate records."))
-
-      dup_check <- getExactDuplicates(d)
-
-      if (inherits(dup_check, "data.frame") & NROW(dup_check) > 0) {
-        messages <-  append(
-          paste("ERROR! ",
-            paste( NROW(dup_check)," duplicate values found.")
-          ),messages )
-
-        validation$duplicates_check<-dup_check
-
-        has_error<-TRUE
-        } else {
-        messages<-append("No duplicate records detected.",messages)
-      }
-
-      #Check that orgunits are in the provided user hierarchy
-      incProgress(step_size, detail = ("Checking sites are within the operating unit"))
-      ou_hierarchy_check <-  checkOrgunitsInHierarchy(d = d,
-                                                      userOrgUnit = input$ou,
-                                                      d2session = user_input$d2_session)
-
-      if (inherits(ou_hierarchy_check, "list") && length(ou_hierarchy_check > 0L)) {
-        messages<-append(paste("ERROR! ",
-          length(ou_hierarchy_check),
-          "organisation units found which were not in the provided operating unit!"
-        ), messages)
-
-        validation$ou_hierarchy_check<-data.frame(invalid_orgunits = ou_hierarchy_check)
-
-        has_error<-TRUE
-      } else {
-        messages<-append("All organisation units were within the provided operating unit.", messages)
-      }
-
-
-      incProgress(step_size, detail = ("Checking data element/orgunit associations"))
-      de_ou_check <-
-        checkDataElementOrgunitValidity(
-          d = d,
-          datasets = ds,
-          return_violations = TRUE,
-          d2session = user_input$d2_session
-        )
-
-      if (inherits(de_ou_check, "data.frame") && NROW(de_ou_check > 0L)) {
-        messages<-append(paste("ERROR! ",
-          NROW(de_ou_check),
-          "invalid data element/orgunit associations found!"
-        ), messages)
-
-        validation$dataelement_ou_check<-de_ou_check
-
-        has_error<-TRUE
-      } else {
-        messages<-append("Data element/orgunit associations are valid.", messages)
-      }
-
-      #Data element cadence check
-      incProgress(step_size, detail = ("Checking data elemement cadence"))
-      de_cadence_check <- checkDataElementCadence(d, d2session = user_input$d2_session)
-
-      if (inherits(de_cadence_check, "data.frame")) {
-
-        messages <- append(paste("ERROR! ",
-          NROW(de_cadence_check),
-          "data elements were submitted for the incorrect period!"
-        ),
-        messages)
-
-        validation$de_cadence_check<-de_cadence_check
-        has_error<-TRUE
-      } else {
-        messages<-append("Data elements were submittted for the correct period.",messages)
-      }
-
-      #Data element orgunit check
-      incProgress(step_size, detail = ("Checking data element/disagg associations"))
-
-      ds_disagg_check <-
-        checkDataElementDisaggValidity(d, datasets = ds,
-                                       return_violations = TRUE,
+        #Check that orgunits are in the provided user hierarchy
+        incProgress(step_size, detail = ("Checking sites are within the operating unit"))
+        d <-  checkOrgunitsInHierarchy(d = d,
+                                       userOrgUnit = input$ou,
                                        d2session = user_input$d2_session)
 
-      if (inherits(ds_disagg_check, "data.frame")) {
+        incProgress(step_size, detail = ("Checking data element/mechanism associations"))
+        d <-
+          checkDataElementMechValidity(
+            d = d,
+            datasets = ds,
+            d2session = user_input$d2_session
+          )
 
-        messages <- append(paste("ERROR! ",
-          NROW(ds_disagg_check),
-          "invalid data element/disagg associations found!"
-        ),
-        messages)
+        #Check data element and organisation unit associations
+        incProgress(step_size, detail = ("Checking data element/orgunit associations"))
+        d <-
+          checkDataElementOrgunitValidity(
+            d = d,
+            datasets = ds,
+            d2session = user_input$d2_session
+          )
 
-        validation$datasets_disagg_check<-ds_disagg_check
-        has_error<-TRUE
-      } else {
-        messages<-append("Data element/disagg associations are valid.",messages)
-      }
 
-      #Value type compliance check
-      incProgress(step_size, detail = ("Checking value type compliance."))
+        #Check data element / category option combinations
+        incProgress(step_size, detail = ("Checking data element/disagg associations"))
 
-      vt_check <- checkValueTypeCompliance(d, d2session = user_input$d2_session)
+        d <-
+          checkDataElementDisaggValidity(d, datasets = ds,
+                                         d2session = user_input$d2_session)
+        #Mechanism check
+        incProgress(step_size, detail = ("Checking mechanisms."))
 
-      if (inherits(vt_check, "data.frame") & NROW(vt_check) > 0) {
-        messages <-  append( paste( "ERROR! :", NROW(vt_check)," invalid values found."), messages)
-        validation$value_type_compliance<-vt_check
-        has_error<-TRUE
-      } else {
-        messages<-append("Value types are valid.",messages)
-      }
+        d <-
+          checkMechanismValidity(
+            d = d,
+            organisationUnit = input$ou,
+            d2session = user_input$d2_session
+          )
 
-      #Negative value check
-      incProgress(step_size, detail = ("Checking negative numbers."))
 
-      neg_check <- checkNegativeValues(d, d2session = user_input$d2_session)
+        #Only for narratives
 
-      if (inherits(neg_check, "data.frame")) {
-        messages <- append(paste("ERROR! :", NROW(neg_check), " negatve values found."), messages)
-        validation$negative_values <- neg_check
-        has_error<-TRUE
-      } else {
-        messages<-append("No negative values found.",messages)
-      }
-
-      #Mechanism check
-      incProgress(step_size, detail = ("Checking mechanisms."))
-
-      mech_check <-
-        checkMechanismValidity(
-          data = d,
-          organisationUnit = input$ou,
-          return_violations = TRUE,
-          d2session = user_input$d2_session
-        )
-
-      if (inherits(mech_check, "data.frame")) {
-        messages <- append(paste( "ERROR! :",
-          NROW(mech_check), " invalid mechanisms found."
-        ), messages)
-        validation$mechanism_check <- mech_check
-        has_error<-TRUE
-      } else {
-        messages <- append("All mechanisms are valid.", messages)
-      }
-
-      incProgress(step_size, detail = ("Validating data"))
-
-      if ( Sys.info()['sysname'] == "Linux") {
-
-       ncores <- parallel::detectCores() - 1
-       doMC::registerDoMC(cores=ncores)
-       is_parallel<-TRUE
-
-      } else {
-        is_parallel<-FALSE
-      }
-
-      vr_rules<-validateData(d,organisationUnit = input$ou,
-                             parallel = is_parallel,
-                             d2session = user_input$d2_session)
-
-      #If there are any validation rule violations, put them in the output
-      if  ( NROW(vr_rules) > 0 )  {
-        messages<-append( paste("ERROR! :",  NROW(vr_rules)," validation rule violations found!"),messages)
-
-        validation$validation_rules <- vr_rules[,c("name","ou_name","period","mech_code","formula")]
-        has_error<-TRUE
-      } else {
-        messages<-append( "No validation rule violations found", messages)
+        if (input$datastream %in% c("NARRATIVES")) {
+          shinyjs::hide("contents")
+          d <- checkNarrativeLength(d)
         }
-    })
-    if (has_error) {
-      shinyjs::show("downloadData")
-    }
 
-    list(data=d,messages=messages,validation=validation,has_error=has_error)
-  }
+        #Only for MER Results and Targets
+        if (input$datastream %in% c("RESULTS","TARGETS")) {
+          #Zeros
+          incProgress(step_size, detail = ("Checking zeros: "))
+
+          zero_check<-sprintf("%1.2f%%",  ( sum(as.character(d$data$import$value) == "0") / NROW(d$data$import) )  * 100 )
+          msg <- paste(paste(
+              "Records found: ",
+              NROW(d$data$import),
+              " records found of which ",
+              zero_check,
+              " were zeros."
+            ))
+          d$info$messages <-  datimvalidation::appendMessage(d$info$messages,
+                                                             msg,"INFO" )
+
+        #Data element cadence check
+        incProgress(step_size, detail = ("Checking data elemement cadence"))
+        d <- checkDataElementCadence(d, d2session = user_input$d2_session)
+
+        #Value type compliance check
+        incProgress(step_size, detail = ("Checking value type compliance."))
+
+        d <- checkValueTypeCompliance(d, d2session = user_input$d2_session)
+
+        #Negative value check
+        incProgress(step_size, detail = ("Checking negative numbers."))
+
+        d <- checkNegativeValues(d, d2session = user_input$d2_session)
+
+        incProgress(step_size, detail = ("Checking validation rules..."))
+
+        if ( Sys.info()['sysname'] == "Linux") {
+
+          ncores <- parallel::detectCores() - 1
+          doMC::registerDoMC(cores=ncores)
+          is_parallel<-TRUE
+
+        } else {
+          is_parallel<-FALSE
+        }
+
+        d$tests$validation_rules <-validateData(d$data$import,
+                         organisationUnit = input$ou,
+                          parallel = is_parallel,
+                          d2session = user_input$d2_session)
+        if (NROW(d$tests$validation_rules) > 0) {
+          msg <- paste("WARNING!", NROW(d$tests$validation_rules),
+                       "validation rule violations found.")
+          d$info$messages <- datimvalidation::appendMessage(d$info$messages,
+                                                            msg,
+                                                            "WARNING")
+        } else {
+          msg <- paste("No validation rule violations found.")
+          d$info$messages <- datimvalidation::appendMessage(d$info$messages,
+                                                            msg,
+                                                            "INFO")
+        }
+        } #end RESULTS/TARGETS Checks
+
+
+    }) #End progress bar
+    shinyjs::enable("downloadType")
+    shinyjs::enable("downloadOutputs")
+
+    d
+
+  } #End validate function
 
   validation_results <- reactive({ validate() })
 
-  output$downloadData <- downloadHandler(
-    filename = "validation_results.xlsx",
+  output$downloadOutputs <- downloadHandler(
+    filename = function() {
+      d <- validation_results()
+      prefix <- input$downloadType
+      date <- date <- format(Sys.time(), "%Y%m%d_%H%M%S")
+
+      suffix <- if (input$downloadType %in% c("csv_import")) {
+        ".csv"
+      } else {
+        ".xlsx"
+      }
+
+      paste0(prefix, "_", date, suffix)
+    },
     content = function(file) {
 
-      vr_results <- validation_results() %>% purrr::pluck(.,"validation")
-      openxlsx::write.xlsx(vr_results, file = file)
+      d <- validation_results()
+
+      if (input$downloadType == "csv_import") {
+        write.table(d$data$import,
+                    file = file,
+                    row.names = FALSE,
+                    quote = TRUE,
+                    na = "",
+                    sep = ",")
+      }
+
+      if (input$downloadType == "vr_rules") {
+        #The exact structure of the tests is unknown, but filter out anything
+        #which is not a data frame.
+
+        is_data_frame <- unlist(lapply(lapply(d$tests, class), function(x) "data.frame" %in% x))
+
+        d$tests <- d$tests[is_data_frame]
+
+        sheets_with_data <- d$tests[lapply(d$tests, NROW) > 0] %>%
+          #Limit the number of rows to the maximum in Excel
+          purrr::map(., ~ dplyr::slice(.x, 1:1048575)) %>%
+          #Collapses nested lists to a string which will fit inside of excel
+          purrr::map(., ~ .x %>%
+                       dplyr::mutate_if(is.list, \(x) paste(as.character(x[[1]]), sep = "", collapse = ","))) %>%
+          #Convert everything to characters and apply Excel limits
+          purrr::map(., ~ .x %>%
+                       dplyr::mutate_if(is.character, \(x) substring(as.character(x), 0, 36766)))
+
+
+        if (length(sheets_with_data) > 0) {
+          openxlsx::write.xlsx(sheets_with_data, file = file)
+        } else {
+          showModal(modalDialog(
+            title = "Perfect score!",
+            "No validation issues, so nothing to download!"
+          ))
+        }
+      }
     }
   )
 
   output$contents <- DT::renderDT({
 
     results<-validation_results() %>%
-      purrr::pluck(., "validation") %>%
+      purrr::pluck(., "tests") %>%
       purrr::pluck(., "validation_rules")
 
-    if ( inherits(results, "data.frame") ) {
-
-      results }
+    if ( NROW(results) > 0 ) { results }
     else { NULL }
   })
 
@@ -500,16 +584,29 @@ shinyServer(function(input, output, session) {
 
     } else {
 
-      messages<-vr %>%
+      messages <- validation_results() %>%
+        purrr::pluck(., "info") %>%
         purrr::pluck(., "messages")
 
-      if (!is.null(messages))  {
-        lapply(messages, function(x)
-          tags$li(x))
-      } else
-      {
-        tags$li("No issues found! Congratulations!")
-      }
-    }
+      if (length(messages$message) > 0) {
+
+        class(messages) <- "data.frame"
+
+        messages %<>%
+          dplyr::mutate(level = factor(level, levels = c("ERROR", "WARNING", "INFO"))) %>%
+          dplyr::arrange(level) %>%
+          dplyr::mutate(msg_html =
+                          dplyr::case_when(
+                            level == "ERROR" ~ paste('<li><p style = "color:red"><b>', message, "</b></p></li>"),
+                            TRUE ~ paste("<li><p>", message, "</p></li>")
+                          ))
+
+        messages_sorted <-
+          paste0("<ul>", paste(messages$msg_html, sep = "", collapse = ""), "</ul>")
+
+        shiny::HTML(messages_sorted)
+      } else {
+        tags$li("No Issues with Integrity Checks: Congratulations!")
+      } }
   })
 })
