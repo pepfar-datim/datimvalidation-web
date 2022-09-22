@@ -54,6 +54,17 @@ shinyServer(function(input, output, session) {
     ready$ok <- TRUE
   })
 
+observeEvent(input$datastream,{
+  if(input$datastream == "SIMS") {
+    updateSelectInput(session = session, inputId = "ou",
+                      choices = (c("Global" = "ybg3MO3hcf4")))
+  } else {
+    foo <- getUserOperatingUnits(user_input$d2_session$user_orgunit,user_input$d2_session)
+    setNames(foo$id,foo$name)
+    updateSelectInput(session = session, inputId = "ou",choices = setNames(foo$id,foo$name))
+  }
+
+})
   observeEvent(input$reset_input, {
     enableUI()
     ready$ok<-FALSE
@@ -142,7 +153,7 @@ shinyServer(function(input, output, session) {
             selectInput(
               "datastream",
               "Dataset type:",
-              c("Results" = "RESULTS", "Targets" = "TARGETS", "Narratives" = "NARRATIVES", "SIMS" = "SIMS")
+              getDataStreamsInput(user_input$d2_session)
             ),
             selectInput("type", "Type:",
                         c(

@@ -36,17 +36,3 @@
     print(paste("About to use a file appender log at",config$log_path))
     flog.appender(futile.logger::appender.file(config$log_path))
   }
-
-
-  getUserOperatingUnits<-function(uid,d2session = d2_default_session) {
-
-    #Global user
-    if ( uid == "ybg3MO3hcf4" ) {
-      datimvalidation::getValidOperatingUnits(d2session = d2session)
-
-    } else {
-
-      getValidOperatingUnits(d2session = d2session) %>%
-        dplyr::filter(id == uid)
-    }
-  }
