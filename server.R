@@ -65,6 +65,15 @@ observeEvent(input$datastream,{
   }
 
 })
+
+observeEvent(input$type,{
+  if (input$type != "csv") {
+    shinyjs::hide("header")
+  } else {
+    shinyjs::show("header")
+  }
+})
+
   observeEvent(input$reset_input, {
     enableUI()
     ready$ok<-FALSE
