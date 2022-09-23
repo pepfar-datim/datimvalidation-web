@@ -471,33 +471,7 @@ observeEvent(input$type,{
         d <- checkNegativeValues(d, d2session = user_input$d2_session)
 
         incProgress(step_size, detail = ("Checking validation rules..."))
-
-        if ( Sys.info()['sysname'] == "Linux") {
-
-          ncores <- parallel::detectCores() - 1
-          doMC::registerDoMC(cores=ncores)
-          is_parallel<-TRUE
-
-        } else {
-          is_parallel<-FALSE
-        }
-
-        d$tests$validation_rules <-validateData(d$data$import,
-                         organisationUnit = input$ou,
-                          parallel = is_parallel,
-                          d2session = user_input$d2_session)
-        if (NROW(d$tests$validation_rules) > 0) {
-          msg <- paste("WARNING!", NROW(d$tests$validation_rules),
-                       "validation rule violations found.")
-          d$info$messages <- datimvalidation::appendMessage(d$info$messages,
-                                                            msg,
-                                                            "WARNING")
-        } else {
-          msg <- paste("No validation rule violations found.")
-          d$info$messages <- datimvalidation::appendMessage(d$info$messages,
-                                                            msg,
-                                                            "INFO")
-        }
+        d <- checkValidationRules(d, d2session = user_input$d2_session)
         } #end RESULTS/TARGETS Checks
 
 
