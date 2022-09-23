@@ -204,7 +204,8 @@ observeEvent(input$datastream,{
           ),
           mainPanel(tabsetPanel(
             type = "tabs",
-            tabPanel("Messages",   tags$ul(uiOutput('messages'))),
+            tabPanel("Messages",
+                     uiOutput('messages')),
             tabPanel("Validation rules", DT::DTOutput("contents"))
           ))
         ))
@@ -373,7 +374,7 @@ observeEvent(input$datastream,{
       incProgress(step_size, detail = ("Checking periods."))
 
       periods <- unique(d$data$import$period)
-      msg <- paste(paste( "Periods found: ", periods,sep="",collapse=","))
+      msg <-  paste("Periods found: ", paste(sort(periods),sep="",collapse=","))
 
         d$info$messages <-  datimvalidation::appendMessage( d$info$messages, msg, "INFO")
 
@@ -597,12 +598,14 @@ observeEvent(input$datastream,{
           dplyr::arrange(level) %>%
           dplyr::mutate(msg_html =
                           dplyr::case_when(
-                            level == "ERROR" ~ paste('<li><p style = "color:red"><b>', message, "</b></p></li>"),
-                            TRUE ~ paste("<li><p>", message, "</p></li>")
+                            level == "ERROR" ~ paste('<li><p style = "color:red" word-wrap: break-word;"><b>', message, "</b></p></li>"),
+                            TRUE ~ paste('<li><p style = "word-wrap: break-word;" >', message, "</p></li>")
                           ))
 
         messages_sorted <-
-          paste0("<ul>", paste(messages$msg_html, sep = "", collapse = ""), "</ul>")
+          paste0("<ul>",
+                 paste(messages$msg_html, sep = "", collapse = ""),
+                 "</ul>")
 
         shiny::HTML(messages_sorted)
       } else {
