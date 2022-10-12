@@ -586,7 +586,7 @@
         "VignetteBuilder": "knitr",
         "RoxygenNote": "7.2.1",
         "Author": "Jason Pickering [aut, cre],\n  Chris Nemarich [ctb],\n  Vlad Shioshvili [ctb],\n  Dennis Banga [ctb],\n  Hiwot Chichaybelu [ctb]",
-        "Built": "R 4.2.1; ; 2022-09-23 11:02:13 UTC; unix",
+        "Built": "R 4.2.1; ; 2022-09-26 09:36:20 UTC; unix",
         "RemoteType": "github",
         "RemoteHost": "api.github.com",
         "RemoteUsername": "pepfar-datim",
@@ -2508,13 +2508,13 @@
       "checksum": "c8f242fe9249fe4440183f59976d05bf"
     },
     ".Rprofile": {
-      "checksum": "f7b2a3ee43e115e6defb676fbe852435"
+      "checksum": "b1e85903d78b3cddff3d6e1dc9dea222"
     },
     "creds.txt": {
       "checksum": "176dc1b46a098191ecc53d0bd7aa6b3e"
     },
     "DESCRIPTION": {
-      "checksum": "86416613d872a725e7d3273801b6a638"
+      "checksum": "32abd98f2929b9ed79f2834cf53dd057"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
