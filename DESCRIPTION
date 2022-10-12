@@ -1,8 +1,8 @@
 Package: datimvalidation-app
 Type: Shiny App
 Title: Self-service app for parsing and validation of DATIM import Files
-Version: 1.5.1
-Date: 2022-09-23
+Version: 1.5.2
+Date: 2022-10-12
 Authors@R: c( person("Jason", "Pickering", email =
         "jason@dhis2.org", role = c("aut", "cre")) )
 Depends: R (>= 4.1.1)

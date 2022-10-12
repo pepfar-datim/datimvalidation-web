@@ -4,7 +4,8 @@ library(openxlsx)
 library(magrittr)
 require(futile.logger)
 require(shinyWidgets)
-
+#TODO: Fix this in the lock and manifest.
+pacman::p_load(doMC)
 
 ################ OAuth Client information #####################################
 if (interactive()) {

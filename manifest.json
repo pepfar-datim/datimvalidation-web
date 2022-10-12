@@ -363,6 +363,31 @@
         "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 13:00:10 UTC; unix"
       }
     },
+    "codetools": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "codetools",
+        "Version": "0.2-18",
+        "Priority": "recommended",
+        "Author": "Luke Tierney <luke-tierney@uiowa.edu>",
+        "Description": "Code analysis tools for R.",
+        "Title": "Code Analysis Tools for R",
+        "Depends": "R (>= 2.1)",
+        "Maintainer": "Luke Tierney <luke-tierney@uiowa.edu>",
+        "URL": "https://gitlab.com/luke-tierney/codetools",
+        "License": "GPL",
+        "NeedsCompilation": "no",
+        "Packaged": "2020-11-02 14:45:50 UTC; luke",
+        "Repository": "CRAN",
+        "Date/Publication": "2020-11-04 17:12:32 UTC",
+        "Built": "R 4.2.0; ; 'Sat, 30 Apr 2022 15:16:37 +0000'; unix"
+      }
+    },
     "commonmark": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -630,6 +655,34 @@
         "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 12:58:08 UTC; unix"
       }
     },
+    "doMC": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "doMC",
+        "Type": "Package",
+        "Title": "Foreach Parallel Adaptor for 'parallel'",
+        "Version": "1.3.8",
+        "Authors@R": "c(person(\"Folashade\", \"Daniel\", role=\"cre\", email=\"fdaniel@microsoft.com\"),\n             person(\"Revolution\", \"Analytics\", role=c(\"aut\", \"cph\")),\n\t\t\t person(\"Steve\", \"Weston\", role=\"aut\"))",
+        "Description": "Provides a parallel backend for the %dopar% function using\n        the multicore functionality of the parallel package.",
+        "Depends": "R (>= 2.14.0), foreach(>= 1.2.0), iterators(>= 1.0.0),\nparallel",
+        "Imports": "utils",
+        "Enhances": "compiler, RUnit",
+        "License": "GPL-2",
+        "NeedsCompilation": "no",
+        "Packaged": "2022-01-16 18:26:44 UTC; folashade",
+        "Author": "Folashade Daniel [cre],\n  Revolution Analytics [aut, cph],\n  Steve Weston [aut]",
+        "Maintainer": "Folashade Daniel <fdaniel@microsoft.com>",
+        "OS_type": "unix",
+        "Repository": "CRAN",
+        "Date/Publication": "2022-02-05 00:30:24 UTC",
+        "Built": "R 4.2.1; ; 2022-08-16 09:06:06 UTC; unix"
+      }
+    },
     "dplyr": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -815,6 +868,38 @@
         "Repository": "CRAN",
         "Date/Publication": "2022-07-20 14:50:02 UTC",
         "Built": "R 4.2.1; ; 2022-08-15 14:09:57 UTC; unix"
+      }
+    },
+    "foreach": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "foreach",
+        "Type": "Package",
+        "Title": "Provides Foreach Looping Construct",
+        "Version": "1.5.2",
+        "Authors@R": "c(person(\"Folashade\", \"Daniel\", role=\"cre\", email=\"fdaniel@microsoft.com\"),\n             person(\"Hong\", \"Ooi\", role=\"ctb\"),\n             person(\"Rich\", \"Calaway\", role=\"ctb\"),\n             person(\"Microsoft\", role=c(\"aut\", \"cph\")),\n             person(\"Steve\", \"Weston\", role=\"aut\"))",
+        "Description": "Support for the foreach looping construct.  Foreach is an\n        idiom that allows for iterating over elements in a collection,\n        without the use of an explicit loop counter.  This package in\n        particular is intended to be used for its return value, rather\n        than for its side effects.  In that sense, it is similar to the\n        standard lapply function, but doesn't require the evaluation\n        of a function.  Using foreach without side effects also\n        facilitates executing the loop in parallel.",
+        "License": "Apache License (== 2.0)",
+        "URL": "https://github.com/RevolutionAnalytics/foreach",
+        "BugReports": "https://github.com/RevolutionAnalytics/foreach/issues",
+        "Depends": "R (>= 2.5.0)",
+        "Imports": "codetools, utils, iterators",
+        "Suggests": "randomForest, doMC, doParallel, testthat, knitr, rmarkdown",
+        "VignetteBuilder": "knitr",
+        "RoxygenNote": "7.1.1",
+        "Collate": "'callCombine.R' 'foreach.R' 'do.R' 'foreach-ext.R'\n'foreach-pkg.R' 'getDoPar.R' 'getDoSeq.R' 'getsyms.R' 'iter.R'\n'nextElem.R' 'onLoad.R' 'setDoPar.R' 'setDoSeq.R' 'times.R'\n'utils.R'",
+        "NeedsCompilation": "no",
+        "Packaged": "2022-01-11 04:21:12 UTC; fdaniel",
+        "Author": "Folashade Daniel [cre],\n  Hong Ooi [ctb],\n  Rich Calaway [ctb],\n  Microsoft [aut, cph],\n  Steve Weston [aut]",
+        "Maintainer": "Folashade Daniel <fdaniel@microsoft.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2022-02-02 09:20:02 UTC",
+        "Built": "R 4.2.1; ; 2022-08-16 09:06:05 UTC; unix"
       }
     },
     "formatR": {
@@ -1199,6 +1284,33 @@
         "Repository": "CRAN",
         "Date/Publication": "2022-08-17 13:00:04 UTC",
         "Built": "R 4.2.1; ; 2022-08-18 06:45:49 UTC; unix"
+      }
+    },
+    "iterators": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "iterators",
+        "Type": "Package",
+        "Title": "Provides Iterator Construct",
+        "Version": "1.0.14",
+        "Authors@R": "c(person(\"Folashade\", \"Daniel\", role=\"cre\", email=\"fdaniel@microsoft.com\"),\n             person(\"Revolution\", \"Analytics\", role=c(\"aut\", \"cph\")),\n             person(\"Steve\", \"Weston\", role=\"aut\"))",
+        "Description": "Support for iterators, which allow a programmer to traverse\n    through all the elements of a vector, list, or other collection of data.",
+        "URL": "https://github.com/RevolutionAnalytics/iterators",
+        "Depends": "R (>= 2.5.0), utils",
+        "Suggests": "RUnit, foreach",
+        "License": "Apache License (== 2.0)",
+        "NeedsCompilation": "no",
+        "Packaged": "2022-01-16 18:19:31 UTC; folashade",
+        "Author": "Folashade Daniel [cre],\n  Revolution Analytics [aut, cph],\n  Steve Weston [aut]",
+        "Maintainer": "Folashade Daniel <fdaniel@microsoft.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2022-02-05 00:50:08 UTC",
+        "Built": "R 4.2.1; ; 2022-08-16 09:06:04 UTC; unix"
       }
     },
     "jquerylib": {
@@ -1607,6 +1719,36 @@
         "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-12 06:44:02 UTC; unix"
       }
     },
+    "pacman": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "pacman",
+        "Type": "Package",
+        "Title": "Package Management Tool",
+        "Version": "0.5.1",
+        "Authors@R": "c(person(\"Tyler\", \"Rinker\", role = c(\"aut\", \"cre\", \"ctb\"),\n        email = \"tyler.rinker@gmail.com\"), person(\"Dason\",\n        \"Kurkiewicz\", role = c(\"aut\", \"ctb\"), email =\n        \"dasonk@gmail.com\"), person(\"Keith\", \"Hughitt\", role =\n        c(\"ctb\")), person(\"Albert\", \"Wang\", role = c(\"ctb\")),\n        person(\"Garrick\", \"Aden-Buie\", role = c(\"ctb\")),\n        person(\"Albert\", \"Wang\", role = c(\"ctb\")),\n        person(\"Lukas\", \"Burk\", role = c(\"ctb\")))",
+        "Depends": "R (>= 3.5.0)",
+        "Imports": "remotes, methods, stats, utils",
+        "Suggests": "BiocManager, knitr, lattice, testthat (>= 0.9.0), XML",
+        "BugReports": "https://github.com/trinker/pacman/issues?state=open",
+        "Description": "Tools to more conveniently perform tasks associated with\n        add-on packages. pacman conveniently wraps library and package\n        related functions and names them in an intuitive and consistent\n        fashion.  It seeks to combine functionality from lower level\n        functions which can speed up workflow.",
+        "License": "GPL-2",
+        "URL": "https://github.com/trinker/pacman",
+        "RoxygenNote": "6.1.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2019-03-11 01:37:03 UTC; trinker",
+        "Author": "Tyler Rinker [aut, cre, ctb],\n  Dason Kurkiewicz [aut, ctb],\n  Keith Hughitt [ctb],\n  Albert Wang [ctb],\n  Garrick Aden-Buie [ctb],\n  Albert Wang [ctb],\n  Lukas Burk [ctb]",
+        "Maintainer": "Tyler Rinker <tyler.rinker@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2019-03-11 11:50:07 UTC",
+        "Built": "R 4.2.1; ; 2022-10-12 12:43:52 UTC; unix"
+      }
+    },
     "pillar": {
       "Source": "CRAN",
       "Repository": "https://cran.rstudio.com",
@@ -1799,6 +1941,38 @@
         "Repository": "CRAN",
         "Date/Publication": "2021-01-31 05:40:02 UTC",
         "Built": "R 4.2.1; x86_64-pc-linux-gnu; 2022-08-31 12:58:49 UTC; unix"
+      }
+    },
+    "remotes": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "GithubRepo": null,
+      "GithubUsername": null,
+      "GithubRef": null,
+      "GithubSha1": null,
+      "description": {
+        "Package": "remotes",
+        "Title": "R Package Installation from Remote Repositories, Including\n'GitHub'",
+        "Version": "2.4.2",
+        "Authors@R": "c(\n    person(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\", role = c(\"aut\", \"cre\")),\n    person(\"Jim\", \"Hester\", , \"jim.hester@rstudio.com\", role = \"aut\"),\n    person(\"Hadley\", \"Wickham\", role = c(\"aut\")),\n    person(\"Winston\", \"Chang\", role = \"aut\"),\n    person(\"RStudio\", role = \"cph\"),\n    person(\"Martin\", \"Morgan\", role = \"aut\"),\n    person(\"Dan\", \"Tenenbaum\", role = \"aut\"),\n    person(\"Mango Solutions\", role = \"cph\")\n    )",
+        "Description": "Download and install R packages stored in 'GitHub', 'GitLab', \n    'Bitbucket', 'Bioconductor', or plain 'subversion' or 'git' repositories. \n    This package provides the 'install_*' functions in 'devtools'. Indeed most \n    of the code was copied over from 'devtools'.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://remotes.r-lib.org, https://github.com/r-lib/remotes#readme",
+        "BugReports": "https://github.com/r-lib/remotes/issues",
+        "Imports": "methods, stats, tools, utils",
+        "Suggests": "brew, callr, codetools, curl, covr, git2r (>= 0.23.0), knitr,\nmockery, pkgbuild (>= 1.0.1), pingr, rmarkdown, rprojroot,\ntestthat, webfakes, withr",
+        "Depends": "R (>= 3.0.0)",
+        "VignetteBuilder": "knitr",
+        "RoxygenNote": "7.1.2",
+        "SystemRequirements": "Subversion for install_svn, git for install_git",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "no",
+        "Packaged": "2021-11-30 00:20:20 UTC; jhester",
+        "Author": "Gábor Csárdi [aut, cre],\n  Jim Hester [aut],\n  Hadley Wickham [aut],\n  Winston Chang [aut],\n  RStudio [cph],\n  Martin Morgan [aut],\n  Dan Tenenbaum [aut],\n  Mango Solutions [cph]",
+        "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2021-11-30 14:00:02 UTC",
+        "Built": "R 4.2.1; ; 2022-08-31 13:00:50 UTC; unix"
       }
     },
     "reshape2": {
@@ -2507,8 +2681,11 @@
     ".RData": {
       "checksum": "c8f242fe9249fe4440183f59976d05bf"
     },
+    ".renv.lock.swp": {
+      "checksum": "3cffdacfc61c120832db605a43a4359f"
+    },
     ".Rprofile": {
-      "checksum": "b1e85903d78b3cddff3d6e1dc9dea222"
+      "checksum": "a6864f6b8f895ec954953a91c1b89ca7"
     },
     "creds.txt": {
       "checksum": "176dc1b46a098191ecc53d0bd7aa6b3e"
@@ -2529,7 +2706,7 @@
       "checksum": "9f25abe74a77ac00a2d234cab8021498"
     },
     "server.R": {
-      "checksum": "0c5ffeb19613cd8a86c64b49e05d83d5"
+      "checksum": "479582ce7abfc3532077c2761e2b6572"
     },
     "ui.R": {
       "checksum": "10fff370fd41bab3c1d5a247e16071f5"

@@ -137,6 +137,14 @@
         "glue"
       ]
     },
+    "codetools": {
+      "Package": "codetools",
+      "Version": "0.2-18",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "019388fc48e48b3da0d3a76ff94608a8",
+      "Requirements": []
+    },
     "commonmark": {
       "Package": "commonmark",
       "Version": "1.8.0",
@@ -241,6 +249,18 @@
       "Hash": "cf6b206a045a684728c3267ef7596190",
       "Requirements": []
     },
+    "doMC": {
+      "Package": "doMC",
+      "Version": "1.3.8",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "OS_type": "unix",
+      "Hash": "daafe209e13c4fd20f2190a94f2f2103",
+      "Requirements": [
+        "foreach",
+        "iterators"
+      ]
+    },
     "dplyr": {
       "Package": "dplyr",
       "Version": "1.0.9",
@@ -303,6 +323,17 @@
       "Requirements": [
         "htmltools",
         "rlang"
+      ]
+    },
+    "foreach": {
+      "Package": "foreach",
+      "Version": "1.5.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "618609b42c9406731ead03adf5379850",
+      "Requirements": [
+        "codetools",
+        "iterators"
       ]
     },
     "formatR": {
@@ -428,6 +459,14 @@
         "mime",
         "openssl"
       ]
+    },
+    "iterators": {
+      "Package": "iterators",
+      "Version": "1.0.14",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "8954069286b4b2b0d023d1b288dce978",
+      "Requirements": []
     },
     "jquerylib": {
       "Package": "jquerylib",
@@ -564,6 +603,16 @@
         "zip"
       ]
     },
+    "pacman": {
+      "Package": "pacman",
+      "Version": "0.5.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "b37932b67288bc62bb81686b2f337a7d",
+      "Requirements": [
+        "remotes"
+      ]
+    },
     "pillar": {
       "Package": "pillar",
       "Version": "1.8.0",
@@ -629,6 +678,14 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "5e3c5dc0b071b21fa128676560dbe94d",
+      "Requirements": []
+    },
+    "remotes": {
+      "Package": "remotes",
+      "Version": "2.4.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "227045be9aee47e6dda9bb38ac870d67",
       "Requirements": []
     },
     "renv": {
