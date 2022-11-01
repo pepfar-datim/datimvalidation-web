@@ -345,8 +345,8 @@ observeEvent(input$type,{
       input_file<-inFile$datapath
     }
 
-    # d <-  tryCatch({
-      d <- datimvalidation::d2Parser(
+
+        d <- datimvalidation::d2Parser(
         filename = input_file,
         type = input$type,
         datastream = input$datastream,
@@ -357,13 +357,7 @@ observeEvent(input$type,{
         hasHeader = input$header,
         d2session = user_input$d2_session
       )
-    # },
-    # error = function(e) {
-    #   return(e)
-    # },
-    # warning = function(w) {
-    #   list(paste("Escalated warning to error: ", conditionMessage(w)))
-    # })
+
 
       #Reset the button to force upload again
       shinyjs::reset("file1")
