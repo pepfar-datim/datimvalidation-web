@@ -2681,17 +2681,14 @@
     ".RData": {
       "checksum": "c8f242fe9249fe4440183f59976d05bf"
     },
-    ".renv.lock.swp": {
-      "checksum": "3cffdacfc61c120832db605a43a4359f"
-    },
     ".Rprofile": {
-      "checksum": "a6864f6b8f895ec954953a91c1b89ca7"
+      "checksum": "6bea5e15c3fd5a8021ac482cc90fa07c"
     },
     "creds.txt": {
       "checksum": "176dc1b46a098191ecc53d0bd7aa6b3e"
     },
     "DESCRIPTION": {
-      "checksum": "32abd98f2929b9ed79f2834cf53dd057"
+      "checksum": "2408d95f14b6918a2f884051965c70a5"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
