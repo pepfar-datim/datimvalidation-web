@@ -1,7 +1,7 @@
 {
   "version": 1,
   "locale": "en_US",
-  "platform": "4.2.1",
+  "platform": "4.2.2",
   "metadata": {
     "appmode": "shiny",
     "primary_rmd": null,
@@ -590,7 +590,7 @@
       "GithubRepo": "datim-validation",
       "GithubUsername": "pepfar-datim",
       "GithubRef": "master",
-      "GithubSha1": "8e6222097dd1a4b0022547882dd82244440242a9",
+      "GithubSha1": "0bc5c0285931e95741d63eb13e0d28c4e0069f46",
       "description": {
         "Package": "datimvalidation",
         "Type": "Package",
@@ -606,23 +606,23 @@
         "BugReports": "https://github.com/pepfar-datim/datim-validation/issues",
         "Encoding": "UTF-8",
         "Depends": "R (>= 4.1),\ndatimutils (>= 0.6.0)",
-        "Imports": "assertthat (>= 0.2.0),\ndplyr (>= 0.8.3),\nhttr (>= 1.4.0),\nISOweek (>= 0.6-2),\njsonlite (>= 1.6),\nlubridate (>= 1.7.4),\nplyr (>= 1.8.4),\npurrr (>= 0.3.2),\nreshape2 (>= 1.4.3),\nstringr (>= 1.4.0),\nxml2 (>= 1.3.2),\nhttpcache (>= 1.2.0),\ncrayon (>= 1.5.1)",
+        "Imports": "assertthat (>= 0.2.0),\ndplyr (>= 0.8.3),\nhttr (>= 1.4.0),\nISOweek (>= 0.6-2),\njsonlite (>= 1.6),\nlubridate (>= 1.7.4),\nplyr (>= 1.8.4),\npurrr (>= 0.3.2),\nreshape2 (>= 1.4.3),\nstringr (>= 1.4.0),\nxml2 (>= 1.3.2),\nhttpcache (>= 1.2.0),\ncrayon (>= 1.5.1),\nstringi (>= 1.7.8)",
         "Suggests": "covr (>= 3.2.1),\ndoMC (>= 1.3.5),\nforeach (>= 1.4.4),\nhttptest (>= 3.2.2),\nknitr (>= 1.21),\nmethods,\nrmarkdown (>= 1.11),\nroxygen2 (>= 6.1.1),\ntcltk,\ntestthat (>= 2.0.1),\nstringi (>= 1.3.1),\nrprojroot (>= 1.3-2),\nlintr (>= 3.0.0),\ntibble (>= 3.1.8)",
         "VignetteBuilder": "knitr",
         "RoxygenNote": "7.2.1",
         "Author": "Jason Pickering [aut, cre],\n  Chris Nemarich [ctb],\n  Vlad Shioshvili [ctb],\n  Dennis Banga [ctb],\n  Hiwot Chichaybelu [ctb]",
-        "Built": "R 4.2.1; ; 2022-11-01 07:51:13 UTC; unix",
+        "Built": "R 4.2.2; ; 2022-11-30 06:47:10 UTC; unix",
         "RemoteType": "github",
         "RemoteHost": "api.github.com",
         "RemoteUsername": "pepfar-datim",
         "RemoteRepo": "datim-validation",
         "RemoteRef": "master",
-        "RemoteSha": "8e6222097dd1a4b0022547882dd82244440242a9",
+        "RemoteSha": "0bc5c0285931e95741d63eb13e0d28c4e0069f46",
         "GithubHost": "api.github.com",
         "GithubRepo": "datim-validation",
         "GithubUsername": "pepfar-datim",
         "GithubRef": "master",
-        "GithubSHA1": "8e6222097dd1a4b0022547882dd82244440242a9",
+        "GithubSHA1": "0bc5c0285931e95741d63eb13e0d28c4e0069f46",
         "Remotes": "pepfar-datim/datimutils"
       }
     },
@@ -2622,13 +2622,13 @@
       "checksum": "c8f242fe9249fe4440183f59976d05bf"
     },
     ".Rprofile": {
-      "checksum": "66533776fdd65842548b42ee5727392e"
+      "checksum": "f5d4649e2d6ab2c5e309f89b52fe60cc"
     },
     "creds.txt": {
       "checksum": "176dc1b46a098191ecc53d0bd7aa6b3e"
     },
     "DESCRIPTION": {
-      "checksum": "2408d95f14b6918a2f884051965c70a5"
+      "checksum": "f727c3ee4198383f54c8625c73bcc3af"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"

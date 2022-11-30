@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.2.1",
+    "Version": "4.2.2",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -220,9 +220,9 @@
       "RemoteUsername": "pepfar-datim",
       "RemoteRepo": "datim-validation",
       "RemoteRef": "master",
-      "RemoteSha": "8e6222097dd1a4b0022547882dd82244440242a9",
+      "RemoteSha": "0bc5c0285931e95741d63eb13e0d28c4e0069f46",
       "Remotes": "pepfar-datim/datimutils",
-      "Hash": "11d4c734bba6eeada3bab7f3da906bfa",
+      "Hash": "7b35359c222ba12d7e95d95d19c971df",
       "Requirements": [
         "ISOweek",
         "assertthat",
@@ -236,6 +236,7 @@
         "plyr",
         "purrr",
         "reshape2",
+        "stringi",
         "stringr",
         "xml2"
       ]
