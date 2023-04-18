@@ -339,8 +339,20 @@ observeEvent(input$type,{
     validation<-list()
 
     if  ( inFile$type == "application/zip" )  {
-      temp_dir<-tempdir()
-      input_file<-unzip(inFile$datapath, exdir = temp_dir)
+      temp_dir<- tempdir()
+      unzip(inFile$datapath, exdir = temp_dir)
+      possible_files <- list.files(temp_dir,
+                 pattern = paste0(input$type,"$"))
+
+      if (length(possible_files) == 0) {
+        stop("Cannot find a suitable file")
+      }
+
+      if (length(possible_files) > 1) {
+        possible_files <- possible_files[1]
+        warning("Found multiple files. Only using the first")
+      }
+      input_file <- paste0(temp_dir,"/",possible_files)
     } else {
       input_file<-inFile$datapath
     }
