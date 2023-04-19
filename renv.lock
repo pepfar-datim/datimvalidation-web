@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.2.2",
+    "Version": "4.2.3",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -139,10 +139,10 @@
     },
     "codetools": {
       "Package": "codetools",
-      "Version": "0.2-18",
+      "Version": "0.2-19",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "019388fc48e48b3da0d3a76ff94608a8",
+      "Hash": "c089a619a7fae175d149d89164f8c7d8",
       "Requirements": []
     },
     "commonmark": {
@@ -220,9 +220,9 @@
       "RemoteUsername": "pepfar-datim",
       "RemoteRepo": "datim-validation",
       "RemoteRef": "master",
-      "RemoteSha": "0bc5c0285931e95741d63eb13e0d28c4e0069f46",
+      "RemoteSha": "7214f32cc8b21f5466013d8825756322fe9e7353",
       "Remotes": "pepfar-datim/datimutils",
-      "Hash": "7b35359c222ba12d7e95d95d19c971df",
+      "Hash": "5f4816416db6e9f36664ebf5b586365a",
       "Requirements": [
         "ISOweek",
         "assertthat",
