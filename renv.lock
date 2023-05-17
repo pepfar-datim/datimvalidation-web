@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.2.3",
+    "Version": "4.3.0",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -199,8 +199,8 @@
       "RemoteUsername": "pepfar-datim",
       "RemoteRepo": "datimutils",
       "RemoteRef": "master",
-      "RemoteSha": "a662c088cbe46aa32679b08ce768241a231442f6",
-      "Hash": "47e191d5446f393d56bc39e3217f867f",
+      "RemoteSha": "cd7e37ecfe47739ac6b67c27c5969e97d209366c",
+      "Hash": "0fc03b23a01ab0248a66542db766fe71",
       "Requirements": [
         "R6",
         "httr",
@@ -222,7 +222,7 @@
       "RemoteRef": "oauth-refactor",
       "RemoteSha": "0a558f4343e3e538d89779a068eb5067c4eceee4",
       "Remotes": "pepfar-datim/datimutils",
-      "Hash": "c0afb6c673730a79148b5f23600f0373",
+      "Hash": "afc0a2aa7b81e4178580eb89f936c062",
       "Requirements": [
         "ISOweek",
         "assertthat",
