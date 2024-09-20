@@ -1,0 +1,13 @@
+name: validationtesting_new
+title: Validation(Testing New)
+username: Christian.Onyango@icf.com
+account: Christian.Onyango@icf.com
+server: rstudio-connect.testing.ap.datim.org
+hostUrl: https://rstudio-connect.testing.ap.datim.org/__api__
+appId: 257
+bundleId: 2221
+url: https://rstudio-connect.testing.ap.datim.org:443/content/24521c96-d66d-4cc9-92c7-eb12dd941cfd/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .Rprofile
