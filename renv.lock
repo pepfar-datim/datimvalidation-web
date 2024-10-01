@@ -4,7 +4,7 @@
     "Repositories": [
       {
         "Name": "CRAN",
-        "URL": "https://rstudio-package.testing.ap.datim.org/prod/latest"
+        "URL": "https://cran.rstudio.com"
       }
     ]
   },
