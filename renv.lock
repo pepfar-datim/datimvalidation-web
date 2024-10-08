@@ -5,6 +5,10 @@
       {
         "Name": "CRAN",
         "URL": "https://cran.rstudio.com"
+      },
+      {
+        "Name": "pepfar",
+        "URL": "https://rstudio-package.ap.datim.org/prod/latest"
       }
     ]
   },

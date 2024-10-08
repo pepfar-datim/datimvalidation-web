@@ -2864,7 +2864,7 @@
   },
   "files": {
     ".Rprofile": {
-      "checksum": "8241513d372025ab2587261f60608ceb"
+      "checksum": "02c990a83af81d932edcf4bca5f03d84"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
@@ -2873,7 +2873,7 @@
       "checksum": "9f25abe74a77ac00a2d234cab8021498"
     },
     "renv.lock": {
-      "checksum": "8c91f9133f8e2e187520a25667cb12dc"
+      "checksum": "d2a5cc8db623ab30cdc72f765e3c7c90"
     },
     "server.R": {
       "checksum": "9aa558bd2ae90c844db6e7d55da77753"
