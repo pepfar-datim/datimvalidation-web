@@ -542,7 +542,7 @@
       }
     },
     "datimvalidation": {
-      "Source": "Git",
+      "Source": "github",
       "Repository": null,
       "description": {
         "Package": "datimvalidation",
@@ -564,13 +564,20 @@
         "Suggests": "covr (>= 3.2.1), doMC (>= 1.3.5), foreach (>= 1.4.4),\nhttptest (>= 3.2.2), knitr (>= 1.21), methods, rmarkdown (>=\n1.11), roxygen2 (>= 6.1.1), tcltk, testthat (>= 2.0.1), stringi\n(>= 1.3.1), rprojroot (>= 1.3-2), lintr (>= 3.0.0), tibble (>=\n3.1.8)",
         "VignetteBuilder": "knitr",
         "RoxygenNote": "7.2.1",
-        "RemoteType": "xgit",
-        "RemoteUrl": "https://github.com/pepfar-datim/datim-validation",
+        "RemoteType": "github",
+        "RemoteHost": "api.github.com",
+        "RemoteRepo": "datim-validation",
+        "RemoteUsername": "pepfar-datim",
+        "RemoteRef": "HEAD",
         "RemoteSha": "7214f32cc8b21f5466013d8825756322fe9e7353",
+        "GithubRepo": "datim-validation",
+        "GithubUsername": "pepfar-datim",
+        "GithubRef": "HEAD",
+        "GithubSHA1": "7214f32cc8b21f5466013d8825756322fe9e7353",
         "NeedsCompilation": "no",
-        "Packaged": "2024-10-08 14:37:32 UTC; LopezF3@state.gov",
+        "Packaged": "2024-10-08 15:45:24 UTC; LopezF3@state.gov",
         "Author": "Jason Pickering [aut, cre],\n  Chris Nemarich [ctb],\n  Vlad Shioshvili [ctb],\n  Dennis Banga [ctb],\n  Hiwot Chichaybelu [ctb]",
-        "Built": "R 4.4.0; ; 2024-10-08 14:37:33 UTC; unix"
+        "Built": "R 4.4.0; ; 2024-10-08 15:45:25 UTC; unix"
       }
     },
     "digest": {
@@ -2857,7 +2864,7 @@
   },
   "files": {
     ".Rprofile": {
-      "checksum": "6c793d7f1e3c2ea1187c82feab6d17cf"
+      "checksum": "3692d1f68860dc6cc2912c68574a9b82"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
@@ -2866,7 +2873,7 @@
       "checksum": "9f25abe74a77ac00a2d234cab8021498"
     },
     "renv.lock": {
-      "checksum": "72cde0ea161c5d7bddb768afa8e3dd98"
+      "checksum": "3abefb94bcc5dd5508b6f5249785b07f"
     },
     "server.R": {
       "checksum": "9aa558bd2ae90c844db6e7d55da77753"

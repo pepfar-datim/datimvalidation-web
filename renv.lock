@@ -215,9 +215,11 @@
     "datimvalidation": {
       "Package": "datimvalidation",
       "Version": "1.3.5",
-      "Source": "Git",
-      "RemoteType": "xgit",
-      "RemoteUrl": "https://github.com/pepfar-datim/datim-validation",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "datim-validation",
+      "RemoteUsername": "pepfar-datim",
       "RemoteSha": "7214f32cc8b21f5466013d8825756322fe9e7353",
       "Requirements": [
         "ISOweek",
@@ -237,7 +239,7 @@
         "stringr",
         "xml2"
       ],
-      "Hash": "cf5a52dd2718adbc05f591836be3c707"
+      "Hash": "1c2e8bafd1ceff306f791e5810e514f2"
     },
     "digest": {
       "Package": "digest",
