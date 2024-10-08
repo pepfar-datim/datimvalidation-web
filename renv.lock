@@ -196,11 +196,9 @@
     "datimutils": {
       "Package": "datimutils",
       "Version": "0.7.0",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "datimutils",
-      "RemoteUsername": "pepfar-datim",
+      "Source": "Git",
+      "RemoteType": "xgit",
+      "RemoteUrl": "https://github.com/pepfar-datim/datimutils",
       "RemoteSha": "338c374674876850707f642d1998f8aff4a41096",
       "Requirements": [
         "R",
@@ -212,7 +210,7 @@
         "stringi",
         "tidyr"
       ],
-      "Hash": "038afc12fa36965dd70bb79dce08727c"
+      "Hash": "035460bc0cb3726db20b86ea934a768d"
     },
     "datimvalidation": {
       "Package": "datimvalidation",
@@ -903,10 +901,10 @@
     },
     "sodium": {
       "Package": "sodium",
-      "Version": "1.3.1",
+      "Version": "1.3.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "dd86d6fd2a01d4eb3777dfdee7076d56"
+      "Hash": "869b09ca565ecaa9efc62534ebfa3efd"
     },
     "sourcetools": {
       "Package": "sourcetools",
