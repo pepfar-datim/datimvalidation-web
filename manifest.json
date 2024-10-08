@@ -138,11 +138,11 @@
         "Package": "askpass",
         "Type": "Package",
         "Title": "Password Entry Utilities for R, Git, and SSH",
-        "Version": "1.2.0",
-        "Authors@R": "person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), \n    email = \"jeroen@berkeley.edu\", comment = c(ORCID = \"0000-0002-4035-0289\"))",
+        "Version": "1.2.1",
+        "Authors@R": "person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), \n    email = \"jeroenooms@gmail.com\", comment = c(ORCID = \"0000-0002-4035-0289\"))",
         "Description": "Cross-platform utilities for prompting the user for credentials or a \n    passphrase, for example to authenticate with a server or read a protected key.\n    Includes native programs for MacOS and Windows, hence no 'tcltk' is required. \n    Password entry can be invoked in two different ways: directly from R via the \n    askpass() function, or indirectly as password-entry back-end for 'ssh-agent' \n    or 'git-credential' via the SSH_ASKPASS and GIT_ASKPASS environment variables.\n    Thereby the user can be prompted for credentials or a passphrase if needed \n    when R calls out to git or ssh.",
         "License": "MIT + file LICENSE",
-        "URL": "https://github.com/r-lib/askpass",
+        "URL": "https://r-lib.r-universe.dev/askpass",
         "BugReports": "https://github.com/r-lib/askpass/issues",
         "Encoding": "UTF-8",
         "Imports": "sys (>= 2.1)",
@@ -150,19 +150,12 @@
         "Suggests": "testthat",
         "Language": "en-US",
         "NeedsCompilation": "yes",
-        "Packaged": "2023-09-03 19:16:12 UTC; jeroen",
+        "Packaged": "2024-10-03 14:12:09 UTC; jeroen",
         "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>)",
-        "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
+        "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
         "Repository": "CRAN",
-        "Date/Publication": "2023-09-03 20:00:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:47:50 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "askpass",
-        "RemoteRef": "askpass",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.2.0"
+        "Date/Publication": "2024-10-04 07:20:03 UTC",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-08 14:37:30 UTC; unix"
       }
     },
     "assertthat": {
@@ -582,9 +575,9 @@
         "RemoteUrl": "https://github.com/pepfar-datim/datim-validation",
         "RemoteSha": "7214f32cc8b21f5466013d8825756322fe9e7353",
         "NeedsCompilation": "no",
-        "Packaged": "2024-10-08 14:33:57 UTC; LopezF3@state.gov",
+        "Packaged": "2024-10-08 14:37:32 UTC; LopezF3@state.gov",
         "Author": "Jason Pickering [aut, cre],\n  Chris Nemarich [ctb],\n  Vlad Shioshvili [ctb],\n  Dennis Banga [ctb],\n  Hiwot Chichaybelu [ctb]",
-        "Built": "R 4.4.0; ; 2024-10-08 14:33:58 UTC; unix"
+        "Built": "R 4.4.0; ; 2024-10-08 14:37:33 UTC; unix"
       }
     },
     "digest": {
@@ -2411,8 +2404,8 @@
         "Package": "sys",
         "Type": "Package",
         "Title": "Powerful and Reliable Tools for Running System Commands in R",
-        "Version": "3.4.2",
-        "Authors@R": "c(person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), \n      email = \"jeroen@berkeley.edu\", comment = c(ORCID = \"0000-0002-4035-0289\")),\n    person(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\", role = \"ctb\"))",
+        "Version": "3.4.3",
+        "Authors@R": "c(person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), \n      email = \"jeroenooms@gmail.com\", comment = c(ORCID = \"0000-0002-4035-0289\")),\n    person(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\", role = \"ctb\"))",
         "Description": "Drop-in replacements for the base system2() function with fine control\n    and consistent behavior across platforms. Supports clean interruption, timeout, \n    background tasks, and streaming STDIN / STDOUT / STDERR over binary or text \n    connections. Arguments on Windows automatically get encoded and quoted to work \n    on different locales.",
         "License": "MIT + file LICENSE",
         "URL": "https://jeroen.r-universe.dev/sys",
@@ -2422,19 +2415,12 @@
         "Suggests": "unix (>= 1.4), spelling, testthat",
         "Language": "en-US",
         "NeedsCompilation": "yes",
-        "Packaged": "2023-05-22 21:45:03 UTC; jeroen",
+        "Packaged": "2024-10-03 14:13:17 UTC; jeroen",
         "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\n  Gábor Csárdi [ctb]",
-        "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
+        "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
         "Repository": "CRAN",
-        "Date/Publication": "2023-05-23 07:50:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:47:48 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "sys",
-        "RemoteRef": "sys",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "3.4.2"
+        "Date/Publication": "2024-10-04 09:40:02 UTC",
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-08 14:37:28 UTC; unix"
       }
     },
     "tibble": {
@@ -2878,7 +2864,7 @@
   },
   "files": {
     ".Rprofile": {
-      "checksum": "c6b7a7197ff22b0f3393e273340efa8e"
+      "checksum": "12fc9262f635bf6dd701531523a7004a"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
@@ -2887,7 +2873,7 @@
       "checksum": "9f25abe74a77ac00a2d234cab8021498"
     },
     "renv.lock": {
-      "checksum": "7ab793c7a87fb1a0e2ce30948826f135"
+      "checksum": "c6f7be8bf37ccf3ba97a2b53f964c09b"
     },
     "server.R": {
       "checksum": "9aa558bd2ae90c844db6e7d55da77753"
