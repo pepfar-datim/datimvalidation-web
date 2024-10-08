@@ -308,14 +308,7 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-06-21 21:00:07 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:19:27 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "cli",
-        "RemoteRef": "cli",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "3.6.3"
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-24 15:05:20 UTC; unix"
       }
     },
     "codetools": {
@@ -2077,14 +2070,7 @@
         "Maintainer": "Lionel Henry <lionel@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-06-04 09:45:03 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:19:41 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "rlang",
-        "RemoteRef": "rlang",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.1.4"
+        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-24 15:05:08 UTC; unix"
       }
     },
     "rmarkdown": {
@@ -2864,7 +2850,7 @@
   },
   "files": {
     ".Rprofile": {
-      "checksum": "12fc9262f635bf6dd701531523a7004a"
+      "checksum": "4f95ce552cd27a8a1ea7db1244193a8f"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
