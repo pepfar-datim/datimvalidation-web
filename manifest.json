@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "locale": "C",
-  "platform": "4.4.0",
+  "locale": "en_US",
+  "platform": "4.3.1",
   "metadata": {
     "appmode": "shiny",
     "primary_rmd": null,
@@ -34,14 +34,7 @@
         "Maintainer": "Joe Cheng <joe@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-04-04 05:03:17 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:57:13 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "DT",
-        "RemoteRef": "DT",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.33"
+        "Built": "R 4.3.2; ; 2024-04-04 09:22:51 UTC; unix"
       }
     },
     "ISOweek": {
@@ -64,7 +57,37 @@
         "Packaged": "2011-09-07 06:45:51 UTC; Uwe",
         "Repository": "CRAN",
         "Date/Publication": "2011-09-07 07:25:10",
-        "Built": "R 4.4.0; ; 2024-10-01 13:56:00 UTC; unix"
+        "Built": "R 4.3.0; ; 2023-04-12 13:01:36 UTC; unix"
+      }
+    },
+    "PKI": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "PKI",
+        "Version": "0.1-14",
+        "Title": "Public Key Infrastucture for R Based on the X.509 Standard",
+        "Author": "Simon Urbanek <Simon.Urbanek@r-project.org>",
+        "Maintainer": "Simon Urbanek <Simon.Urbanek@r-project.org>",
+        "Depends": "R (>= 2.9.0), base64enc",
+        "Enhances": "gmp",
+        "Description": "Public Key Infrastucture functions such as verifying certificates, RSA encription and signing which can be used to build PKI infrastructure and perform cryptographic tasks.",
+        "License": "GPL-2 | GPL-3 | file LICENSE",
+        "URL": "http://www.rforge.net/PKI",
+        "SystemRequirements": "OpenSSL library and headers (openssl-dev or\nsimilar)",
+        "NeedsCompilation": "yes",
+        "Packaged": "2024-06-15 19:22:05 UTC; rforge",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-06-15 19:40:02 UTC",
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-06-15 22:55:13 UTC; unix",
+        "Archs": "PKI.so.dSYM",
+        "RemoteType": "standard",
+        "RemotePkgRef": "PKI",
+        "RemoteRef": "PKI",
+        "RemoteRepos": "https://cran.rstudio.com",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "x86_64-apple-darwin20",
+        "RemoteSha": "0.1-14"
       }
     },
     "R6": {
@@ -88,14 +111,7 @@
         "Maintainer": "Winston Chang <winston@stdout.org>",
         "Repository": "CRAN",
         "Date/Publication": "2021-08-19 14:00:05 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:20:31 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "R6",
-        "RemoteRef": "R6",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "2.5.1"
+        "Built": "R 4.3.0; ; 2023-04-11 20:07:58 UTC; unix"
       }
     },
     "Rcpp": {
@@ -121,14 +137,8 @@
         "Packaged": "2024-07-11 13:00:10 UTC; edd",
         "Repository": "CRAN",
         "Date/Publication": "2024-07-17 15:50:06 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:22:07 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "Rcpp",
-        "RemoteRef": "Rcpp",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.0.13"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-07-17 15:56:32 UTC; unix",
+        "Archs": "Rcpp.so.dSYM"
       }
     },
     "askpass": {
@@ -155,7 +165,8 @@
         "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-10-04 07:20:03 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-08 14:37:30 UTC; unix"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-10-04 08:08:05 UTC; unix",
+        "Archs": "askpass.so.dSYM"
       }
     },
     "assertthat": {
@@ -178,7 +189,7 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2019-03-21 14:53:46 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:56:02 UTC; unix"
+        "Built": "R 4.3.0; ; 2023-04-11 20:46:51 UTC; unix"
       }
     },
     "base64enc": {
@@ -199,14 +210,8 @@
         "Packaged": "2015-02-04 20:31:00 UTC; svnuser",
         "Repository": "CRAN",
         "Date/Publication": "2015-07-28 08:03:37",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:46:35 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "base64enc",
-        "RemoteRef": "base64enc",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.1-3"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-04-11 20:09:42 UTC; unix",
+        "Archs": "base64enc.so.dSYM"
       }
     },
     "bslib": {
@@ -239,14 +244,7 @@
         "Maintainer": "Carson Sievert <carson@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-07-29 19:20:02 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:53:47 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "bslib",
-        "RemoteRef": "bslib",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.8.0"
+        "Built": "R 4.3.3; ; 2024-07-30 00:24:44 UTC; unix"
       }
     },
     "cachem": {
@@ -273,14 +271,8 @@
         "Maintainer": "Winston Chang <winston@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-05-16 09:50:11 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:33:15 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "cachem",
-        "RemoteRef": "cachem",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.1.0"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-05-16 13:34:20 UTC; unix",
+        "Archs": "cachem.so.dSYM"
       }
     },
     "cli": {
@@ -308,14 +300,8 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-06-21 21:00:07 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:19:27 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "cli",
-        "RemoteRef": "cli",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "3.6.3"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-06-21 21:59:17 UTC; unix",
+        "Archs": "cli.so.dSYM"
       }
     },
     "codetools": {
@@ -336,7 +322,7 @@
         "Packaged": "2024-03-31 18:18:09 UTC; luke",
         "Repository": "CRAN",
         "Date/Publication": "2024-03-31 20:10:06 UTC",
-        "Built": "R 4.4.0; ; 2024-08-22 01:54:22 UTC; unix"
+        "Built": "R 4.3.2; ; 2024-03-31 21:55:18 UTC; unix"
       }
     },
     "commonmark": {
@@ -362,14 +348,8 @@
         "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
         "Repository": "CRAN",
         "Date/Publication": "2024-01-30 12:40:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:59:22 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "commonmark",
-        "RemoteRef": "commonmark",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.9.1"
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2024-01-30 14:54:22 UTC; unix",
+        "Archs": "commonmark.so.dSYM"
       }
     },
     "cpp11": {
@@ -398,14 +378,7 @@
         "Maintainer": "Davis Vaughan <davis@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-08-27 04:30:17 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:27:34 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "cpp11",
-        "RemoteRef": "cpp11",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.5.0"
+        "Built": "R 4.3.3; ; 2024-09-23 03:22:37 UTC; unix"
       }
     },
     "crayon": {
@@ -432,14 +405,7 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-06-20 13:00:02 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:55:22 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "crayon",
-        "RemoteRef": "crayon",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.5.3"
+        "Built": "R 4.3.3; ; 2024-06-20 16:49:10 UTC; unix"
       }
     },
     "crosstalk": {
@@ -465,14 +431,7 @@
         "Maintainer": "Carson Sievert <carson@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2023-11-23 08:50:07 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:57:10 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "crosstalk",
-        "RemoteRef": "crosstalk",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.2.1"
+        "Built": "R 4.3.0; ; 2023-11-23 09:30:12 UTC; unix"
       }
     },
     "curl": {
@@ -501,18 +460,12 @@
         "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-09-20 11:50:24 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:59:34 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "curl",
-        "RemoteRef": "curl",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "5.2.3"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-09-23 03:22:52 UTC; unix",
+        "Archs": "curl.so.dSYM"
       }
     },
     "datimutils": {
-      "Source": "Git",
+      "Source": "github",
       "Repository": null,
       "description": {
         "Package": "datimutils",
@@ -525,20 +478,27 @@
         "URL": "https://github.com/pepfar-datim/datimutils",
         "BugReports": "https://github.com/pepfar-datim/datimutils",
         "Depends": "R (>= 4.1.1)",
-        "Imports": "tidyr (>= 0.8.3), jsonlite (>= 1.6), stringi (>= 1.7.6), httr\n(>= 1.4.0), keyring, rlang, R6 (>= 2.5.1)",
-        "Suggests": "devtools (>= 2.0.1), dplyr (>= 0.8.3), tibble (>= 2.1.1),\nreadr (>= 1.3.1), httptest, knitr, rmarkdown, assertthat,\ntestthat (>= 2.1.0), lintr (>= 3.0.0)",
+        "Imports": "tidyr (>= 0.8.3),\njsonlite (>= 1.6),\nstringi (>= 1.7.6),\nhttr (>= 1.4.0),\nkeyring,\nrlang,\nR6 (>= 2.5.1)",
+        "Suggests": "devtools (>= 2.0.1),\ndplyr (>= 0.8.3),\ntibble (>= 2.1.1),\nreadr (>= 1.3.1),\nhttptest,\nknitr,\nrmarkdown,\nassertthat,\ntestthat (>= 2.1.0),\nlintr (>= 3.0.0)",
         "License": "GPL-3 + file LICENSE",
         "Encoding": "UTF-8",
+        "LazyData": "true",
         "RoxygenNote": "7.2.3",
         "VignetteBuilder": "knitr",
-        "RemoteType": "xgit",
-        "RemoteUrl": "https://github.com/pepfar-datim/datimutils",
-        "RemoteSha": "338c374674876850707f642d1998f8aff4a41096",
-        "NeedsCompilation": "no",
-        "Packaged": "2024-10-08 15:29:17 UTC; LopezF3@state.gov",
         "Author": "Scott Jackson [aut, cre],\n  Jason Pickering [aut],\n  Sam Garman [aut],\n  Jordan Bales [aut],\n  Fausto Lopez [aut],\n  Chris Nemarich [ctb]",
         "Maintainer": "Scott Jackson <sjackson@baosystems.com>",
-        "Built": "R 4.4.0; ; 2024-10-08 15:29:18 UTC; unix"
+        "Built": "R 4.3.1; ; 2024-10-14 20:14:50 UTC; unix",
+        "RemoteType": "github",
+        "RemoteHost": "api.github.com",
+        "RemoteUsername": "pepfar-datim",
+        "RemoteRepo": "datimutils",
+        "RemoteRef": "master",
+        "RemoteSha": "338c374674876850707f642d1998f8aff4a41096",
+        "GithubHost": "api.github.com",
+        "GithubRepo": "datimutils",
+        "GithubUsername": "pepfar-datim",
+        "GithubRef": "master",
+        "GithubSHA1": "338c374674876850707f642d1998f8aff4a41096"
       }
     },
     "datimvalidation": {
@@ -554,30 +514,29 @@
         "Maintainer": "Jason P. Pickering <jason.p.pickering@gmail.com>",
         "Description": "A comprehensive set of tools to validate data payloads\n        intended for import into 'DATIM' <https://www.datim.org/>.\n        DATIM is the 'PEPFAR' <https://www.state.gov/pepfar/> specific\n        instance of 'DHIS2' <https://www.dhis2.org/>. These scripts are\n        provided for the 'PEPFAR' data exchange community in order to\n        validate their prospective data payloads prior to submission\n        for import.",
         "License": "BSD_3_clause + file LICENSE",
-        "Remotes": "pepfar-datim/datimutils",
         "SystemRequirements": "Active user account on 'DATIM'\n<https://www.datim.org/>",
         "URL": "https://github.com/pepfar-datim/datim-validation",
         "BugReports": "https://github.com/pepfar-datim/datim-validation/issues",
         "Encoding": "UTF-8",
-        "Depends": "R (>= 4.1), datimutils (>= 0.6.0)",
-        "Imports": "assertthat (>= 0.2.0), dplyr (>= 0.8.3), httr (>= 1.4.0),\nISOweek (>= 0.6-2), jsonlite (>= 1.6), lubridate (>= 1.7.4),\nplyr (>= 1.8.4), purrr (>= 0.3.2), reshape2 (>= 1.4.3), stringr\n(>= 1.4.0), xml2 (>= 1.3.2), httpcache (>= 1.2.0), crayon (>=\n1.5.1), stringi (>= 1.7.8)",
-        "Suggests": "covr (>= 3.2.1), doMC (>= 1.3.5), foreach (>= 1.4.4),\nhttptest (>= 3.2.2), knitr (>= 1.21), methods, rmarkdown (>=\n1.11), roxygen2 (>= 6.1.1), tcltk, testthat (>= 2.0.1), stringi\n(>= 1.3.1), rprojroot (>= 1.3-2), lintr (>= 3.0.0), tibble (>=\n3.1.8)",
+        "Depends": "R (>= 4.1),\ndatimutils (>= 0.6.0)",
+        "Imports": "assertthat (>= 0.2.0),\ndplyr (>= 0.8.3),\nhttr (>= 1.4.0),\nISOweek (>= 0.6-2),\njsonlite (>= 1.6),\nlubridate (>= 1.7.4),\nplyr (>= 1.8.4),\npurrr (>= 0.3.2),\nreshape2 (>= 1.4.3),\nstringr (>= 1.4.0),\nxml2 (>= 1.3.2),\nhttpcache (>= 1.2.0),\ncrayon (>= 1.5.1),\nstringi (>= 1.7.8)",
+        "Suggests": "covr (>= 3.2.1),\ndoMC (>= 1.3.5),\nforeach (>= 1.4.4),\nhttptest (>= 3.2.2),\nknitr (>= 1.21),\nmethods,\nrmarkdown (>= 1.11),\nroxygen2 (>= 6.1.1),\ntcltk,\ntestthat (>= 2.0.1),\nstringi (>= 1.3.1),\nrprojroot (>= 1.3-2),\nlintr (>= 3.0.0),\ntibble (>= 3.1.8)",
         "VignetteBuilder": "knitr",
         "RoxygenNote": "7.2.1",
+        "Author": "Jason Pickering [aut, cre],\n  Chris Nemarich [ctb],\n  Vlad Shioshvili [ctb],\n  Dennis Banga [ctb],\n  Hiwot Chichaybelu [ctb]",
+        "Built": "R 4.3.1; ; 2023-09-05 19:35:06 UTC; unix",
         "RemoteType": "github",
         "RemoteHost": "api.github.com",
-        "RemoteRepo": "datim-validation",
         "RemoteUsername": "pepfar-datim",
-        "RemoteRef": "HEAD",
+        "RemoteRepo": "datim-validation",
+        "RemoteRef": "master",
         "RemoteSha": "7214f32cc8b21f5466013d8825756322fe9e7353",
+        "Remotes": "pepfar-datim/datimutils",
+        "GithubHost": "api.github.com",
         "GithubRepo": "datim-validation",
         "GithubUsername": "pepfar-datim",
-        "GithubRef": "HEAD",
-        "GithubSHA1": "7214f32cc8b21f5466013d8825756322fe9e7353",
-        "NeedsCompilation": "no",
-        "Packaged": "2024-10-08 15:45:24 UTC; LopezF3@state.gov",
-        "Author": "Jason Pickering [aut, cre],\n  Chris Nemarich [ctb],\n  Vlad Shioshvili [ctb],\n  Dennis Banga [ctb],\n  Hiwot Chichaybelu [ctb]",
-        "Built": "R 4.4.0; ; 2024-10-08 15:45:25 UTC; unix"
+        "GithubRef": "master",
+        "GithubSHA1": "7214f32cc8b21f5466013d8825756322fe9e7353"
       }
     },
     "digest": {
@@ -604,14 +563,8 @@
         "Maintainer": "Dirk Eddelbuettel <edd@debian.org>",
         "Repository": "CRAN",
         "Date/Publication": "2024-08-19 14:10:07 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:45:41 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "digest",
-        "RemoteRef": "digest",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.6.37"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-08-19 17:55:55 UTC; unix",
+        "Archs": "digest.so.dSYM"
       }
     },
     "doMC": {
@@ -635,14 +588,7 @@
         "OS_type": "unix",
         "Repository": "CRAN",
         "Date/Publication": "2022-02-05 00:30:24 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:57:26 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "doMC",
-        "RemoteRef": "doMC",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.3.8"
+        "Built": "R 4.3.0; ; 2023-04-12 08:27:38 UTC; unix"
       }
     },
     "dplyr": {
@@ -673,7 +619,8 @@
         "Maintainer": "Hadley Wickham <hadley@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2023-11-17 16:50:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:56:21 UTC; unix"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-11-17 19:44:43 UTC; unix",
+        "Archs": "dplyr.so.dSYM"
       }
     },
     "evaluate": {
@@ -701,14 +648,7 @@
         "Maintainer": "Hadley Wickham <hadley@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-09-17 22:10:07 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:47:29 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "evaluate",
-        "RemoteRef": "evaluate",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.0.0"
+        "Built": "R 4.3.1; ; 2024-10-14 14:48:49 UTC; unix"
       }
     },
     "fansi": {
@@ -736,14 +676,8 @@
         "Maintainer": "Brodie Gaslam <brodie.gaslam@yahoo.com>",
         "Repository": "CRAN",
         "Date/Publication": "2023-12-08 03:30:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:19:58 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "fansi",
-        "RemoteRef": "fansi",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.0.6"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-12-08 03:36:28 UTC; unix",
+        "Archs": "fansi.so.dSYM"
       }
     },
     "fastmap": {
@@ -767,14 +701,8 @@
         "Maintainer": "Winston Chang <winston@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-05-15 09:00:07 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:33:12 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "fastmap",
-        "RemoteRef": "fastmap",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.2.0"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-05-15 10:15:27 UTC; unix",
+        "Archs": "fastmap.so.dSYM"
       }
     },
     "filelock": {
@@ -801,7 +729,8 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2023-12-11 04:40:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:54:42 UTC; unix"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-12-11 05:11:43 UTC; unix",
+        "Archs": "filelock.so.dSYM"
       }
     },
     "fontawesome": {
@@ -830,14 +759,7 @@
         "Maintainer": "Richard Iannone <rich@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2023-08-19 04:52:40 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:53:51 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "fontawesome",
-        "RemoteRef": "fontawesome",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.5.2"
+        "Built": "R 4.3.0; ; 2023-08-19 06:53:48 UTC; unix"
       }
     },
     "foreach": {
@@ -865,14 +787,7 @@
         "Maintainer": "Folashade Daniel <fdaniel@microsoft.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-02-02 09:20:02 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:57:24 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "foreach",
-        "RemoteRef": "foreach",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.5.2"
+        "Built": "R 4.3.0; ; 2023-04-12 06:44:51 UTC; unix"
       }
     },
     "formatR": {
@@ -899,14 +814,7 @@
         "Maintainer": "Yihui Xie <xie@yihui.name>",
         "Repository": "CRAN",
         "Date/Publication": "2023-01-17 22:30:02 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:50:50 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "formatR",
-        "RemoteRef": "formatR",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.14"
+        "Built": "R 4.3.0; ; 2023-04-11 20:57:34 UTC; unix"
       }
     },
     "fs": {
@@ -939,14 +847,8 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-04-25 12:50:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:51:34 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "fs",
-        "RemoteRef": "fs",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.6.4"
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2024-04-25 16:01:23 UTC; unix",
+        "Archs": "fs.so.dSYM"
       }
     },
     "futile.logger": {
@@ -973,14 +875,7 @@
         "Packaged": "2016-07-10 13:44:30 UTC; brian",
         "Repository": "CRAN",
         "Date/Publication": "2016-07-10 16:57:47",
-        "Built": "R 4.4.0; ; 2024-10-01 13:50:55 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "futile.logger",
-        "RemoteRef": "futile.logger",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.4.3"
+        "Built": "R 4.3.0; ; 2023-04-12 11:24:59 UTC; unix"
       }
     },
     "futile.options": {
@@ -1002,14 +897,7 @@
         "Packaged": "2018-04-20 16:08:58 UTC; brian",
         "Repository": "CRAN",
         "Date/Publication": "2018-04-20 22:04:12 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:50:54 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "futile.options",
-        "RemoteRef": "futile.options",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.0.1"
+        "Built": "R 4.3.0; ; 2023-04-11 20:57:09 UTC; unix"
       }
     },
     "generics": {
@@ -1037,7 +925,7 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-07-05 19:40:02 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:55:56 UTC; unix"
+        "Built": "R 4.3.0; ; 2023-04-11 20:07:12 UTC; unix"
       }
     },
     "glue": {
@@ -1067,14 +955,8 @@
         "Maintainer": "Jennifer Bryan <jenny@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-09-30 22:30:01 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:48:30 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "glue",
-        "RemoteRef": "glue",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.8.0"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-09-30 23:14:03 UTC; unix",
+        "Archs": "glue.so.dSYM"
       }
     },
     "highr": {
@@ -1102,14 +984,7 @@
         "Maintainer": "Yihui Xie <xie@yihui.name>",
         "Repository": "CRAN",
         "Date/Publication": "2024-05-26 20:00:03 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:47:35 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "highr",
-        "RemoteRef": "highr",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.11"
+        "Built": "R 4.3.3; ; 2024-05-26 22:53:28 UTC; unix"
       }
     },
     "htmltools": {
@@ -1140,14 +1015,7 @@
         "Maintainer": "Carson Sievert <carson@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-04-04 05:03:00 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:46:37 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "htmltools",
-        "RemoteRef": "htmltools",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.5.8.1"
+        "Built": "R 4.3.1; x86_64-apple-darwin20; 2024-04-05 17:53:23 UTC; unix"
       }
     },
     "htmlwidgets": {
@@ -1175,14 +1043,7 @@
         "Maintainer": "Carson Sievert <carson@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2023-12-06 06:00:06 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:59:32 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "htmlwidgets",
-        "RemoteRef": "htmlwidgets",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.6.4"
+        "Built": "R 4.3.0; ; 2023-12-06 06:54:31 UTC; unix"
       }
     },
     "httpcache": {
@@ -1211,7 +1072,7 @@
         "Maintainer": "Neal Richardson <neal.p.richardson@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-01-10 23:10:02 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:56:03 UTC; unix"
+        "Built": "R 4.3.0; ; 2023-04-12 13:24:22 UTC; unix"
       }
     },
     "httpuv": {
@@ -1241,14 +1102,8 @@
         "Maintainer": "Winston Chang <winston@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-03-26 05:50:06 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:46:50 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "httpuv",
-        "RemoteRef": "httpuv",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.6.15"
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2024-03-26 09:17:38 UTC; unix",
+        "Archs": "httpuv.so.dSYM"
       }
     },
     "httr": {
@@ -1276,7 +1131,7 @@
         "Maintainer": "Hadley Wickham <hadley@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2023-08-15 09:00:02 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:55:22 UTC; unix"
+        "Built": "R 4.3.0; ; 2023-08-15 11:34:25 UTC; unix"
       }
     },
     "iterators": {
@@ -1299,14 +1154,7 @@
         "Maintainer": "Folashade Daniel <fdaniel@microsoft.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-02-05 00:50:08 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:57:22 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "iterators",
-        "RemoteRef": "iterators",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.0.14"
+        "Built": "R 4.3.0; ; 2023-04-11 20:08:41 UTC; unix"
       }
     },
     "jquerylib": {
@@ -1330,14 +1178,7 @@
         "Maintainer": "Carson Sievert <carson@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-04-26 17:10:02 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:51:26 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "jquerylib",
-        "RemoteRef": "jquerylib",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.1.4"
+        "Built": "R 4.3.0; ; 2023-04-12 11:15:31 UTC; unix"
       }
     },
     "jsonlite": {
@@ -1363,14 +1204,8 @@
         "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>),\n  Duncan Temple Lang [ctb],\n  Lloyd Hilaiel [cph] (author of bundled libyajl)",
         "Repository": "CRAN",
         "Date/Publication": "2024-09-20 08:40:14 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:51:28 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "jsonlite",
-        "RemoteRef": "jsonlite",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.8.9"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-09-23 03:21:28 UTC; unix",
+        "Archs": "jsonlite.so.dSYM"
       }
     },
     "keyring": {
@@ -1400,7 +1235,8 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2023-12-11 00:40:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:55:02 UTC; unix"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-12-11 01:17:20 UTC; unix",
+        "Archs": "keyring.so.dSYM"
       }
     },
     "knitr": {
@@ -1430,14 +1266,7 @@
         "Maintainer": "Yihui Xie <xie@yihui.name>",
         "Repository": "CRAN",
         "Date/Publication": "2024-07-07 14:00:01 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:47:42 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "knitr",
-        "RemoteRef": "knitr",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.48"
+        "Built": "R 4.3.3; ; 2024-07-07 15:29:01 UTC; unix"
       }
     },
     "lambda.r": {
@@ -1461,14 +1290,7 @@
         "Packaged": "2019-09-15 08:08:15 UTC; brian",
         "Repository": "CRAN",
         "Date/Publication": "2019-09-18 14:30:02 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:50:52 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "lambda.r",
-        "RemoteRef": "lambda.r",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.2.4"
+        "Built": "R 4.3.0; ; 2023-04-12 07:05:56 UTC; unix"
       }
     },
     "later": {
@@ -1496,14 +1318,8 @@
         "Maintainer": "Winston Chang <winston@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2023-12-06 09:10:05 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:46:25 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "later",
-        "RemoteRef": "later",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.3.2"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-12-06 10:43:08 UTC; unix",
+        "Archs": "later.so.dSYM"
       }
     },
     "lazyeval": {
@@ -1527,14 +1343,8 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2019-03-15 17:50:07 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:57:08 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "lazyeval",
-        "RemoteRef": "lazyeval",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.2.2"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-04-11 20:23:24 UTC; unix",
+        "Archs": "lazyeval.so.dSYM"
       }
     },
     "lifecycle": {
@@ -1563,14 +1373,7 @@
         "Maintainer": "Lionel Henry <lionel@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2023-11-07 10:10:10 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:19:54 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "lifecycle",
-        "RemoteRef": "lifecycle",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.0.4"
+        "Built": "R 4.3.0; ; 2023-11-07 14:26:25 UTC; unix"
       }
     },
     "lubridate": {
@@ -1604,7 +1407,8 @@
         "Author": "Vitalie Spinu [aut, cre],\n  Garrett Grolemund [aut],\n  Hadley Wickham [aut],\n  Davis Vaughan [ctb],\n  Ian Lyttle [ctb],\n  Imanuel Costigan [ctb],\n  Jason Law [ctb],\n  Doug Mitarotonda [ctb],\n  Joseph Larmarange [ctb],\n  Jonathan Boiser [ctb],\n  Chel Hee Lee [ctb]",
         "Repository": "CRAN",
         "Date/Publication": "2023-09-27 09:20:06 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:56:14 UTC; unix"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-09-27 11:15:45 UTC; unix",
+        "Archs": "lubridate.so.dSYM"
       }
     },
     "magrittr": {
@@ -1633,14 +1437,8 @@
         "Maintainer": "Lionel Henry <lionel@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2022-03-30 07:30:09 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:19:56 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "magrittr",
-        "RemoteRef": "magrittr",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "2.0.3"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-04-11 20:07:22 UTC; unix",
+        "Archs": "magrittr.so.dSYM"
       }
     },
     "memoise": {
@@ -1665,14 +1463,7 @@
         "Maintainer": "Winston Chang <winston@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-11-26 16:11:10 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:33:18 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "memoise",
-        "RemoteRef": "memoise",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "2.0.1"
+        "Built": "R 4.3.0; ; 2023-04-17 22:23:05 UTC; unix"
       }
     },
     "mime": {
@@ -1697,14 +1488,8 @@
         "Maintainer": "Yihui Xie <xie@yihui.name>",
         "Repository": "CRAN",
         "Date/Publication": "2021-09-28 05:00:05 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:51:32 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "mime",
-        "RemoteRef": "mime",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.12"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-04-11 20:09:16 UTC; unix",
+        "Archs": "mime.so.dSYM"
       }
     },
     "openssl": {
@@ -1732,14 +1517,8 @@
         "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-09-20 08:40:05 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:47:52 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "openssl",
-        "RemoteRef": "openssl",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "2.2.2"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-09-23 04:09:20 UTC; unix",
+        "Archs": "openssl.so.dSYM"
       }
     },
     "openxlsx": {
@@ -1772,14 +1551,36 @@
         "Maintainer": "Jan Marvin Garbuszus <jan.garbuszus@ruhr-uni-bochum.de>",
         "Repository": "CRAN",
         "Date/Publication": "2024-09-20 12:50:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:49:30 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "openxlsx",
-        "RemoteRef": "openxlsx",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "4.2.7.1"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-09-23 03:22:42 UTC; unix",
+        "Archs": "openxlsx.so.dSYM"
+      }
+    },
+    "packrat": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Type": "Package",
+        "Package": "packrat",
+        "Title": "A Dependency Management System for Projects and their R Package\nDependencies",
+        "Version": "0.9.2",
+        "Authors@R": "c(\n    person(\"Aron\", \"Atkins\", , \"aron@posit.co\", role = c(\"aut\", \"cre\")),\n    person(\"Toph\", \"Allen\", role = \"aut\"),\n    person(\"Kevin\", \"Ushey\", role = \"aut\"),\n    person(\"Jonathan\", \"McPherson\", role = \"aut\"),\n    person(\"Joe\", \"Cheng\", role = \"aut\"),\n    person(\"JJ\", \"Allaire\", role = \"aut\"),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
+        "Description": "Manage the R packages your project depends on in an isolated,\n    portable, and reproducible way.",
+        "License": "GPL-2",
+        "URL": "https://github.com/rstudio/packrat",
+        "BugReports": "https://github.com/rstudio/packrat/issues",
+        "Depends": "R (>= 3.0.0)",
+        "Imports": "tools, utils",
+        "Suggests": "devtools, httr, knitr, mockery, rmarkdown, testthat (>=\n3.0.0)",
+        "Config/testthat/edition": "3",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.2.3",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-09-05 11:45:33 UTC; aron",
+        "Author": "Aron Atkins [aut, cre],\n  Toph Allen [aut],\n  Kevin Ushey [aut],\n  Jonathan McPherson [aut],\n  Joe Cheng [aut],\n  JJ Allaire [aut],\n  Posit Software, PBC [cph, fnd]",
+        "Maintainer": "Aron Atkins <aron@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-09-05 13:00:02 UTC",
+        "Built": "R 4.3.1; ; 2023-09-05 17:31:23 UTC; unix"
       }
     },
     "pillar": {
@@ -1812,14 +1613,7 @@
         "Maintainer": "Kirill Müller <kirill@cynkra.com>",
         "Repository": "CRAN",
         "Date/Publication": "2023-03-22 08:10:02 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:20:26 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "pillar",
-        "RemoteRef": "pillar",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.9.0"
+        "Built": "R 4.3.0; ; 2023-04-12 12:50:25 UTC; unix"
       }
     },
     "pkgconfig": {
@@ -1843,14 +1637,7 @@
         "Packaged": "2019-09-22 08:42:40 UTC; gaborcsardi",
         "Repository": "CRAN",
         "Date/Publication": "2019-09-22 09:20:02 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:20:33 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "pkgconfig",
-        "RemoteRef": "pkgconfig",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "2.0.3"
+        "Built": "R 4.3.0; ; 2023-04-11 20:07:53 UTC; unix"
       }
     },
     "plyr": {
@@ -1878,7 +1665,8 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2023-10-02 06:50:08 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:55:26 UTC; unix"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-10-02 07:03:03 UTC; unix",
+        "Archs": "plyr.so.dSYM"
       }
     },
     "promises": {
@@ -1908,14 +1696,7 @@
         "Maintainer": "Joe Cheng <joe@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-04-05 15:00:06 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:46:41 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "promises",
-        "RemoteRef": "promises",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.3.0"
+        "Built": "R 4.3.1; x86_64-apple-darwin20; 2024-04-05 17:53:42 UTC; unix"
       }
     },
     "purrr": {
@@ -1946,14 +1727,8 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2023-08-10 08:20:07 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:25:20 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "purrr",
-        "RemoteRef": "purrr",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.0.2"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-08-10 09:42:56 UTC; unix",
+        "Archs": "purrr.so.dSYM"
       }
     },
     "rappdirs": {
@@ -1981,14 +1756,8 @@
         "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-01-31 05:40:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:51:58 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "rappdirs",
-        "RemoteRef": "rappdirs",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.3.3"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-04-11 20:10:28 UTC; unix",
+        "Archs": "rappdirs.so.dSYM"
       }
     },
     "renv": {
@@ -2019,7 +1788,7 @@
         "Maintainer": "Kevin Ushey <kevin@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-10-05 05:50:01 UTC",
-        "Built": "R 4.4.0; ; 2024-10-08 16:40:23 UTC; unix"
+        "Built": "R 4.3.1; ; 2024-10-14 14:48:37 UTC; unix"
       }
     },
     "reshape2": {
@@ -2046,7 +1815,8 @@
         "Packaged": "2020-04-09 12:27:19 UTC; hadley",
         "Repository": "CRAN",
         "Date/Publication": "2020-04-09 13:50:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:56:05 UTC; unix"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-04-12 14:22:29 UTC; unix",
+        "Archs": "reshape2.so.dSYM"
       }
     },
     "rlang": {
@@ -2077,14 +1847,8 @@
         "Maintainer": "Lionel Henry <lionel@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-06-04 09:45:03 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:19:41 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "rlang",
-        "RemoteRef": "rlang",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.1.4"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-06-05 00:01:14 UTC; unix",
+        "Archs": "rlang.so.dSYM"
       }
     },
     "rmarkdown": {
@@ -2115,14 +1879,77 @@
         "Author": "JJ Allaire [aut],\n  Yihui Xie [aut, cre] (<https://orcid.org/0000-0003-0645-5666>),\n  Christophe Dervieux [aut] (<https://orcid.org/0000-0003-4474-2498>),\n  Jonathan McPherson [aut],\n  Javier Luraschi [aut],\n  Kevin Ushey [aut],\n  Aron Atkins [aut],\n  Hadley Wickham [aut],\n  Joe Cheng [aut],\n  Winston Chang [aut],\n  Richard Iannone [aut] (<https://orcid.org/0000-0003-3925-190X>),\n  Andrew Dunning [ctb] (<https://orcid.org/0000-0003-0464-5036>),\n  Atsushi Yasumoto [ctb, cph] (<https://orcid.org/0000-0002-8335-495X>,\n    Number sections Lua filter),\n  Barret Schloerke [ctb],\n  Carson Sievert [ctb] (<https://orcid.org/0000-0002-4958-2844>),\n  Devon Ryan [ctb] (<https://orcid.org/0000-0002-8549-0971>),\n  Frederik Aust [ctb] (<https://orcid.org/0000-0003-4900-788X>),\n  Jeff Allen [ctb],\n  JooYoung Seo [ctb] (<https://orcid.org/0000-0002-4064-6012>),\n  Malcolm Barrett [ctb],\n  Rob Hyndman [ctb],\n  Romain Lesur [ctb],\n  Roy Storey [ctb],\n  Ruben Arslan [ctb],\n  Sergio Oller [ctb],\n  Posit Software, PBC [cph, fnd],\n  jQuery UI contributors [ctb, cph] (jQuery UI library; authors listed in\n    inst/rmd/h/jqueryui/AUTHORS.txt),\n  Mark Otto [ctb] (Bootstrap library),\n  Jacob Thornton [ctb] (Bootstrap library),\n  Bootstrap contributors [ctb] (Bootstrap library),\n  Twitter, Inc [cph] (Bootstrap library),\n  Alexander Farkas [ctb, cph] (html5shiv library),\n  Scott Jehl [ctb, cph] (Respond.js library),\n  Ivan Sagalaev [ctb, cph] (highlight.js library),\n  Greg Franko [ctb, cph] (tocify library),\n  John MacFarlane [ctb, cph] (Pandoc templates),\n  Google, Inc. [ctb, cph] (ioslides library),\n  Dave Raggett [ctb] (slidy library),\n  W3C [cph] (slidy library),\n  Dave Gandy [ctb, cph] (Font-Awesome),\n  Ben Sperry [ctb] (Ionicons),\n  Drifty [cph] (Ionicons),\n  Aidan Lister [ctb, cph] (jQuery StickyTabs),\n  Benct Philip Jonsson [ctb, cph] (pagebreak Lua filter),\n  Albert Krewinkel [ctb, cph] (pagebreak Lua filter)",
         "Repository": "CRAN",
         "Date/Publication": "2024-08-17 04:50:13 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:53:56 UTC; unix",
+        "Built": "R 4.3.3; ; 2024-08-17 10:23:37 UTC; unix"
+      }
+    },
+    "rsconnect": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Type": "Package",
+        "Package": "rsconnect",
+        "Title": "Deploy Docs, Apps, and APIs to 'Posit Connect', 'shinyapps.io',\nand 'RPubs'",
+        "Version": "1.3.1",
+        "Authors@R": "c(\n    person(\"Aron\", \"Atkins\", , \"aron@posit.co\", role = c(\"aut\", \"cre\")),\n    person(\"Toph\", \"Allen\", role = \"aut\"),\n    person(\"Hadley\", \"Wickham\", role = \"aut\"),\n    person(\"Jonathan\", \"McPherson\", role = \"aut\"),\n    person(\"JJ\", \"Allaire\", role = \"aut\"),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
+        "Description": "Programmatic deployment interface for 'RPubs',\n    'shinyapps.io', and 'Posit Connect'. Supported content types include R\n    Markdown documents, Shiny applications, Plumber APIs, plots, and\n    static web content.",
+        "License": "GPL-2",
+        "URL": "https://rstudio.github.io/rsconnect/,\nhttps://github.com/rstudio/rsconnect",
+        "BugReports": "https://github.com/rstudio/rsconnect/issues",
+        "Depends": "R (>= 3.5.0)",
+        "Imports": "cli, curl, digest, jsonlite, lifecycle, openssl (>= 2.0.0),\nPKI, packrat (>= 0.6), renv (>= 1.0.0), rlang (>= 1.0.0),\nrstudioapi (>= 0.5), tools, yaml (>= 2.1.5)",
+        "Suggests": "Biobase, BiocManager, foreign, knitr, MASS, plumber (>=\n0.3.2), quarto, RCurl, reticulate, rmarkdown (>= 1.1), shiny,\ntestthat (>= 3.1.9), webfakes, withr",
+        "VignetteBuilder": "knitr, rmarkdown",
+        "Config/Needs/website": "tidyverse/tidytemplate",
+        "Config/testthat/edition": "3",
+        "Config/testthat/parallel": "true",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2024-06-03 14:23:06 UTC; aron",
+        "Author": "Aron Atkins [aut, cre],\n  Toph Allen [aut],\n  Hadley Wickham [aut],\n  Jonathan McPherson [aut],\n  JJ Allaire [aut],\n  Posit Software, PBC [cph, fnd]",
+        "Maintainer": "Aron Atkins <aron@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-06-04 09:50:02 UTC",
+        "Built": "R 4.3.1; ; 2024-10-14 19:22:33 UTC; unix",
         "RemoteType": "standard",
-        "RemotePkgRef": "rmarkdown",
-        "RemoteRef": "rmarkdown",
-        "RemoteRepos": "https://cloud.r-project.org",
+        "RemotePkgRef": "rsconnect",
+        "RemoteRef": "rsconnect",
+        "RemoteRepos": "https://cran.rstudio.com",
         "RemoteReposName": "CRAN",
         "RemotePkgPlatform": "source",
-        "RemoteSha": "2.28"
+        "RemoteSha": "1.3.1"
+      }
+    },
+    "rstudioapi": {
+      "Source": "CRAN",
+      "Repository": "https://cran.rstudio.com",
+      "description": {
+        "Package": "rstudioapi",
+        "Title": "Safely Access the RStudio API",
+        "Description": "Access the RStudio API (if available) and provide informative error\n    messages when it's not.",
+        "Version": "0.16.0",
+        "Authors@R": "c(\n    person(\"Kevin\", \"Ushey\", role = c(\"aut\", \"cre\"), email = \"kevin@rstudio.com\"),\n    person(\"JJ\", \"Allaire\", role = c(\"aut\"), email = \"jj@posit.co\"),\n    person(\"Hadley\", \"Wickham\", role = c(\"aut\"), email = \"hadley@posit.co\"),\n    person(\"Gary\", \"Ritchie\", role = c(\"aut\"), email = \"gary@posit.co\"),\n    person(family = \"RStudio\", role = \"cph\")\n    )",
+        "Maintainer": "Kevin Ushey <kevin@rstudio.com>",
+        "License": "MIT + file LICENSE",
+        "URL": "https://rstudio.github.io/rstudioapi/,\nhttps://github.com/rstudio/rstudioapi",
+        "BugReports": "https://github.com/rstudio/rstudioapi/issues",
+        "RoxygenNote": "7.3.1",
+        "Suggests": "testthat, knitr, rmarkdown, clipr, covr",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "no",
+        "Packaged": "2024-03-23 21:59:09 UTC; kevin",
+        "Author": "Kevin Ushey [aut, cre],\n  JJ Allaire [aut],\n  Hadley Wickham [aut],\n  Gary Ritchie [aut],\n  RStudio [cph]",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-03-24 11:30:02 UTC",
+        "Built": "R 4.3.2; ; 2024-03-24 13:53:57 UTC; unix",
+        "RemoteType": "standard",
+        "RemotePkgRef": "rstudioapi",
+        "RemoteRef": "rstudioapi",
+        "RemoteRepos": "https://cran.rstudio.com",
+        "RemoteReposName": "CRAN",
+        "RemotePkgPlatform": "x86_64-apple-darwin20",
+        "RemoteSha": "0.16.0"
       }
     },
     "sass": {
@@ -2151,14 +1978,8 @@
         "Maintainer": "Carson Sievert <carson@rstudio.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-03-15 22:30:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:51:59 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "sass",
-        "RemoteRef": "sass",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.4.9"
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2024-03-16 06:23:12 UTC; unix",
+        "Archs": "sass.so.dSYM"
       }
     },
     "shiny": {
@@ -2189,14 +2010,7 @@
         "Maintainer": "Winston Chang <winston@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-08-01 10:50:02 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:48:33 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "shiny",
-        "RemoteRef": "shiny",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.9.1"
+        "Built": "R 4.3.3; ; 2024-08-01 14:20:41 UTC; unix"
       }
     },
     "shinyWidgets": {
@@ -2223,14 +2037,7 @@
         "Maintainer": "Victor Perrier <victor.perrier@dreamrs.fr>",
         "Repository": "CRAN",
         "Date/Publication": "2024-09-23 07:40:02 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:51:16 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "shinyWidgets",
-        "RemoteRef": "shinyWidgets",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.8.7"
+        "Built": "R 4.3.3; ; 2024-09-23 10:55:01 UTC; unix"
       }
     },
     "shinyjs": {
@@ -2257,14 +2064,7 @@
         "Maintainer": "Dean Attali <daattali@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2021-12-23 10:10:02 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:49:21 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "shinyjs",
-        "RemoteRef": "shinyjs",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "2.1.0"
+        "Built": "R 4.3.0; ; 2023-04-12 15:34:48 UTC; unix"
       }
     },
     "sodium": {
@@ -2290,7 +2090,8 @@
         "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-10-04 11:20:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-08 15:29:14 UTC; unix"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-10-04 12:14:37 UTC; unix",
+        "Archs": "sodium.so.dSYM"
       }
     },
     "sourcetools": {
@@ -2314,14 +2115,8 @@
         "Packaged": "2023-01-31 18:03:04 UTC; kevin",
         "Repository": "CRAN",
         "Date/Publication": "2023-02-01 10:10:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:48:26 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "sourcetools",
-        "RemoteRef": "sourcetools",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.1.7-1"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-04-11 20:10:09 UTC; unix",
+        "Archs": "sourcetools.so.dSYM"
       }
     },
     "stringi": {
@@ -2350,14 +2145,7 @@
         "License_is_FOSS": "yes",
         "Repository": "CRAN",
         "Date/Publication": "2024-05-06 15:00:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:22:48 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "stringi",
-        "RemoteRef": "stringi",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.8.4"
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2024-05-06 16:20:13 UTC; unix"
       }
     },
     "stringr": {
@@ -2387,14 +2175,7 @@
         "Maintainer": "Hadley Wickham <hadley@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2023-11-14 23:10:02 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:24:12 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "stringr",
-        "RemoteRef": "stringr",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.5.1"
+        "Built": "R 4.3.0; ; 2023-11-15 01:41:52 UTC; unix"
       }
     },
     "sys": {
@@ -2420,7 +2201,8 @@
         "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-10-04 09:40:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-08 14:37:28 UTC; unix"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-10-04 10:08:44 UTC; unix",
+        "Archs": "sys.so.dSYM"
       }
     },
     "tibble": {
@@ -2454,14 +2236,8 @@
         "Maintainer": "Kirill Müller <kirill@cynkra.com>",
         "Repository": "CRAN",
         "Date/Publication": "2023-03-20 06:30:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:20:34 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "tibble",
-        "RemoteRef": "tibble",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "3.2.1"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-04-17 22:55:38 UTC; unix",
+        "Archs": "tibble.so.dSYM"
       }
     },
     "tidyr": {
@@ -2492,7 +2268,8 @@
         "Maintainer": "Hadley Wickham <hadley@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-01-24 14:50:09 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:55:07 UTC; unix"
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2024-01-24 19:15:02 UTC; unix",
+        "Archs": "tidyr.so.dSYM"
       }
     },
     "tidyselect": {
@@ -2522,7 +2299,7 @@
         "Maintainer": "Lionel Henry <lionel@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-03-11 14:10:02 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:55:57 UTC; unix"
+        "Built": "R 4.3.2; ; 2024-03-11 17:09:45 UTC; unix"
       }
     },
     "timechange": {
@@ -2549,7 +2326,8 @@
         "Maintainer": "Vitalie Spinu <spinuvit@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-01-18 09:20:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-10-01 13:55:34 UTC; unix"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2024-01-18 10:20:25 UTC; unix",
+        "Archs": "timechange.so.dSYM"
       }
     },
     "tinytex": {
@@ -2575,14 +2353,7 @@
         "Maintainer": "Yihui Xie <xie@yihui.name>",
         "Repository": "CRAN",
         "Date/Publication": "2024-09-15 18:00:02 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:53:54 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "tinytex",
-        "RemoteRef": "tinytex",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.53"
+        "Built": "R 4.3.3; ; 2024-09-15 20:56:56 UTC; unix"
       }
     },
     "utf8": {
@@ -2609,14 +2380,8 @@
         "Maintainer": "Kirill Müller <kirill@cynkra.com>",
         "Repository": "CRAN",
         "Date/Publication": "2023-10-22 21:50:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:20:03 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "utf8",
-        "RemoteRef": "utf8",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.2.4"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-10-22 23:15:41 UTC; unix",
+        "Archs": "utf8.so.dSYM"
       }
     },
     "vctrs": {
@@ -2646,14 +2411,8 @@
         "Maintainer": "Davis Vaughan <davis@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2023-12-01 23:50:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:20:07 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "vctrs",
-        "RemoteRef": "vctrs",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.6.5"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-12-02 02:40:26 UTC; unix",
+        "Archs": "vctrs.so.dSYM"
       }
     },
     "withr": {
@@ -2683,14 +2442,7 @@
         "Maintainer": "Lionel Henry <lionel@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2024-07-31 11:30:02 UTC",
-        "Built": "R 4.4.0; ; 2024-09-25 13:20:38 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "withr",
-        "RemoteRef": "withr",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "3.0.1"
+        "Built": "R 4.3.3; ; 2024-07-31 16:35:10 UTC; unix"
       }
     },
     "xfun": {
@@ -2718,14 +2470,7 @@
         "Maintainer": "Yihui Xie <xie@yihui.name>",
         "Repository": "CRAN",
         "Date/Publication": "2024-08-17 04:00:03 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:47:31 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "xfun",
-        "RemoteRef": "xfun",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.47"
+        "Built": "R 4.3.1; x86_64-apple-darwin20; 2024-10-14 14:48:51 UTC; unix"
       }
     },
     "xml2": {
@@ -2756,14 +2501,8 @@
         "Maintainer": "Hadley Wickham <hadley@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2023-12-04 16:30:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:50:54 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "xml2",
-        "RemoteRef": "xml2",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.3.6"
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-12-04 17:26:15 UTC; unix",
+        "Archs": "xml2.so.dSYM"
       }
     },
     "xtable": {
@@ -2788,14 +2527,7 @@
         "Packaged": "2019-04-21 10:56:51 UTC; dsco036",
         "Author": "David B. Dahl [aut],\n  David Scott [aut, cre],\n  Charles Roosen [aut],\n  Arni Magnusson [aut],\n  Jonathan Swinton [aut],\n  Ajay Shah [ctb],\n  Arne Henningsen [ctb],\n  Benno Puetz [ctb],\n  Bernhard Pfaff [ctb],\n  Claudio Agostinelli [ctb],\n  Claudius Loehnert [ctb],\n  David Mitchell [ctb],\n  David Whiting [ctb],\n  Fernando da Rosa [ctb],\n  Guido Gay [ctb],\n  Guido Schulz [ctb],\n  Ian Fellows [ctb],\n  Jeff Laake [ctb],\n  John Walker [ctb],\n  Jun Yan [ctb],\n  Liviu Andronic [ctb],\n  Markus Loecher [ctb],\n  Martin Gubri [ctb],\n  Matthieu Stigler [ctb],\n  Robert Castelo [ctb],\n  Seth Falcon [ctb],\n  Stefan Edwards [ctb],\n  Sven Garbade [ctb],\n  Uwe Ligges [ctb]",
         "Date/Publication": "2019-04-21 12:20:03 UTC",
-        "Built": "R 4.4.0; ; 2024-10-01 13:48:24 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "xtable",
-        "RemoteRef": "xtable",
-        "RemoteRepos": "https://cran.rstudio.com",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "1.8-4"
+        "Built": "R 4.3.0; ; 2023-04-11 20:07:40 UTC; unix"
       }
     },
     "yaml": {
@@ -2818,14 +2550,8 @@
         "Packaged": "2024-07-22 15:44:18 UTC; garbetsp",
         "Repository": "CRAN",
         "Date/Publication": "2024-07-26 15:10:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:47:37 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "yaml",
-        "RemoteRef": "yaml",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "2.3.10"
+        "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-07-26 17:49:55 UTC; unix",
+        "Archs": "yaml.so.dSYM"
       }
     },
     "zip": {
@@ -2851,20 +2577,13 @@
         "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-01-27 10:00:02 UTC",
-        "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2024-09-25 13:51:03 UTC; unix",
-        "RemoteType": "standard",
-        "RemotePkgRef": "zip",
-        "RemoteRef": "zip",
-        "RemoteRepos": "https://cloud.r-project.org",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "2.3.1"
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2024-01-27 12:39:00 UTC; unix"
       }
     }
   },
   "files": {
     ".Rprofile": {
-      "checksum": "c7fc45437f3daa55f77d2ddb9be646cf"
+      "checksum": "a333c8d6110ac03bef5d93e64bd6690a"
     },
     "LICENSE": {
       "checksum": "9b62b5c75bb467271d2729f6639a8259"
@@ -2873,7 +2592,7 @@
       "checksum": "9f25abe74a77ac00a2d234cab8021498"
     },
     "renv.lock": {
-      "checksum": "d2a5cc8db623ab30cdc72f765e3c7c90"
+      "checksum": "ec716255a376cedaa9c60dc7f8c45d83"
     },
     "server.R": {
       "checksum": "9aa558bd2ae90c844db6e7d55da77753"
