@@ -5,10 +5,6 @@
       {
         "Name": "CRAN",
         "URL": "https://cran.rstudio.com"
-      },
-      {
-        "Name": "pepfar",
-        "URL": "https://rstudio-package.ap.datim.org/prod/latest"
       }
     ]
   },
@@ -544,13 +540,13 @@
     },
     "jsonlite": {
       "Package": "jsonlite",
-      "Version": "1.8.0",
+      "Version": "1.8.9",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "methods"
       ],
-      "Hash": "d07e729b27b372429d42d24d503613a0"
+      "Hash": "4e993b65c2c3ffbffce7bb3e2c6f832b"
     },
     "keyring": {
       "Package": "keyring",
