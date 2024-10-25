@@ -338,7 +338,7 @@ observeEvent(input$type,{
     incProgress(step_size, detail = ("Parsing data"))
     validation<-list()
 
-    if  ( inFile$type == "application/zip" )  {
+    if  ( inFile$type == "application/zip" || inFile$type == "application/zip-compressed" || inFile$type == "application/x-zip-compressed") {
       temp_dir<- tempdir()
       unzip(inFile$datapath, exdir = temp_dir)
       possible_files <- list.files(temp_dir,
