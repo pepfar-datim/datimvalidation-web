@@ -340,6 +340,10 @@ observeEvent(input$type,{
 
     if  ( inFile$type == "application/zip" || inFile$type == "application/zip-compressed" || inFile$type == "application/x-zip-compressed") {
       temp_dir<- tempdir()
+      #Create some random subdirectory to prevent file collsions with shared sessions
+      random_string <- rawToChar(as.raw(sample(c(65:90,97:122), 12, replace=T)))
+      temp_dir <- paste0(temp_dir,"/",random_string)
+      dir.create(temp_dir)
       unzip(inFile$datapath, exdir = temp_dir)
       possible_files <- list.files(temp_dir,
                  pattern = paste0(input$type,"$"))
@@ -370,6 +374,10 @@ observeEvent(input$type,{
         d2session = user_input$d2_session
       )
 
+      ##Clean up the temp directory
+      if (exists("temp_dir")) {
+        unlink(temp_dir, recursive = TRUE)
+      }
 
       #Reset the button to force upload again
       shinyjs::reset("file1")
